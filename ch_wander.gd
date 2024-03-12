@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 onready var animator = $animator
 onready var sprite = $AnimatedSprite
-var state = "walk"
 
-var machine_eps = 1.0
+var machine_eps = 1.0 # initial value
+var state = "idle"
 
 func _ready():
 	self.position.y = 400
@@ -23,7 +23,7 @@ even though animations of AnimationPlayer and the _process mainloop are independ
 the _process function delay is globally the same among characters (skeletons) (*right?).
 """
 
-func strict_greater(a, b):
+func gneq(a, b):
 	return not (a <= b+machine_eps)
 	
 var tick = 0
@@ -32,6 +32,14 @@ var bound_x = 600
 var y = 400
 var last_tick = 0
 
+func cst_movement(dur):
+	if(state == "walk" and gneq(dur,0.42)):
+		state = "idle"
+		dur -= 0.42
+	elif(state == "idle"):
+		state = "walk"
+	
+
 func _process(delta):
 	tick += delta
 	
@@ -39,18 +47,14 @@ func _process(delta):
 	
 	if(!animator.current_animation): animator.current_animation = "idle"
 	
-	if(state == "walk" and strict_greater(dur,1.08)):
-		state = "idle"
-		dur -= 1.08
-	elif(state == "idle"):
-		state = "walk"
+	cst_movement(dur)
 	
 	if(state != animator.current_animation):
 		animator.current_animation = state
 		last_tick = tick
 		
-	if(self.position.x > 920):
-		self.position.x -= 940
+	#if(self.position.x > 920):
+	#	self.position.x -= 940
 	
 	
 func _move(steps):
