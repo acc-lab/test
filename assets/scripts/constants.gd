@@ -15,3 +15,9 @@ func _ready():
 	while machine_eps + 1 > 1:
 		machine_eps /= 2
 	machine_eps *= 2
+	
+func gneq(a, b):
+	return not (a <= b+machine_eps)
+
+func geq(a, b):
+	return (a >= b-machine_eps)
