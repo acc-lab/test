@@ -11,6 +11,8 @@ var state = "idle"
 func _ready():
 	self.position.y = 400
 	animator.current_animation = "idle"
+	$CollisionShape2D.collision_layer = team
+	$CollisionShape2D.set("uuid", uuid)
 	
 var tick = 0
 var last_tick = 0

@@ -16,11 +16,15 @@ var last_tick=0
 func _ready():
 	self.position.x = 0
 	self.position.y = 200
+	$CollisionShape2D.collision_layer = team
+	$CollisionShape2D.collision_mask = (team)%2+1
+	$CollisionShape2D.set("uuid", uuid)
 
 func cst_movement(dur):
 	if dur >= 0.03:
-		self.position.x+=vx;
-		self.position.y+=vy;
+		var collision = move_and_slide(Vector2(vx, vy))
+		if collision:
+			pass
 		vx+=ax;
 		vy+=ay;
 		return 0.03

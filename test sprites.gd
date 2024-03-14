@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var scene = {}
 var scenes = ["archer2", "axy", "healer", "police", "tank"]
