@@ -8,7 +8,7 @@ var vx=18
 var vy=-0.1
 var ax=0
 var ay=0.5
-var damage
+var damage=10
 
 var tick=0
 var last_tick=0
@@ -16,17 +16,21 @@ var last_tick=0
 func _ready():
 	self.position.x = 0
 	self.position.y = 200
-	$CollisionShape2D.collision_layer = team
-	$CollisionShape2D.collision_mask = (team)%2+1
-	$CollisionShape2D.set("uuid", uuid)
+	set_collision_layer(0)
+	set_collision_mask((team)%2+1)
 
 func cst_movement(dur):
 	if dur >= 0.03:
-		var collision = move_and_slide(Vector2(vx, vy))
+		var collision = move_and_collide(Vector2(vx, vy))
 		if collision:
-			pass
+			var collider = collision.collider
+			collider.set_damage(damage)
+			
+			call_deferred("free")
+			
 		vx+=ax;
 		vy+=ay;
+		
 		return 0.03
 	return 0
 
@@ -36,7 +40,6 @@ func _process(delta):
 	var dur = tick - last_tick
 	
 	self.rotation_degrees = atan2(vy, vx)*180/PI
-	print(self.rotation_degrees)
 	self.scale.x = 1*getDir()
 	
 	var del = cst_movement(dur)

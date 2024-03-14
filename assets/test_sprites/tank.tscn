@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://ch_wander.gd" type="Script" id=1]
+[ext_resource path="res://assets/test_sprites/emit_signals.gd" type="Script" id=1]
 [ext_resource path="res://assets/pictures/shield2.png" type="Texture" id=2]
 [ext_resource path="res://assets/pictures/shield3.png" type="Texture" id=3]
 [ext_resource path="res://assets/pictures/shield1.png" type="Texture" id=4]
@@ -230,8 +230,6 @@ animations = [ {
 extents = Vector2( 12, 30 )
 
 [node name="tank" type="KinematicBody2D"]
-position = Vector2( 285, 279 )
-scale = Vector2( 0.5, 0.5 )
 input_pickable = true
 script = ExtResource( 1 )
 
@@ -244,7 +242,8 @@ anims/idle = SubResource( 14 )
 anims/walk = SubResource( 15 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 8, 0 )
+position = Vector2( 4, 0 )
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 23 )
 animation = "idle"
 centered = false
@@ -254,8 +253,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -54 )
+position = Vector2( 0, -27 )
+scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
-
-[connection signal="mouse_entered" from="." to="." method="_on_ax_skeleton_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_ax_skeleton_mouse_exited"]

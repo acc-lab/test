@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://ch_wander.gd" type="Script" id=1]
+[ext_resource path="res://assets/test_sprites/emit_signals.gd" type="Script" id=1]
 [ext_resource path="res://assets/pictures/bow3.png" type="Texture" id=2]
 [ext_resource path="res://assets/pictures/bow4.png" type="Texture" id=3]
 [ext_resource path="res://assets/pictures/bow3_walk.png" type="Texture" id=4]
@@ -215,8 +215,6 @@ animations = [ {
 extents = Vector2( 12, 30 )
 
 [node name="archer" type="KinematicBody2D"]
-position = Vector2( 247, 279 )
-scale = Vector2( 0.5, 0.5 )
 input_pickable = true
 script = ExtResource( 1 )
 
@@ -228,8 +226,9 @@ anims/idle = SubResource( 9 )
 anims/walk = SubResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 11 )
-animation = "walk"
+animation = "idle"
 centered = false
 offset = Vector2( -28, -88 )
 __meta__ = {
@@ -237,8 +236,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -54 )
+position = Vector2( 0, -27 )
+scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
-
-[connection signal="mouse_entered" from="." to="." method="_on_ax_skeleton_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_ax_skeleton_mouse_exited"]

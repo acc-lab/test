@@ -17,7 +17,7 @@ func spawn_random():
 		ticks -= 1
 		var RI = rng.randi_range(1, 100)
 		
-		if RI >= 80:
+		if RI >= 5:
 			# instantiate with name scenes[scene_num]
 			var sc = scene[scenes[0]]
 			
@@ -25,6 +25,7 @@ func spawn_random():
 			instance.set("uuid", UUID)
 			instance.position.x = -20
 			instance.set("team", 1)
+			instance.set("vx", rng.randi_range(25, 30))
 			
 			UUID += 1
 			add_child(instance)
@@ -36,7 +37,9 @@ func _process(delta):
 	
 	var children = get_children()
 	
-	for i in children: print(i.position.x)
+	#print(len(children))
+	
+	#for i in children: print(i.position.x)
 	
 	
 	
