@@ -14,7 +14,9 @@ var tick=0
 var last_tick=0
 
 func _ready():
-	self.position.x = 0
+	if team==1: self.position.x = -20
+	else: self.position.x = 920
+	
 	self.position.y = 200
 	set_collision_layer(0)
 	set_collision_mask((team)%2+1)
@@ -25,7 +27,7 @@ func cst_movement(dur):
 		if collision:
 			var collider = collision.collider
 			collider.set_damage(damage)
-			
+			#fuck U
 			call_deferred("free")
 			
 		vx+=ax;

@@ -21,18 +21,17 @@ func spawn_random():
 			# instantiate with name scenes[scene_num]
 			var sc = scene[scenes[0]]
 			
-			#var instance = sc.instance()
-			#instance.set("uuid", UUID)
-			#instance.position.x = -20
-			#instance.set("team", 1)
-			#instance.set("vx", rng.randi_range(15, 35))
+			var instance = sc.instance()
+			instance.set("uuid", UUID)
+			instance.position.x = -20
+			instance.set("team", 1)
+			instance.set("vx", rng.randi_range(15, 35))
 			
-			#UUID += 1
-			#add_child(instance)
+			UUID += 1
+			add_child(instance)
 			
 			var instance2 = sc.instance()
 			instance2.set("uuid", UUID)
-			instance2.position.x = 920
 			instance2.set("team", 2)
 			instance2.set("vx", rng.randi_range(-35, -15))
 			
