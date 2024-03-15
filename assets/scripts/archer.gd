@@ -14,6 +14,8 @@ var body
 var animator
 var sprite
 
+signal _shoot_projectile(type, arguments)
+
 onready var health_bar = $"health bar"
 
 func _ready():			
@@ -29,6 +31,7 @@ func _ready():
 	
 	instance.connect("_move", self, "_move")
 	instance.connect("_damage", self, "_damage")
+	instance.connect("_attack", self, "_attack")
 	
 	body = instance
 	
@@ -64,10 +67,10 @@ func cst_movement(dur):
 			state = "walk"
 		return 0
 	elif(state == "attack"):
-		if Constants.geq(dur, 0.33):
+		if Constants.geq(dur, 0.36):
 			#print("shoot!")
 			state = "after_attack"
-			return 0.33
+			return 0.36
 	elif(state == "after_attack"):
 		if Constants.geq(dur, 1.17):
 			state = "idle"
@@ -118,3 +121,8 @@ func _damage(damage):
 	health -= damage
 	effect = 10
 	print(health)
+	
+func _attack():
+	print("I should attack")
+	
+	emit_signal("_shoot_projectile", "arrows", [])

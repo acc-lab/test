@@ -1,12 +1,14 @@
 extends Node
 
 func _ready():
-	pass
+	manager_projectile = get_parent().get_node("Manager (projectile)")
 
 var rng = RandomNumberGenerator.new()
 
 var ticks = 0
 var UUID = 0
+
+var manager_projectile
 
 func leftcpr(a, b):
 	return a.position.x < b.position.x
@@ -30,6 +32,7 @@ func spawn_random():
 			else:
 				instance.set("team", 2)
 			instance.set("observe_target_x", null)
+			instance.connect("_shoot_projectile", manager_projectile, "_shoot_projectile")
 
 			UUID += 1
 			

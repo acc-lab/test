@@ -49,5 +49,6 @@ func _process(delta):
 	
 	#for i in children: print(i.position.x)
 	
-	
-	
+
+func _shoot_projectile(type, arguments):
+	print("your mom ", type)

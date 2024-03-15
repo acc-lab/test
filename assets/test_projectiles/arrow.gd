@@ -27,7 +27,7 @@ func cst_movement(dur):
 		if collision:
 			var collider = collision.collider
 			collider.set_damage(damage)
-			#fuck U
+			
 			call_deferred("free")
 			
 		vx+=ax;
