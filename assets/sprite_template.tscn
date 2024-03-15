@@ -13,10 +13,10 @@ position = Vector2( 250, -50 )
 script = ExtResource( 2 )
 
 [node name="health bar" type="ProgressBar" parent="."]
-margin_left = -14.0
-margin_top = -53.0
-margin_right = 14.0
-margin_bottom = -50.0
+margin_left = -16.0
+margin_top = -58.0
+margin_right = 12.0
+margin_bottom = -55.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 value = 50.0
