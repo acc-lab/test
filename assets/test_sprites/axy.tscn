@@ -285,7 +285,7 @@ anims/walk = SubResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 12 )
-animation = "attack"
+animation = "walk"
 centered = false
 offset = Vector2( -28, -96 )
 __meta__ = {

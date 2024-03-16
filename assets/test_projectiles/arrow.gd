@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-onready var sprite = $Sprite
-
 var uuid
 var team = 1
 var vx=18

@@ -6,8 +6,8 @@ func _attack():
 	emit_signal("_shoot_projectile", "arrow", {
 		"position": self.position + Vector2(16*getDir(), -22),
 		"team": team,
-		"velocity": Vector2(18*getDir(), -1.8),
-		"acceleration": Vector2(0.2*getDir(), 0.2),
+		"velocity": Vector2(26*getDir(), -1.9),
+		"acceleration": Vector2(-0.4*getDir(), 0.2),
 		"damage": 40
 	})
 

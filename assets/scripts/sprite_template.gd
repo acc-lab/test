@@ -102,7 +102,6 @@ func _move(steps):
 func _damage(damage):
 	health -= damage
 	effect = 10
-	print(health)
 	
 func _attack():
 	pass
