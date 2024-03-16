@@ -1,6 +1,4 @@
-[gd_scene load_steps=4 format=2]
-
-[ext_resource path="res://assets/scripts/archer.gd" type="Script" id=2]
+[gd_scene load_steps=3 format=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.482353, 0.482353, 1 )
@@ -10,7 +8,6 @@ bg_color = Color( 1, 1, 1, 1 )
 
 [node name="sprite" type="Node2D"]
 position = Vector2( 250, -50 )
-script = ExtResource( 2 )
 
 [node name="health bar" type="ProgressBar" parent="."]
 margin_left = -16.0

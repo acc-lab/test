@@ -23,20 +23,21 @@ func spawn_random():
 			
 			var instance = sc.instance()
 			instance.set("uuid", UUID)
-			instance.position.x = -20
 			instance.set("team", 1)
+			instance.position.x = -20
 			instance.set("vx", rng.randi_range(15, 35))
 			
 			UUID += 1
-			add_child(instance)
+			#add_child(instance)
 			
 			var instance2 = sc.instance()
 			instance2.set("uuid", UUID)
 			instance2.set("team", 2)
+			instance2.position.x = 920
 			instance2.set("vx", rng.randi_range(-35, -15))
 			
 			UUID += 1
-			add_child(instance2)
+			#add_child(instance2)
 
 func _process(delta):
 	ticks += delta
@@ -51,4 +52,18 @@ func _process(delta):
 	
 
 func _shoot_projectile(type, arguments):
-	print("your mom ", type)
+	if type == "arrow":
+		var sc = scene[scenes[0]]
+		
+		var instance = sc.instance()
+		instance.set("uuid", UUID)
+		instance.set("position", arguments["position"])
+		instance.set("team", arguments["team"])
+		instance.set("vx", arguments["velocity"].x)
+		instance.set("vy", arguments["velocity"].y)
+		instance.set("ax", arguments["acceleration"].x)
+		instance.set("ay", arguments["acceleration"].y)
+		instance.set("damage", arguments["damage"])
+		
+		UUID += 1
+		add_child(instance)

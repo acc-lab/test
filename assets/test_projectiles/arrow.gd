@@ -14,10 +14,6 @@ var tick=0
 var last_tick=0
 
 func _ready():
-	if team==1: self.position.x = -20
-	else: self.position.x = 920
-	
-	self.position.y = 200
 	set_collision_layer(0)
 	set_collision_mask((team)%2+1)
 
@@ -42,7 +38,6 @@ func _process(delta):
 	var dur = tick - last_tick
 	
 	self.rotation_degrees = atan2(vy, vx)*180/PI
-	self.scale.x = 1*getDir()
 	
 	var del = cst_movement(dur)
 	
