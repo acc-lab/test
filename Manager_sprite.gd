@@ -48,6 +48,10 @@ func spawn_random():
 			
 			new_sprite("axy", 1)
 			new_sprite("axy", 2)
+			
+		elif RI >= 10:
+			new_sprite("police", 1)
+			new_sprite("police", 2)
 
 func _process(delta):
 	ticks += delta

@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/emit_signals.gd" type="Script" id=1]
-[ext_resource path="res://assets/pictures/police-idle.png" type="Texture" id=2]
-[ext_resource path="res://assets/pictures/police-walk1.png" type="Texture" id=3]
-[ext_resource path="res://assets/pictures/police-walk3.png" type="Texture" id=4]
-[ext_resource path="res://assets/pictures/police-walk2.png" type="Texture" id=5]
+[ext_resource path="res://pictures/latest/police-idle.png" type="Texture" id=2]
+[ext_resource path="res://pictures/latest/police-walk1.png" type="Texture" id=3]
+[ext_resource path="res://pictures/latest/police-walk3.png" type="Texture" id=4]
+[ext_resource path="res://pictures/latest/police-walk2.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=18]
 length = 0.001

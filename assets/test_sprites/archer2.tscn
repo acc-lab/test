@@ -1,13 +1,13 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/emit_signals.gd" type="Script" id=1]
-[ext_resource path="res://assets/pictures/bow3.png" type="Texture" id=2]
-[ext_resource path="res://assets/pictures/bow4.png" type="Texture" id=3]
-[ext_resource path="res://assets/pictures/bow3_walk.png" type="Texture" id=4]
-[ext_resource path="res://assets/pictures/bow4_walk.png" type="Texture" id=5]
-[ext_resource path="res://assets/pictures/bow2_walk.png" type="Texture" id=6]
-[ext_resource path="res://assets/pictures/bow2.png" type="Texture" id=7]
-[ext_resource path="res://assets/pictures/bow1.png" type="Texture" id=8]
+[ext_resource path="res://pictures/latest/bow3.png" type="Texture" id=2]
+[ext_resource path="res://pictures/latest/bow4.png" type="Texture" id=3]
+[ext_resource path="res://pictures/latest/bow3_walk.png" type="Texture" id=4]
+[ext_resource path="res://pictures/latest/bow4_walk.png" type="Texture" id=5]
+[ext_resource path="res://pictures/latest/bow2_walk.png" type="Texture" id=6]
+[ext_resource path="res://pictures/latest/bow2.png" type="Texture" id=7]
+[ext_resource path="res://pictures/latest/bow1.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
