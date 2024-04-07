@@ -9,6 +9,10 @@ func _attack():
 		"team": team,
 		"damage": 5,
 	})
+	
+func _ready():
+	health = 150
+	.set_health_bar()
 
 func cst_movement(dur):
 	if state == "idle":

@@ -9,7 +9,7 @@ var state = "idle"
 var phase = ""
 
 var effect=0
-var health=100
+var health
 
 var body
 var animator
@@ -41,12 +41,15 @@ func _ready():
 	
 	animator.current_animation = "idle"
 	
+	body.set_collision_layer(team)
+	body.set_collision_mask(0)
+	
+	# set_health_bar()
+	
+func set_health_bar():
 	health_bar.min_value = 0
 	health_bar.max_value = health
 	health_bar.value = health
-	
-	body.set_collision_layer(team)
-	body.set_collision_mask(0)
 	
 var tick = 0
 var last_tick = 0

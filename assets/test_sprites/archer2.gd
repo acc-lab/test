@@ -8,8 +8,12 @@ func _attack():
 		"team": team,
 		"velocity": Vector2(26*getDir(), -1.9),
 		"acceleration": Vector2(-0.4*getDir(), 0.2),
-		"damage": 40
+		"damage": 25
 	})
+	
+func _ready():
+	health = 80
+	.set_health_bar()
 
 func cst_movement(dur):
 	if(state == "walk" and Constants.geq(dur,0.42)):

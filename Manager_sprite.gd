@@ -40,18 +40,26 @@ func spawn_random():
 		ticks -= 1
 		var RI = rng.randi_range(1, 100)
 		
-		if RI >= 90:
+		if RI >= 80:
 			new_sprite("archer2", 1)
 			new_sprite("archer2", 2)
 			
-		elif RI >= 20:
+		elif RI >= 60:
 			
 			new_sprite("axy", 1)
 			new_sprite("axy", 2)
 			
-		elif RI >= 10:
+		elif RI >= 40:
 			new_sprite("police", 1)
 			new_sprite("police", 2)
+			
+		elif RI >= 20:
+			new_sprite("tank", 1)
+			new_sprite("tank", 2)
+			
+		else:
+			new_sprite("healer", 1)
+			new_sprite("healer", 2)
 
 func _process(delta):
 	ticks += delta
