@@ -44,6 +44,8 @@ func _ready():
 	body.set_collision_layer(team)
 	body.set_collision_mask(0)
 	
+	self.body.scale.x = 1*getDir()
+	
 	# set_health_bar()
 	
 func set_health_bar():
