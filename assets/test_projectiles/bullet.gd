@@ -12,7 +12,7 @@ var damage=100
 var tick=0
 var last_tick=0
 
-var piercing = 2
+var piercing = 1
 var pierced = []
 
 func _ready():

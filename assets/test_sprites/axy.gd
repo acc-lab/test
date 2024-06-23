@@ -7,11 +7,11 @@ func _attack():
 		"position": self.position + Vector2(33*getDir(), -45),
 		"slide": [self.position + Vector2(40*getDir(), -31), self.position + Vector2(35*getDir(), -23)],
 		"team": team,
-		"damage": 5,
+		"damage": 50,
 	})
 	
 func _ready():
-	health = 150
+	health = 200
 	.set_health_bar()
 
 func cst_movement(dur):

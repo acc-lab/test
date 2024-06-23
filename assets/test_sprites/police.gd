@@ -6,7 +6,7 @@ func _attack():
 	emit_signal("_shoot_projectile", "bullet", {
 		"position": self.position + Vector2(25*getDir(), -23),
 		"team": team,
-		"velocity": Vector2(55*getDir(), -1),
+		"velocity": Vector2(75*getDir(), -1),
 		"acceleration": Vector2(0, 0.4),
 		"drag_constant": 0.002,
 		"damage": 400
@@ -15,7 +15,7 @@ func _attack():
 	emit_signal("_shoot_projectile", "bullet", {
 		"position": self.position + Vector2(25*getDir(), -22),
 		"team": team,
-		"velocity": Vector2(55*getDir(), -2),
+		"velocity": Vector2(75*getDir(), -2),
 		"acceleration": Vector2(0, 0.4),
 		"drag_constant": 0.002,
 		"damage": 400
@@ -24,7 +24,7 @@ func _attack():
 	emit_signal("_shoot_projectile", "bullet", {
 		"position": self.position + Vector2(25*getDir(), -24),
 		"team": team,
-		"velocity": Vector2(55*getDir(), -3),
+		"velocity": Vector2(75*getDir(), -3),
 		"acceleration": Vector2(0, 0.4),
 		"drag_constant": 0.002,
 		"damage": 400
@@ -40,7 +40,7 @@ func cst_movement(dur):
 		return 0.42
 	elif(state == "idle"):
 		#print(self.position.x + 450*getDir(), " ", observe_target_x)
-		if exceed(self.position.x + 500*getDir(), observe_target_x, getDir()):
+		if exceed(self.position.x + 550*getDir(), observe_target_x, getDir()):
 			state = "attack"
 		else:
 			state = "walk"
