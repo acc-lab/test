@@ -1,7 +1,7 @@
 extends Node
 
 var scene = {}
-var scenes = ["arrow", "chop"]
+var scenes = ["arrow", "chop", "bullet"]
 
 func _ready():
 	for name in scenes:
@@ -49,6 +49,23 @@ func _shoot_projectile(type, arguments):
 		instance.set("damage", arguments["damage"])
 		
 		instance.set("slide", arguments["slide"])
+		
+		UUID += 1
+		add_child(instance)
+		
+	if type == "bullet":
+		var sc = scene[scenes[2]]
+		
+		var instance = sc.instance()
+		instance.set("uuid", UUID)
+		instance.set("position", arguments["position"])
+		instance.set("team", arguments["team"])
+		instance.set("vx", arguments["velocity"].x)
+		instance.set("vy", arguments["velocity"].y)
+		instance.set("ax", arguments["acceleration"].x)
+		instance.set("ay", arguments["acceleration"].y)
+		instance.set("drag_const", arguments["drag_constant"])
+		instance.set("damage", arguments["damage"])
 		
 		UUID += 1
 		add_child(instance)

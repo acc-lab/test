@@ -15,7 +15,10 @@ var body
 var animator
 var sprite
 
+var coord = null
+
 signal _shoot_projectile(type, arguments)
+signal free_tile(coord)
 
 onready var health_bar = $"health bar"
 
@@ -86,6 +89,8 @@ func _process(delta):
 	health_bar.value = health
 	
 	if(health <= 0):
+		if coord != null:
+			emit_signal("free_tile", coord)
 		call_deferred("free")
 		
 	#if(self.position.x > 920):

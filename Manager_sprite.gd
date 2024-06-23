@@ -1,6 +1,8 @@
 extends Node
 
-func new_sprite(variant, team):
+onready var board = $"../Node2D/board"
+
+func new_sprite(variant, team, coord = null):
 	var sc = Preloads.scene["sprite_template"]
 	var instance = sc.instance()
 	
@@ -12,8 +14,11 @@ func new_sprite(variant, team):
 	instance.set("team", team)
 	instance.set("observe_target_x", null)
 	instance.connect("_shoot_projectile", manager_projectile, "_shoot_projectile")
+	instance.connect("free_tile", board, "free_tile")
 	
 	UUID += 1
+	
+	instance.coord = coord
 	
 	add_child(instance)
 	
@@ -21,8 +26,8 @@ func new_sprite(variant, team):
 func _ready():
 	manager_projectile = get_parent().get_node("Manager (projectile)")
 	
-	new_sprite("axy", 1)
-	new_sprite("axy", 2)
+	#new_sprite("axy", 1)
+	#new_sprite("axy", 2)
 	
 
 var rng = RandomNumberGenerator.new()
@@ -38,28 +43,22 @@ func leftcpr(a, b):
 func spawn_random():
 	if ticks > 1:
 		ticks -= 1
-		var RI = rng.randi_range(1, 100)
 		
-		if RI >= 80:
-			new_sprite("archer2", 1)
-			new_sprite("archer2", 2)
-			
-		elif RI >= 60:
-			
-			new_sprite("axy", 1)
+		if Input.is_key_pressed(KEY_1):
 			new_sprite("axy", 2)
 			
-		elif RI >= 40:
-			new_sprite("police", 1)
-			new_sprite("police", 2)
+		elif Input.is_key_pressed(KEY_2):
+			new_sprite("archer2", 2)
 			
-		elif RI >= 20:
-			new_sprite("tank", 1)
+		elif Input.is_key_pressed(KEY_3):
 			new_sprite("tank", 2)
 			
-		else:
-			new_sprite("healer", 1)
+		elif Input.is_key_pressed(KEY_4):
+			new_sprite("police", 2)
+			
+		elif Input.is_key_pressed(KEY_5):
 			new_sprite("healer", 2)
+			
 
 func _process(delta):
 	ticks += delta
@@ -87,7 +86,19 @@ func _process(delta):
 			target = ch.position.x
 		else:
 			ch.observe_target_x = target
+
+func _on_Button_pressed():
+	var RI = rng.randi_range(1, 100)
 	
-	
+	if RI >= 60:
+		new_sprite("archer2", 1)
 		
-			
+	elif RI >= 30:
+		new_sprite("axy", 1)
+	else:
+		new_sprite("tank", 1)
+
+
+
+func _on_board_summon(coord, type):
+	new_sprite(type, 1, coord)

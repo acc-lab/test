@@ -1,20 +1,32 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://test sprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Manager_projectile.gd" type="Script" id=2]
 [ext_resource path="res://pictures/tile_archer.png" type="Texture" id=3]
-[ext_resource path="res://pictures/tile_0.png" type="Texture" id=4]
+[ext_resource path="res://pictures/tile_1.png" type="Texture" id=4]
 [ext_resource path="res://pictures/tile_axy.png" type="Texture" id=5]
-[ext_resource path="res://pictures/tile_defender.png" type="Texture" id=6]
-[ext_resource path="res://pictures/tile_1.png" type="Texture" id=7]
+[ext_resource path="res://pictures/tile_2.png" type="Texture" id=6]
+[ext_resource path="res://pictures/tile_healer.png" type="Texture" id=7]
+[ext_resource path="res://board.gd" type="Script" id=8]
+[ext_resource path="res://button_manager.gd" type="Script" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://pictures/Sprite-0001.png" type="Texture" id=11]
+[ext_resource path="res://pictures/tile_police.png" type="Texture" id=12]
+[ext_resource path="res://pictures/tile_shield.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 93.5, 72 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 2
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
-0/name = "tile_archer.png 0"
-0/texture = ExtResource( 3 )
-0/tex_offset = Vector2( 9, -15 )
+0/name = "tile_1.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 57, 69 )
+0/region = Rect2( 0, 0, 38, 44 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -24,11 +36,11 @@ resource_local_to_scene = true
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
-1/name = "tile_0.png 1"
-1/texture = ExtResource( 4 )
+1/name = "tile_2.png 1"
+1/texture = ExtResource( 6 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 38, 38 )
+1/region = Rect2( 0, 0, 38, 44 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
@@ -42,7 +54,7 @@ resource_local_to_scene = true
 2/texture = ExtResource( 5 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 39, 44 )
+2/region = Rect2( 0, 0, 38, 44 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -52,11 +64,11 @@ resource_local_to_scene = true
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
-3/name = "tile_defender.png 3"
-3/texture = ExtResource( 6 )
-3/tex_offset = Vector2( -9, -15 )
+3/name = "tile_archer.png 3"
+3/texture = ExtResource( 3 )
+3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 57, 69 )
+3/region = Rect2( 0, 0, 38, 44 )
 3/tile_mode = 0
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )
@@ -66,8 +78,8 @@ resource_local_to_scene = true
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
-4/name = "tile_1.png 4"
-4/texture = ExtResource( 7 )
+4/name = "tile_shield.png 4"
+4/texture = ExtResource( 13 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 0, 38, 44 )
@@ -80,6 +92,34 @@ resource_local_to_scene = true
 4/shape_one_way_margin = 0.0
 4/shapes = [  ]
 4/z_index = 0
+5/name = "tile_police.png 5"
+5/texture = ExtResource( 12 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 38, 44 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "tile_healer.png 6"
+6/texture = ExtResource( 7 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 38, 44 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
 
 [node name="Games scene" type="Node"]
 
@@ -90,11 +130,103 @@ script = ExtResource( 2 )
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="Node2D"]
+[node name="board" type="StaticBody2D" parent="Node2D"]
+position = Vector2( 507, 103 )
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/board"]
+shape = SubResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Node2D/board"]
+margin_left = -99.0
+margin_top = -78.0
+margin_right = 97.0
+margin_bottom = 76.0
+texture = ExtResource( 11 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TileMap" type="TileMap" parent="Node2D/board"]
+material = SubResource( 4 )
+position = Vector2( -507, -103 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 36, 32 )
 cell_half_offset = 0
 cell_tile_origin = 1
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 131074, 4, 0, 131075, 4, 0, 196609, 4, 0, 196610, 2, 0, 196611, 4, 0, 262146, 4, 0, 262147, 4, 0 )
+tile_data = PoolIntArray( -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 0, 0, 65552, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 0, 0, 131089, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 0, 0, 196625, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 0, 0, 262161, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 0, 0, 327696, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0 )
+
+[node name="Area2D" type="Area2D" parent="Node2D/board"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/board/Area2D"]
+shape = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="Node2D"]
+position = Vector2( 507, 103 )
+scale = Vector2( 2.90625, 2.25 )
+texture = ExtResource( 10 )
+energy = 1.2
+mode = 2
+
+[node name="button manager" type="Node2D" parent="Node2D"]
+position = Vector2( 687, 41 )
+script = ExtResource( 9 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Node2D/button manager"]
+margin_left = -19.0
+margin_top = -16.0
+margin_right = 213.0
+margin_bottom = 58.0
+texture = ExtResource( 11 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TextureButton" type="TextureButton" parent="Node2D/button manager"]
+margin_right = 40.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 5 )
+
+[node name="TextureButton2" type="TextureButton" parent="Node2D/button manager"]
+margin_left = 40.0
+margin_right = 80.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 3 )
+
+[node name="TextureButton3" type="TextureButton" parent="Node2D/button manager"]
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 13 )
+
+[node name="TextureButton4" type="TextureButton" parent="Node2D/button manager"]
+margin_left = 120.0
+margin_right = 160.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 12 )
+
+[node name="TextureButton5" type="TextureButton" parent="Node2D/button manager"]
+margin_left = 160.0
+margin_right = 200.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 7 )
+
+[node name="Light2D" type="Light2D" parent="Node2D/button manager"]
+position = Vector2( 97.9687, 22 )
+scale = Vector2( 3.53223, 1.0625 )
+texture = ExtResource( 10 )
+energy = 1.2
+mode = 2
+
+[connection signal="input_event" from="Node2D/board" to="Node2D/board" method="_on_board_input_event"]
+[connection signal="summon" from="Node2D/board" to="Manager (sprite)" method="_on_board_summon"]
+[connection signal="input_event" from="Node2D/board/Area2D" to="Node2D/board" method="_on_Area2D_input_event"]
+[connection signal="pressed" from="Node2D/button manager/TextureButton" to="Node2D/button manager" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Node2D/button manager/TextureButton2" to="Node2D/button manager" method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Node2D/button manager/TextureButton3" to="Node2D/button manager" method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="Node2D/button manager/TextureButton4" to="Node2D/button manager" method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="Node2D/button manager/TextureButton5" to="Node2D/button manager" method="_on_TextureButton5_pressed"]
