@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var health = 40000
-onready var max_health = 40000
+onready var health = 20000*$"../../..".difficulty
+onready var max_health = 20000*$"../../..".difficulty
 onready var health_bar = $"health bar"
 
 signal victory
