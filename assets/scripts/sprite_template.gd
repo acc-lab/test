@@ -26,9 +26,6 @@ func _ready():
 	var sc = Preloads.scene[variant]
 	var instance = sc.instance()
 	
-	if team==1: self.position.x = 20
-	else: self.position.x = 880
-	
 	self.position.y = 360
 	
 	add_child(instance)

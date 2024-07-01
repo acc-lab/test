@@ -10,10 +10,10 @@ config_version=4
 
 [application]
 
-config/name="Span"
-run/main_scene="res://games scene.tscn"
+config/name="skullfighters"
+run/main_scene="res://assets/main.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
-config/icon="res://pictures/latest/icon_of_shield.png"
+config/icon="res://pictures/latest/icon_of_healer.png"
 
 [autoload]
 

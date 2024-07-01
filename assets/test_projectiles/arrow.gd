@@ -41,8 +41,10 @@ func _process(delta):
 	
 	last_tick += del
 		
-	#if(self.position.x > 920):
-	#	self.position.x -= 940
+	if(self.position.x > 960*2 or self.position.x < -960):
+		call_deferred("free")
+	elif(self.position.y > 400 or self.position.y < -400):
+		call_deferred("free")
 
 func getDir():
 	var direction

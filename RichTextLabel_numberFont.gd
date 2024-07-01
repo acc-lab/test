@@ -2,6 +2,8 @@ extends RichTextLabel
 
 var bitmapFont: BitmapFont
 
+var err: bool = false
+
 
 func _ready():
 	bitmapFont = BitmapFont.new()
@@ -25,3 +27,14 @@ func _ready():
 	
 	theme = Theme.new()
 	theme.default_font = bitmapFont
+
+
+func _on_board_UI_no_money():
+	err = true
+	bbcode_enabled = true
+	bbcode_text = "[color=red]"+text+"[/color]"
+	yield(get_tree().create_timer(0.1), "timeout")
+	err = false
+	bbcode_enabled = false
+	bbcode_text = text
+	

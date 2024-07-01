@@ -1,0 +1,380 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://pictures/Sprite-0001.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/castle uuid.gd" type="Script" id=3]
+[ext_resource path="res://assets/castle uuid2.gd" type="Script" id=4]
+[ext_resource path="res://assets/UI.gd" type="Script" id=5]
+[ext_resource path="res://RichTextLabel_numberFont.gd" type="Script" id=6]
+[ext_resource path="res://assets/castle2.gd" type="Script" id=7]
+[ext_resource path="res://assets/descriptor.gd" type="Script" id=8]
+[ext_resource path="res://assets/board.gd" type="Script" id=9]
+[ext_resource path="res://assets/button_manager.gd" type="Script" id=10]
+[ext_resource path="res://assets/Manager_projectile.gd" type="Script" id=11]
+[ext_resource path="res://assets/castle1.gd" type="Script" id=12]
+[ext_resource path="res://pictures/tile_axy.png" type="Texture" id=13]
+[ext_resource path="res://pictures/tile_2.png" type="Texture" id=14]
+[ext_resource path="res://pictures/tile_archer.png" type="Texture" id=15]
+[ext_resource path="res://pictures/tile_1.png" type="Texture" id=16]
+[ext_resource path="res://pictures/tile_healer.png" type="Texture" id=17]
+[ext_resource path="res://assets/test sprite.tscn" type="PackedScene" id=18]
+[ext_resource path="res://pictures/latest/castle.png" type="Texture" id=19]
+[ext_resource path="res://pictures/background.png" type="Texture" id=20]
+[ext_resource path="res://pictures/tile_police.png" type="Texture" id=21]
+[ext_resource path="res://pictures/tile_shield.png" type="Texture" id=22]
+[ext_resource path="res://assets/games scene.gd" type="Script" id=23]
+[ext_resource path="res://minimal3x5.ttf" type="DynamicFontData" id=24]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 7, 37 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0.482353, 0.482353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 95, 75 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+light_mode = 2
+
+[sub_resource type="TileSet" id=1]
+resource_local_to_scene = true
+0/name = "tile_1.png 0"
+0/texture = ExtResource( 16 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 38, 44 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "tile_2.png 1"
+1/texture = ExtResource( 14 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 38, 44 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "tile_axy.png 2"
+2/texture = ExtResource( 13 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 38, 44 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "tile_archer.png 3"
+3/texture = ExtResource( 15 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 38, 44 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "tile_shield.png 4"
+4/texture = ExtResource( 22 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 38, 44 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "tile_police.png 5"
+5/texture = ExtResource( 21 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 38, 44 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "tile_healer.png 6"
+6/texture = ExtResource( 17 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 38, 44 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 24 )
+
+[node name="Games scene" type="Node"]
+script = ExtResource( 23 )
+
+[node name="Background" type="Node" parent="."]
+
+[node name="Background" type="Sprite" parent="Background"]
+light_mask = 0
+position = Vector2( 480, 180 )
+scale = Vector2( 2, 1.8 )
+texture = ExtResource( 20 )
+
+[node name="Manager (castle)" type="Node" parent="."]
+
+[node name="castle1 container" type="Node2D" parent="Manager (castle)"]
+script = ExtResource( 3 )
+
+[node name="castle1" type="KinematicBody2D" parent="Manager (castle)/castle1 container"]
+collision_mask = 2
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Manager (castle)/castle1 container/castle1"]
+position = Vector2( 20, 323 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1"]
+visible = false
+position = Vector2( 19, 323 )
+shape = SubResource( 5 )
+
+[node name="health bar" type="ProgressBar" parent="Manager (castle)/castle1 container/castle1"]
+anchor_right = 0.908
+margin_left = 4.0
+margin_top = 276.0
+margin_right = 36.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( -99, -55 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 50.0
+percent_visible = false
+
+[node name="castle2 container" type="Node2D" parent="Manager (castle)"]
+script = ExtResource( 4 )
+
+[node name="castle2" type="KinematicBody2D" parent="Manager (castle)/castle2 container"]
+collision_layer = 2
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Manager (castle)/castle2 container/castle2"]
+position = Vector2( 940, 323 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2"]
+visible = false
+position = Vector2( 941, 323 )
+scale = Vector2( -1, 1 )
+shape = SubResource( 5 )
+
+[node name="health bar" type="ProgressBar" parent="Manager (castle)/castle2 container/castle2"]
+anchor_right = 0.908
+margin_left = 924.0
+margin_top = 276.0
+margin_right = 956.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( -99, -55 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 50.0
+percent_visible = false
+
+[node name="Manager (sprite)" parent="." instance=ExtResource( 18 )]
+
+[node name="Manager (projectile)" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="UI" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="board" type="StaticBody2D" parent="UI"]
+position = Vector2( 500, 20 )
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/board"]
+position = Vector2( 1, 81 )
+shape = SubResource( 3 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/board"]
+margin_left = -100.0
+margin_right = 100.0
+margin_bottom = 160.0
+texture = ExtResource( 1 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="TileMap" type="TileMap" parent="UI/board"]
+material = SubResource( 4 )
+position = Vector2( -507, -27 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 36, 32 )
+cell_half_offset = 0
+cell_tile_origin = 1
+centered_textures = true
+format = 1
+tile_data = PoolIntArray( -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 0, 0, 65552, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 0, 0, 131089, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 0, 0, 196625, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 1, 0, 262157, 1, 0, 262158, 1, 0, 262159, 1, 0, 262160, 0, 0, 262161, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 1, 0, 327693, 1, 0, 327694, 1, 0, 327695, 0, 0, 327696, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0 )
+
+[node name="Area2D" type="Area2D" parent="UI/board"]
+position = Vector2( 0, -1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/board/Area2D"]
+position = Vector2( 1, 82 )
+shape = SubResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="UI"]
+position = Vector2( 501, 101 )
+scale = Vector2( 2.96875, 2.34375 )
+texture = ExtResource( 2 )
+energy = 1.2
+mode = 2
+
+[node name="button manager" type="Node2D" parent="UI"]
+position = Vector2( 680, 20 )
+script = ExtResource( 10 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/button manager"]
+margin_right = 232.0
+margin_bottom = 74.0
+texture = ExtResource( 1 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="button container" type="Node2D" parent="UI/button manager"]
+position = Vector2( 18, 14 )
+
+[node name="TextureButton" type="TextureButton" parent="UI/button manager/button container"]
+margin_right = 40.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 13 )
+
+[node name="TextureButton2" type="TextureButton" parent="UI/button manager/button container"]
+margin_left = 40.0
+margin_right = 80.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 15 )
+
+[node name="TextureButton3" type="TextureButton" parent="UI/button manager/button container"]
+margin_left = 80.0
+margin_right = 120.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 22 )
+
+[node name="TextureButton4" type="TextureButton" parent="UI/button manager/button container"]
+margin_left = 120.0
+margin_right = 160.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 21 )
+
+[node name="TextureButton5" type="TextureButton" parent="UI/button manager/button container"]
+margin_left = 160.0
+margin_right = 200.0
+margin_bottom = 44.0
+texture_normal = ExtResource( 17 )
+
+[node name="Light2D" type="Light2D" parent="UI/button manager"]
+position = Vector2( 117, 38 )
+scale = Vector2( 3.53223, 1.0625 )
+texture = ExtResource( 2 )
+energy = 1.2
+mode = 2
+
+[node name="money displayer" type="RichTextLabel" parent="UI"]
+margin_left = 686.0
+margin_top = 94.0
+margin_right = 811.0
+margin_bottom = 110.0
+text = "$69420"
+fit_content_height = true
+script = ExtResource( 6 )
+
+[node name="descriptor" type="NinePatchRect" parent="UI"]
+margin_left = 50.0
+margin_top = 20.0
+margin_right = 350.0
+margin_bottom = 180.0
+texture = ExtResource( 1 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 4
+patch_margin_bottom = 4
+script = ExtResource( 8 )
+
+[node name="text displayer" type="RichTextLabel" parent="UI/descriptor"]
+margin_left = 14.0
+margin_top = 17.0
+margin_right = 287.0
+margin_bottom = 146.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+
+[node name="wave indicator" type="NinePatchRect" parent="UI"]
+margin_left = 680.0
+margin_top = 130.0
+margin_right = 906.0
+margin_bottom = 180.0
+texture = ExtResource( 1 )
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="text displayer" type="RichTextLabel" parent="UI/wave indicator"]
+margin_left = 14.0
+margin_top = 20.0
+margin_right = 214.0
+margin_bottom = 33.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+
+[connection signal="defeated" from="Manager (castle)/castle1 container/castle1" to="." method="_on_castle1_defeated"]
+[connection signal="victory" from="Manager (castle)/castle2 container/castle2" to="." method="_on_castle2_victory"]
+[connection signal="UI_no_money" from="UI/board" to="UI/money displayer" method="_on_board_UI_no_money"]
+[connection signal="input_event" from="UI/board" to="UI/board" method="_on_board_input_event"]
+[connection signal="summon" from="UI/board" to="Manager (sprite)" method="_on_board_summon"]
+[connection signal="input_event" from="UI/board/Area2D" to="UI/board" method="_on_Area2D_input_event"]
+[connection signal="update_description" from="UI/button manager" to="UI/descriptor" method="_on_button_manager_update_description"]
+[connection signal="pressed" from="UI/button manager/button container/TextureButton" to="UI/button manager" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/TextureButton2" to="UI/button manager" method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/TextureButton3" to="UI/button manager" method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/TextureButton4" to="UI/button manager" method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/TextureButton5" to="UI/button manager" method="_on_TextureButton5_pressed"]

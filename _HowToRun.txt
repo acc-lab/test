@@ -1,0 +1,4 @@
+Run the executable "skullfighters.exe"
+It is runnable as long as skullfighters.pck exists
+
+The rest are the native godot project files.
