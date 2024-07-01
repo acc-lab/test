@@ -6,7 +6,7 @@ func _attack():
 	pass
 	
 func _ready():
-	health = 1300
+	health = 1800
 	.set_health_bar()
 
 func cst_movement(dur):
