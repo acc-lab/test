@@ -16,5 +16,7 @@ func set_damage(damage):
 	
 	if health <= 0:
 		emit_signal("victory")
+		
+		call_deferred("free")
 	
 	
