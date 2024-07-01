@@ -8,7 +8,7 @@ onready var tick = 0
 onready var display = $"money displayer"
 
 onready var type = ["", "", "axy", "archer2", "tank", "police", "healer"]
-onready var price = [0, 0, 30, 100, 250, 500, 9999999999]
+onready var price = [0, 0, 40, 100, 250, 500, 9999999999]
 
 func _ready():
 	pass

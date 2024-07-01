@@ -9,14 +9,14 @@ func _ready():
 func _on_button_manager_update_description():
 	description.bbcode_text = {
 2: """Axeman
-[color=red]Unit Price: 30[/color]
+[color=red]Unit Price: 40[/color]
 
 "Did you just assume my gender?"
 
 [color=purple]Axeman is good at tanking minor damages and dealing solid damages.[/color]
 
-[color=#FFC0CB]Health[/color]: 200 units
-[color=red]Damage[/color]: 30 units
+[color=#FFC0CB]Health[/color]: 150 units
+[color=red]Damage[/color]: 25 units
 [color=green]Range[/color]: 30 units
 [color=#00FFFF]Reload[/color]: 0.69 sec
 

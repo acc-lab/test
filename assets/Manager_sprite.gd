@@ -179,9 +179,9 @@ func spawn_random():
 		RI = rng.randi_range(1, 100)
 		
 		while (RI >= 30):
-			if (worth >= 30):
+			if (worth >= 40):
 				new_enemy("axy")
-				worth -= 30
+				worth -= 40
 			else:
 				break
 			RI = rng.randi_range(1, 100)

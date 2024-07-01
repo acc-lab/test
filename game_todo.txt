@@ -1,0 +1,38 @@
+
+UI of tilemap (scroll with roller) OK
+issue: tile doesn't go to the correct position after scrolling OK
+edge of UI OK
+better button UI design -> OK for now
+
+placable area -> OK
+ 
+replace default picture -> OK
+character design ( 2 left ) -> half OK
+
+delete tile if character dies -> OK
+
+fix police penetration -> OK
+
+castles & health -> OK
+economy -> OK
+
+full screen issue -> OK
+projectile doesn't disappear off screen -> OK
+
+click to activate character skill
+
+placement cooldown
+
+broadcast/ start system
+
+1 demo level
+
+additional effect,
+replacing tile,
+
+visual effects of replacing, additional effect
+
+menu
+
+team editor (menu, descriptions of each tile/character)
+addition levels, characters(healer), progressions
