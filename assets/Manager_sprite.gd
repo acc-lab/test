@@ -2,6 +2,7 @@ extends Node
 
 onready var UI = $"../UI"
 onready var board = $"../UI/board"
+onready var scene = $".."
 
 func new_sprite(variant, team, coord = null, x = null):
 	var RI = rng.randi_range(-20, 20)
@@ -78,55 +79,55 @@ func adjust():
 		UI.mps = 12
 		
 	if totaltick >= 95:
-		worths = 15
+		worths = 15*scene.difficulty
 		timegap = 20
 		
 		UI.mps = 15
 		
 	if totaltick >= 180:
-		worths = 20
+		worths = 20*scene.difficulty
 		timegap = 25
 		
 		UI.mps = 19
 		
 	if totaltick >= 270:
-		worths = 25
+		worths = 25*scene.difficulty
 		timegap = 5
 		
 		UI.mps = 23
 		
 	if totaltick >= 360:
-		worths = 35
+		worths = 35*scene.difficulty
 		timegap = 20
 		
 		UI.mps = 32
 		
 	if totaltick >= 450:
-		worths = 45
+		worths = 45*scene.difficulty
 		timegap = 30
 		
 		UI.mps = 40
 		
 	if totaltick >= 550:
-		worths = 55
+		worths = 55*scene.difficulty
 		timegap = 40
 		
 		UI.mps = 48
 		
 	if totaltick >= 750:
-		worths = 65
+		worths = 65*scene.difficulty
 		timegap = 50
 		
 		UI.mps = 55
 		
 	if totaltick >= 860:
-		worths = 100
+		worths = 100*scene.difficulty
 		timegap = 60
 		
 		UI.mps = 85
 		
 	if totaltick >= 1000:
-		worths = 120
+		worths = 120*scene.difficulty
 		timegap = 90
 		
 		UI.mps = 100

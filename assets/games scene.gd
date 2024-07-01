@@ -3,6 +3,8 @@ extends Node
 signal defeated
 signal victory
 
+var difficulty = 1
+
 func _ready():
 	pass
 
