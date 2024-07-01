@@ -15,6 +15,7 @@ margin_left = -16.0
 margin_top = -56.0
 margin_right = 16.0
 margin_bottom = -53.0
+rect_pivot_offset = Vector2( -99, -55 )
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 value = 50.0

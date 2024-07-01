@@ -1,6 +1,6 @@
 extends Node
 
-onready var board = $"../Node2D/board"
+onready var board = $"../UI/board"
 
 func new_sprite(variant, team, coord = null):
 	var sc = Preloads.scene["sprite_template"]
@@ -78,7 +78,7 @@ func _process(delta):
 		else:
 			ch.observe_target_x = target
 			
-	target = 880
+	target = 940
 	for i in range(len(children)-1, -1, -1):
 		ch = children[i]
 		
