@@ -28,7 +28,7 @@ func _on_button_manager_update_description():
 
 "Pew pew pew, or whatever sound the bow makes."
 
-[color=purple]Archer is perfect for mid-long range attack, dealing relilable damages.[/color]
+[color=purple]Archer is perfect for mid-long range attack, dealing reliable damages.[/color]
 
 [color=#FFC0CB]Health[/color]: 80 units
 [color=red]Damage[/color]: 25 units per projectile
@@ -45,7 +45,7 @@ func _on_button_manager_update_description():
 
 [color=purple]It is a meat shield that doesn't deal damage. Simple, no?[/color]
 
-[color=#FFC0CB]Health[/color]: 1300 units
+[color=#FFC0CB]Health[/color]: 1800 units
 [color=green]Range[/color]: 75 units
 
 
