@@ -10,7 +10,7 @@ onready var display = $"money displayer"
 onready var type = ["", "", "axy", "archer2", "tank", "police", "healer"]
 onready var price = [0, 0, 50, 100, 250, 500, 9999999999]
 
-var cooldown = [-1, -1, 0.9, 1.8, 5.4, 10.5, 999]
+var cooldown = [-1, -1, 1.8, 3.6, 10.8, 21, 999]
 var delay = [0, 0, 0, 0, 0, 0, 0]
 
 func _ready():

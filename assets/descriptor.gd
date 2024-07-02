@@ -11,7 +11,7 @@ func _on_button_manager_update_description():
 2: """[center]Axeman[/center]
 
 [color=red]Unit Price: 50[/color]
-[color=gray]Cooldown: 0.9 sec[/color]
+[color=gray]Cooldown: 1.8 sec[/color]
 
 "Did you just assume my gender?"
 
@@ -28,7 +28,7 @@ func _on_button_manager_update_description():
 3: """[center]Archer[/center]
 
 [color=red]Unit Price: 100[/color]
-[color=gray]Cooldown: 1.8 sec[/color]
+[color=gray]Cooldown: 3.6 sec[/color]
 
 "Pew pew pew, or whatever sound the bow makes."
 
@@ -45,7 +45,7 @@ func _on_button_manager_update_description():
 4: """[center]Meat Shield[/center]
 
 [color=red]Unit Price: 250[/color]
-[color=gray]Cooldown: 5.4 sec[/color]
+[color=gray]Cooldown: 10.8 sec[/color]
 
 "Ow, that hurts."
 
@@ -60,7 +60,7 @@ func _on_button_manager_update_description():
 5: """[center]Police[/center]
 
 [color=red]Unit Price: 500[/color]
-[color=gray]Cooldown: 10.5 sec[/color]
+[color=gray]Cooldown: 21 sec[/color]
 
 "I'm OP asf, deploy me."
 
