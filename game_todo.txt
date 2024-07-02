@@ -19,17 +19,17 @@ economy -> OK
 full screen issue -> OK
 projectile doesn't disappear off screen -> OK
 
-click to activate character skill
-
 placement cooldown/UI -> OK
 
-fix penetration issue
+fix penetration issue -> OK
 
 fix ending issue (difficulty) -> OK
 
 start system -> OK
 
-1 demo level
+1 demo level -> OK
+
+click to activate character skill
 
 additional effect,
 replacing tile,
