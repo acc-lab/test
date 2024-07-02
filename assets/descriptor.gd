@@ -8,8 +8,10 @@ func _ready():
 
 func _on_button_manager_update_description():
 	description.bbcode_text = {
-2: """Axeman
-[color=red]Unit Price: 40[/color]
+2: """[center]Axeman[/center]
+
+[color=red]Unit Price: 50[/color]
+[color=gray]Cooldown: 0.9 sec[/color]
 
 "Did you just assume my gender?"
 
@@ -23,8 +25,10 @@ func _on_button_manager_update_description():
 
 [color=#D3D3D3]Insert some lore here.[/color]
 """,
-3: """Archer
+3: """[center]Archer[/center]
+
 [color=red]Unit Price: 100[/color]
+[color=gray]Cooldown: 1.8 sec[/color]
 
 "Pew pew pew, or whatever sound the bow makes."
 
@@ -38,8 +42,10 @@ func _on_button_manager_update_description():
 
 [color=#D3D3D3]Insert some lore here.[/color]
 """,
-4: """Meat Shield
+4: """[center]Meat Shield[/center]
+
 [color=red]Unit Price: 250[/color]
+[color=gray]Cooldown: 5.4 sec[/color]
 
 "Ow, that hurts."
 
@@ -51,8 +57,10 @@ func _on_button_manager_update_description():
 
 [color=#D3D3D3]Insert some lore here.[/color]
 """,
-5: """Police
+5: """[center]Police[/center]
+
 [color=red]Unit Price: 500[/color]
+[color=gray]Cooldown: 10.5 sec[/color]
 
 "I'm OP asf, deploy me."
 
@@ -63,13 +71,15 @@ func _on_button_manager_update_description():
 [color=blue]Multishot[/color]: Shoots 3 projectiles
 [color=purple]Penetration[/color]: Deals damage to up to 2 entity
 [color=green]Range[/color]: 550 units
-[color=#00FFFF]Reload[/color]: 14.07 secs
+[color=#00FFFF]Reload[/color]: 14.07 sec
 
 
 [color=#D3D3D3]Insert some lore here.[/color]
 """,
-6: """Coming Soon
+6: """[center]Coming Soon[/center]
+
 [color=red]Unit Price: ???[/color]
+[color=gray]Cooldown: ???[/color]
 
 "I mean, it is under construction. What am I suppose to write here?"
 

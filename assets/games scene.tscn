@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://pictures/Sprite-0001.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://pictures/tile_shield.png" type="Texture" id=22]
 [ext_resource path="res://assets/games scene.gd" type="Script" id=23]
 [ext_resource path="res://minimal3x5.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://assets/shader/button.gdshader" type="Shader" id=25]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7, 37 )
@@ -140,6 +141,31 @@ resource_local_to_scene = true
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 25 )
+shader_param/cd_effect = 0.0
+shader_param/as_if_height = 22.0
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 25 )
+shader_param/cd_effect = 0.0
+shader_param/as_if_height = 22.0
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 25 )
+shader_param/cd_effect = 0.0
+shader_param/as_if_height = 22.0
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 25 )
+shader_param/cd_effect = 0.0
+shader_param/as_if_height = 22.0
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 25 )
+shader_param/cd_effect = 0.0
+shader_param/as_if_height = 22.0
 
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 24 )
@@ -282,30 +308,35 @@ patch_margin_bottom = 4
 [node name="button container" type="Node2D" parent="UI/button manager"]
 position = Vector2( 18, 14 )
 
-[node name="TextureButton" type="TextureButton" parent="UI/button manager/button container"]
+[node name="2" type="TextureButton" parent="UI/button manager/button container"]
+material = SubResource( 9 )
 margin_right = 40.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 13 )
 
-[node name="TextureButton2" type="TextureButton" parent="UI/button manager/button container"]
+[node name="3" type="TextureButton" parent="UI/button manager/button container"]
+material = SubResource( 10 )
 margin_left = 40.0
 margin_right = 80.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 15 )
 
-[node name="TextureButton3" type="TextureButton" parent="UI/button manager/button container"]
+[node name="4" type="TextureButton" parent="UI/button manager/button container"]
+material = SubResource( 11 )
 margin_left = 80.0
 margin_right = 120.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 22 )
 
-[node name="TextureButton4" type="TextureButton" parent="UI/button manager/button container"]
+[node name="5" type="TextureButton" parent="UI/button manager/button container"]
+material = SubResource( 12 )
 margin_left = 120.0
 margin_right = 160.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 21 )
 
-[node name="TextureButton5" type="TextureButton" parent="UI/button manager/button container"]
+[node name="6" type="TextureButton" parent="UI/button manager/button container"]
+material = SubResource( 13 )
 margin_left = 160.0
 margin_right = 200.0
 margin_bottom = 44.0
@@ -373,8 +404,8 @@ bbcode_enabled = true
 [connection signal="summon" from="UI/board" to="Manager (sprite)" method="_on_board_summon"]
 [connection signal="input_event" from="UI/board/Area2D" to="UI/board" method="_on_Area2D_input_event"]
 [connection signal="update_description" from="UI/button manager" to="UI/descriptor" method="_on_button_manager_update_description"]
-[connection signal="pressed" from="UI/button manager/button container/TextureButton" to="UI/button manager" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/TextureButton2" to="UI/button manager" method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/TextureButton3" to="UI/button manager" method="_on_TextureButton3_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/TextureButton4" to="UI/button manager" method="_on_TextureButton4_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/TextureButton5" to="UI/button manager" method="_on_TextureButton5_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/2" to="UI/button manager" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/3" to="UI/button manager" method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/4" to="UI/button manager" method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/5" to="UI/button manager" method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="UI/button manager/button container/6" to="UI/button manager" method="_on_TextureButton5_pressed"]

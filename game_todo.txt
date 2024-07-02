@@ -21,9 +21,11 @@ projectile doesn't disappear off screen -> OK
 
 click to activate character skill
 
-placement cooldown
+placement cooldown/UI -> OK
 
-broadcast/ start system
+fix penetration issue
+
+start system -> OK
 
 1 demo level
 
@@ -32,7 +34,7 @@ replacing tile,
 
 visual effects of replacing, additional effect
 
-menu
+menu -> OK
 
 team editor (menu, descriptions of each tile/character)
 addition levels, characters(healer), progressions

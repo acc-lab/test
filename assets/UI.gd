@@ -8,11 +8,13 @@ onready var tick = 0
 onready var display = $"money displayer"
 
 onready var type = ["", "", "axy", "archer2", "tank", "police", "healer"]
-onready var price = [0, 0, 40, 100, 250, 500, 9999999999]
+onready var price = [0, 0, 50, 100, 250, 500, 9999999999]
+
+var cooldown = [-1, -1, 0.9, 1.8, 5.4, 10.5, 999]
+var delay = [0, 0, 0, 0, 0, 0, 0]
 
 func _ready():
-	pass
-	#Engine.set_time_scale(2)
+	delay = cooldown.duplicate()
 
 func _process(delta):
 	tick += delta
@@ -24,6 +26,11 @@ func _process(delta):
 		display.text = '$'+str(int(money))
 		if display.err == true:
 			display.bbcode_text = "[color=red]"+display.text+"[/color]"
+		
+		for each in range(len(delay)):
+			delay[each] += 0.03
+			if delay[each] >= cooldown[each]:
+				delay[each] = cooldown[each]
 		
 		
 	

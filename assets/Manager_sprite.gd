@@ -68,12 +68,12 @@ func leftcpr(a, b):
 	
 func adjust():
 	if totaltick >= 30:
-		worths = 10
+		worths = 10*scene.difficulty
 		
 		UI.mps = 10
 		
 	if totaltick >= 45:
-		worths = 12
+		worths = 12*scene.difficulty
 		timegap = 30
 		
 		UI.mps = 12
@@ -146,45 +146,50 @@ func spawn_random():
 		
 		# print("New wave at ", int(totaltick), ": ", worth, " with worth +", worths, "*", timegap)
 		
-		var RI = rng.randi_range(1, 100)
+		var networth = worth
 		
-		while (RI >= 70):
-			if (worth >= 500):
-				new_enemy("police")
-				worth -= 500
-			else:
-				break
+		var RI: int
+		
+		while (2*worth >= networth):
 			RI = rng.randi_range(1, 100)
 		
-		RI = rng.randi_range(1, 100)
+			while (RI <= 60):
+				if (worth >= 500):
+					new_enemy("police")
+					worth -= 500
+				else:
+					break
+				RI = rng.randi_range(1, 100)
 		
-		while (RI >= 70):
-			if (worth >= 100):
-				new_enemy("archer2")
-				worth -= 100
-			else:
-				break
 			RI = rng.randi_range(1, 100)
 			
-		RI = rng.randi_range(1, 100)
-		
-		while (RI >= 50):
-			if (worth >= 250):
-				new_enemy("tank")
-				worth -= 250
-			else:
-				break
+			while (RI <= 80):
+				if (worth >= 100):
+					new_enemy("archer2")
+					worth -= 100
+				else:
+					break
+				RI = rng.randi_range(1, 100)
+				
 			RI = rng.randi_range(1, 100)
 			
-		RI = rng.randi_range(1, 100)
-		
-		while (RI >= 30):
-			if (worth >= 40):
-				new_enemy("axy")
-				worth -= 40
-			else:
-				break
+			while (RI <= 50):
+				if (worth >= 250):
+					new_enemy("tank")
+					worth -= 250
+				else:
+					break
+				RI = rng.randi_range(1, 100)
+				
 			RI = rng.randi_range(1, 100)
+			
+			while (RI <= 70):
+				if (worth >= 50):
+					new_enemy("axy")
+					worth -= 50
+				else:
+					break
+				RI = rng.randi_range(1, 100)
 	
 	#if Input.is_key_pressed(KEY_1):
 	#	new_sprite("axy", 2)
@@ -217,7 +222,8 @@ func _process(delta):
 		ch = children[i]
 		
 		if(ch.team == 1):
-			target = ch.position.x
+			if ch.position.x > 20:
+				target = ch.position.x
 		else:
 			ch.observe_target_x = target
 			
@@ -226,7 +232,8 @@ func _process(delta):
 		ch = children[i]
 		
 		if(ch.get("team") == 2):
-			target = ch.position.x
+			if ch.position.x < 940:
+				target = ch.position.x
 		else:
 			ch.observe_target_x = target
 
