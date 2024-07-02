@@ -23,7 +23,7 @@ func _on_button_manager_update_description():
 [color=#00FFFF]Reload[/color]: 0.69 sec
 
 
-[color=#D3D3D3]Insert some lore here.[/color]
+Axeman hates the generic look of his and the axe design which looks like a bug net.
 """,
 3: """[center]Archer[/center]
 
@@ -40,7 +40,7 @@ func _on_button_manager_update_description():
 [color=#00FFFF]Reload[/color]: 1.5 sec
 
 
-[color=#D3D3D3]Insert some lore here.[/color]
+In the earlier versions, the archer would bend the bow's wooden part just to shoot the arrow. Life is hard for the archer.
 """,
 4: """[center]Meat Shield[/center]
 
@@ -55,7 +55,7 @@ func _on_button_manager_update_description():
 [color=green]Range[/color]: 75 units
 
 
-[color=#D3D3D3]Insert some lore here.[/color]
+Ah yes, meat shield- the character with the most depth ever.
 """,
 5: """[center]Police[/center]
 
@@ -74,7 +74,7 @@ func _on_button_manager_update_description():
 [color=#00FFFF]Reload[/color]: 14.07 sec
 
 
-[color=#D3D3D3]Insert some lore here.[/color]
+Not associated or affiliated with the Hong Kong police.
 """,
 6: """[center]Coming Soon[/center]
 
