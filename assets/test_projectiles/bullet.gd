@@ -12,8 +12,8 @@ var damage=100
 var tick=0
 var last_tick=0
 
-var piercing = 1
-var pierced = []
+var piercing = 2
+var pierced = 0
 
 func _ready():
 	set_collision_layer(0)
@@ -23,20 +23,25 @@ func cst_movement(dur):
 	if dur >= 0.03:
 		var target_position = position + Vector2(vx, vy)
 		
-		var collision = move_and_collide(Vector2(vx, vy))
+		var collision = move_and_collide(Vector2(vx, vy), true, true, true)
 		
-		if collision:
+		while collision:
 			var collider = collision.collider
 			
-			if(!pierced.has(collider.get_parent().uuid)):
-				collider.set_damage(damage)
-				pierced.push_back(collider.get_parent().uuid)
-				
-				if len(pierced) >= piercing + 1:
-					call_deferred("free")
-					
-			position = target_position
+			collider.set_damage(damage)
+			add_collision_exception_with(collider)
 			
+			pierced += 1
+				
+			if pierced >= piercing + 1:
+				call_deferred("free")
+				
+				break
+			
+			collision = move_and_collide(Vector2(vx, vy), true, true, true)
+		
+		position = target_position
+		
 		var sp = sqrt(vx*vx+vy*vy)
 			
 		vx+=ax-vx*sp*drag_const
