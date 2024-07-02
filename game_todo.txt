@@ -25,6 +25,8 @@ placement cooldown/UI -> OK
 
 fix penetration issue
 
+fix ending issue (difficulty) -> OK
+
 start system -> OK
 
 1 demo level
