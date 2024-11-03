@@ -132,10 +132,9 @@ func adjust():
 		
 		UI.mps = 100
 	
-func spawn_random():
-	$"../UI/wave indicator/text displayer".bbcode_text = "[center]Until next wave: "+str(int(timegap-ticks))+"[/center]"
-		
-		
+var cd = 0
+
+func temp():
 	if ticks > timegap:
 		adjust()
 		
@@ -189,22 +188,32 @@ func spawn_random():
 					worth -= 50
 				else:
 					break
-				RI = rng.randi_range(1, 100)
+				RI = rng.randi_range(1, 100)	
 	
-	#if Input.is_key_pressed(KEY_1):
-	#	new_sprite("axy", 2)
-	#	
-	#elif Input.is_key_pressed(KEY_2):
-	#	new_sprite("archer2", 2)
-	#	
-	#elif Input.is_key_pressed(KEY_3):
-	#	new_sprite("tank", 2)
-	#	
-	#elif Input.is_key_pressed(KEY_4):
-	#	new_sprite("police", 2)
-	#	
-	#elif Input.is_key_pressed(KEY_5):
-	#	new_sprite("healer", 2)
+func spawn_random():
+	$"../UI/wave indicator/text displayer".bbcode_text = "[center]Until next wave: "+str(int(timegap-ticks))+"[/center]"
+		
+	#temp()
+	
+	cd -= 1
+	
+	if cd<0: cd=0
+	
+	if Input.is_action_pressed("ui_up") and cd == 0:
+		new_sprite("axy", 2)
+		cd += 15
+		
+	elif Input.is_action_pressed("ui_left") and cd == 0:
+		new_sprite("archer2", 2)
+		cd += 15
+		
+	elif Input.is_action_pressed("ui_down") and cd == 0:
+		new_sprite("tank", 2)
+		cd += 15
+		
+	elif Input.is_action_pressed("ui_right") and cd == 0:
+		new_sprite("ninja", 2)
+		cd += 15
 			
 
 func _process(delta):

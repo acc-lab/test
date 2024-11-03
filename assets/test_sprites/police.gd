@@ -9,7 +9,7 @@ func _attack():
 		"velocity": Vector2(75*getDir(), -1),
 		"acceleration": Vector2(0, 0.4),
 		"drag_constant": 0.002,
-		"damage": 300
+		"damage": 200
 	})
 	
 	emit_signal("_shoot_projectile", "bullet", {
@@ -18,7 +18,7 @@ func _attack():
 		"velocity": Vector2(75*getDir(), -2),
 		"acceleration": Vector2(0, 0.4),
 		"drag_constant": 0.002,
-		"damage": 300
+		"damage": 200
 	})
 	
 	emit_signal("_shoot_projectile", "bullet", {
@@ -27,7 +27,7 @@ func _attack():
 		"velocity": Vector2(75*getDir(), -3),
 		"acceleration": Vector2(0, 0.4),
 		"drag_constant": 0.002,
-		"damage": 300
+		"damage": 200
 	})
 	
 func _ready():

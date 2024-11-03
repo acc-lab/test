@@ -51,7 +51,7 @@ In the earlier versions, the archer would bend the bow's wooden part just to sho
 
 [color=purple]It is a meat shield that doesn't deal damage. Simple, no?[/color]
 
-[color=#FFC0CB]Health[/color]: 1800 units
+[color=#FFC0CB]Health[/color]: 1825 units
 [color=green]Range[/color]: 75 units
 
 
@@ -67,7 +67,7 @@ Ah yes, meat shield- the character with the most depth ever.
 [color=purple]Shoots 3 bullets that penetrate and deal high damages.[/color]
 
 [color=#FFC0CB]Health[/color]: 300 units
-[color=red]Damage[/color]: 300 units per projectile, per penetration
+[color=red]Damage[/color]: 200 units per projectile, per penetration
 [color=blue]Multishot[/color]: Shoots 3 projectiles
 [color=purple]Penetration[/color]: Deals damage to up to 2 entity
 [color=green]Range[/color]: 550 units

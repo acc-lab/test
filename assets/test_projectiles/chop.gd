@@ -30,7 +30,7 @@ func cst_movement():
 		var collider = collision.collider
 		collider.set_damage(damage)
 		
-	#call_deferred("free")
+	call_deferred("free")
 
 func getDir():
 	var direction

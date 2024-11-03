@@ -55,9 +55,15 @@ var tick = 0
 var last_tick = 0
 var last_state = ""
 
+var anims = {"walk":"walk", "attack":"attack", "idle":"idle", "after_attack":"idle", "before_attack": "idle"}
+
 func exceed(a, b, dir):
 	if dir > 0: return Constants.gneq(a, b)
 	else: return Constants.gneq(b, a)
+	
+func within(a, b, c, dir):
+	if dir > 0: return Constants.gneq(b, c) and Constants.gneq(c, a)
+	else: return Constants.gneq(c, b) and Constants.gneq(a, c)
 
 func cst_movement(dur):
 	pass
@@ -79,7 +85,7 @@ func _process(delta):
 	# if(variant == "axy"): print(state)
 	
 	if(state != last_state):
-		var anim = {"walk":"walk", "attack":"attack", "idle":"idle", "after_attack":"idle", "before_attack": "idle"}[state]
+		var anim = anims[state]
 		animator.current_animation = anim
 		last_state = state
 		
