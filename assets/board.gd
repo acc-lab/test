@@ -3,6 +3,8 @@ extends StaticBody2D
 onready var tilemap = $"../board/TileMap"
 onready var button_manager = $"../button manager"
 onready var UI = $".."
+var right_button_down=false
+var last_cursor_position=Vector2(0,0)
 
 # -1 no such tile
 # 0 out of border
@@ -38,21 +40,34 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 							UI.money -= UI.price[button_manager.mode]
 							tilemap.set_cell(coord.x, coord.y, button_manager.mode)
 							
-							emit_signal("summon", coord, UI.type[button_manager.mode])
+							emit_signal("summon", coord, UI.type[button_manager.mode]) 
 						else:
 							emit_signal("UI_no_money")
 					
-			if event.button_index == BUTTON_WHEEL_UP:
-				if(Input.is_key_pressed(KEY_SHIFT)):
-					tilemap.position.x += 5
-				else:
-					tilemap.position.y += 5
-				
-			if event.button_index == BUTTON_WHEEL_DOWN:
-				if(Input.is_key_pressed(KEY_SHIFT)):
-					tilemap.position.x -= 5
-				else:
-					tilemap.position.y -= 5
+			if event.button_index == BUTTON_RIGHT:
+				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+				right_button_down=true
+				last_cursor_position=event.position
+				#last_tilemap_position=tilemap.position
+				#var current_cursor_position=tilemap.world_to_map(tilemap.to_local(event.position))
+				#print(last_right_button,current_cursor_position,last_cursor_position)
+				#tilemap.position=last_tilemap_position+current_cursor_position-last_cursor_position
+			#tilemap.position.x += 5
+		##if event.is_canceled():
+		##	if event.button_index==BUTTON_RIGHT:
+		##		right_button_down=false	
+		else:
+			if event.button_index==BUTTON_RIGHT:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				right_button_down=false
+	if event is InputEventMouseMotion:
+		print(right_button_down)
+		if right_button_down:
+			viewport.warp_mouse(last_cursor_position)
+			print(event.position,last_cursor_position)
+			if (event.position-last_cursor_position).dot(event.relative)>0:
+				tilemap.position+=event.relative
+
 		
 		
 		

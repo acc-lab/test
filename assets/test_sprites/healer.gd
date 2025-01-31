@@ -2,6 +2,11 @@ extends "res://assets/scripts/sprite_template.gd"
 
 func _attack():
 	# custom attack script
+	#emit_signal("_shoot_projectile","healbomb",{
+	#	"position":self.position+Vector2(10*getDir(),-30),
+	#	"team":team,
+	#	"velocity":Vector2(26,27)
+	#})
 	
 	pass
 	

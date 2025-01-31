@@ -1,7 +1,7 @@
 extends Node
 
 var scene = {}
-var scenes = ["arrow", "chop", "bullet"]
+var scenes = ["arrow", "chop", "bullet", "healbomb"]
 
 func _ready():
 	for name in scenes:
