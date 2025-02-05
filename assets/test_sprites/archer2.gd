@@ -8,7 +8,7 @@ func _attack():
 		"team": team,
 		"velocity": Vector2(26*getDir(), -1.9),
 		"acceleration": Vector2(-0.4*getDir(), 0.2),
-		"damage": 25
+		"damage": 20
 	})
 	
 func _ready():

@@ -18,7 +18,7 @@ func _on_button_manager_update_description():
 [color=purple]Axeman is good at tanking minor damages and dealing solid damages.[/color]
 
 [color=#FFC0CB]Health[/color]: 150 units
-[color=red]Damage[/color]: 25 units
+[color=red]Damage[/color]: 30 units
 [color=green]Range[/color]: 30 units
 [color=#00FFFF]Reload[/color]: 0.69 sec
 
@@ -27,7 +27,7 @@ Axeman hates the generic look of his and the axe design which looks like a bug n
 """,
 3: """[center]Archer[/center]
 
-[color=red]Unit Price: 100[/color]
+[color=red]Unit Price: 150[/color]
 [color=gray]Cooldown: 3.6 sec[/color]
 
 "Pew pew pew, or whatever sound the bow makes."
@@ -35,7 +35,7 @@ Axeman hates the generic look of his and the axe design which looks like a bug n
 [color=purple]Archer is perfect for mid-long range attack, dealing reliable damages.[/color]
 
 [color=#FFC0CB]Health[/color]: 80 units
-[color=red]Damage[/color]: 25 units per projectile
+[color=red]Damage[/color]: 20 units per projectile
 [color=green]Range[/color]: 450 units
 [color=#00FFFF]Reload[/color]: 1.5 sec
 
@@ -59,7 +59,7 @@ Ah yes, meat shield- the character with the most depth ever.
 """,
 5: """[center]Police[/center]
 
-[color=red]Unit Price: 500[/color]
+[color=red]Unit Price: 600[/color]
 [color=gray]Cooldown: 21 sec[/color]
 
 "I'm OP asf, deploy me."
@@ -69,20 +69,28 @@ Ah yes, meat shield- the character with the most depth ever.
 [color=#FFC0CB]Health[/color]: 300 units
 [color=red]Damage[/color]: 200 units per projectile, per penetration
 [color=blue]Multishot[/color]: Shoots 3 projectiles
-[color=purple]Penetration[/color]: Deals damage to up to 2 entity
+[color=purple]Penetration[/color]: Deals damage to up to 3 entity
 [color=green]Range[/color]: 550 units
-[color=#00FFFF]Reload[/color]: 14.07 sec
+[color=#00FFFF]Reload[/color]: 21 sec
 
 
 Not associated or affiliated with the Hong Kong police.
 """,
-6: """[center]Coming Soon[/center]
+6: """[center]Ninja[/center]
 
-[color=red]Unit Price: ???[/color]
-[color=gray]Cooldown: ???[/color]
+[color=red]Unit Price: 200[/color]
+[color=gray]Cooldown: 7.2 sec[/color]
 
-"I mean, it is under construction. What am I suppose to write here?"
+"My attack animation is just me jumping up and down, because why not."
 
-[color=purple]Does something, probably.[/color]
+[color=purple]Does quick damage and dashes.[/color]
+
+[color=#FFC0CB]Health[/color]: 300 units
+[color=red]Damage[/color]: 10 units
+[color=blue]Dash Damage[/color]: 100 units
+[color=green]Dash Range[/color]: 220-230 units
+[color=#00FFFF]Reload[/color]: 0.24 sec
+
+What? It is not the bandit from CR!
 """,
 }[button_manager.mode]

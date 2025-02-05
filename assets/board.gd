@@ -61,7 +61,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				right_button_down=false
 	if event is InputEventMouseMotion:
-		print(right_button_down)
+		# print(right_button_down)
 		if right_button_down:
 			viewport.warp_mouse(last_cursor_position)
 			print(event.position,last_cursor_position)

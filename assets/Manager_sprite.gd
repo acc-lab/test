@@ -152,25 +152,29 @@ func temp():
 		while (2*worth >= networth):
 			RI = rng.randi_range(1, 100)
 		
-			while (RI <= 60):
-				if (worth >= 500):
+			while (RI <= 60): # 60%
+				if (worth >= 600):
 					new_enemy("police")
-					worth -= 500
+					worth -= 600
 				else:
 					break
 				RI = rng.randi_range(1, 100)
+				
+			print(worth, networth)
 		
 			RI = rng.randi_range(1, 100)
 			
 			while (RI <= 80):
-				if (worth >= 100):
+				if (worth >= 150):
 					new_enemy("archer2")
-					worth -= 100
+					worth -= 150
 				else:
 					break
 				RI = rng.randi_range(1, 100)
 				
 			RI = rng.randi_range(1, 100)
+			
+			print(worth, networth)
 			
 			while (RI <= 50):
 				if (worth >= 250):
@@ -182,18 +186,32 @@ func temp():
 				
 			RI = rng.randi_range(1, 100)
 			
+			print(worth, networth)
+			
 			while (RI <= 70):
 				if (worth >= 50):
 					new_enemy("axy")
 					worth -= 50
 				else:
 					break
+				RI = rng.randi_range(1, 100)
+			
+			print(worth, networth)
+				
+			while (RI <= 70):
+				if (worth >= 200):
+					new_enemy("ninja")
+					worth -= 200
+				else:
+					break
 				RI = rng.randi_range(1, 100)	
+			
+			print(worth, networth)
 	
 func spawn_random():
 	$"../UI/wave indicator/text displayer".bbcode_text = "[center]Until next wave: "+str(int(timegap-ticks))+"[/center]"
 		
-	#temp()
+	temp()
 	
 	cd -= 1
 	
