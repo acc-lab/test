@@ -1,6 +1,6 @@
 extends Node
 
-var difficulty = 1.6
+var difficulty = 1
 
 
 func _ready():
