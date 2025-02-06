@@ -190,7 +190,7 @@ func spawn_random():
 	if cd<0: cd=0
 	
 	if Input.is_action_pressed("ui_up") and cd == 0:
-		new_sprite("axy", 2)
+		new_sprite("healer", 1)
 		cd += 15
 		
 	elif Input.is_action_pressed("ui_left") and cd == 0:
