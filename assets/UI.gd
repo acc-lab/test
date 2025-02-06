@@ -8,9 +8,9 @@ onready var tick = 0
 onready var display = $"money displayer"
 
 onready var type = ["", "", "axy", "archer2", "tank", "police", "ninja"]
-onready var price = [0, 0, 50, 100, 250, 600, 200]
+onready var price = [0, 0, 50, 150, 250, 600, 200]
 
-var cooldown = [-1, -1, 1.8, 3.6, 10.8, 21, 7.2]
+var cooldown = [-1, -1, 0.9, 1.8, 5.4, 10.5, 3.6]
 var delay = [0, 0, 0, 0, 0, 0, 0]
 
 func _ready():

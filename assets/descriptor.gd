@@ -11,7 +11,7 @@ func _on_button_manager_update_description():
 2: """[center]Axeman[/center]
 
 [color=red]Unit Price: 50[/color]
-[color=gray]Cooldown: 1.8 sec[/color]
+[color=gray]Cooldown: 0.9 sec[/color]
 
 "Did you just assume my gender?"
 
@@ -28,7 +28,7 @@ Axeman hates the generic look of his and the axe design which looks like a bug n
 3: """[center]Archer[/center]
 
 [color=red]Unit Price: 150[/color]
-[color=gray]Cooldown: 3.6 sec[/color]
+[color=gray]Cooldown: 1.8 sec[/color]
 
 "Pew pew pew, or whatever sound the bow makes."
 
@@ -45,7 +45,7 @@ In the earlier versions, the archer would bend the bow's wooden part just to sho
 4: """[center]Meat Shield[/center]
 
 [color=red]Unit Price: 250[/color]
-[color=gray]Cooldown: 10.8 sec[/color]
+[color=gray]Cooldown: 5.4 sec[/color]
 
 "Ow, that hurts."
 
@@ -60,7 +60,7 @@ Ah yes, meat shield- the character with the most depth ever.
 5: """[center]Police[/center]
 
 [color=red]Unit Price: 600[/color]
-[color=gray]Cooldown: 21 sec[/color]
+[color=gray]Cooldown: 10.5 sec[/color]
 
 "I'm OP asf, deploy me."
 
@@ -79,7 +79,7 @@ Not associated or affiliated with the Hong Kong police.
 6: """[center]Ninja[/center]
 
 [color=red]Unit Price: 200[/color]
-[color=gray]Cooldown: 7.2 sec[/color]
+[color=gray]Cooldown: 3.6 sec[/color]
 
 "My attack animation is just me jumping up and down, because why not."
 
