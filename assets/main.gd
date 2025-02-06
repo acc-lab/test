@@ -1,10 +1,11 @@
 extends Node
 
-var difficulty = 1
+var difficulty = 1.6
 
 
 func _ready():
 	$menu.visible = true
+	Engine.time_scale = 1
 	
 func _on_victory():
 	$menu.visible = true

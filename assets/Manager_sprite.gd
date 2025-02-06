@@ -192,16 +192,14 @@ func spawn_random():
 		cd += 15
 		
 	elif Input.is_action_pressed("ui_left") and cd == 0:
-		new_sprite("archer2", 2)
-		cd += 15
+		Engine.time_scale -= 0.2
 		
 	elif Input.is_action_pressed("ui_down") and cd == 0:
 		new_sprite("tank", 2)
 		cd += 15
 		
 	elif Input.is_action_pressed("ui_right") and cd == 0:
-		new_sprite("ninja", 2)
-		cd += 15
+		Engine.time_scale += 0.2
 			
 
 func _process(delta):

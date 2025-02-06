@@ -78,7 +78,7 @@ Not associated or affiliated with the Hong Kong police.
 """,
 6: """[center]Ninja[/center]
 
-[color=red]Unit Price: 200[/color]
+[color=red]Unit Price: 150[/color]
 [color=gray]Cooldown: 3.6 sec[/color]
 
 "My attack animation is just me jumping up and down, because why not."
