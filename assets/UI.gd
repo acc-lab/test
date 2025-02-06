@@ -18,17 +18,23 @@ func _ready():
 
 func _process(delta):
 	tick += delta
+	print(tick)
 	if tick >= 0.03:
-		tick -= 0.03
 		
-		money += 0.03*mps
+		var tick_passed: int = floor(tick / 0.03)
+		
+		print(tick_passed)
+		
+		tick -= 0.03 * tick_passed
+		
+		money += 0.03 * tick_passed *mps
 		
 		display.text = '$'+str(int(money))
 		if display.err == true:
 			display.bbcode_text = "[color=red]"+display.text+"[/color]"
 		
 		for each in range(len(delay)):
-			delay[each] += 0.03
+			delay[each] += 0.03 * tick_passed
 			if delay[each] >= cooldown[each]:
 				delay[each] = cooldown[each]
 		

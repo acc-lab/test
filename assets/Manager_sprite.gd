@@ -45,6 +45,8 @@ func new_wave():
 func _ready():
 	manager_projectile = get_parent().get_node("Manager (projectile)")
 	
+	Engine.time_scale = 1
+	
 	#new_sprite("axy", 1)
 	#new_sprite("axy", 2)
 	
