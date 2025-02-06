@@ -73,7 +73,7 @@ func _on_button_manager_update_description():
 
 [color=purple]Does quick damage and dashes.[/color]
 
-[color=#FFC0CB]Health[/color]: 300 units
+[color=#FFC0CB]Health[/color]: 500 units
 [color=red]Damage[/color]: 10 units
 [color=blue]Dash Damage[/color]: 100 units
 [color=green]Dash Range[/color]: 220-230 units

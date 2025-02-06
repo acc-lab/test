@@ -20,7 +20,7 @@ func _attack(type = 0):
 		})
 	
 func _ready():
-	health = 300
+	health = 500
 	.set_health_bar()
 	
 	anims = {"walk":"walk", "attack":"attack", "idle":"idle", "after_attack":"idle", "before_attack": "idle",
