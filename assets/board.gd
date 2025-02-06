@@ -37,6 +37,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 					if(UI.delay[button_manager.mode] >= UI.cooldown[button_manager.mode]):
 						if(UI.money >= UI.price[button_manager.mode]):
 							UI.delay[button_manager.mode] = 0
+							print("hi ", button_manager.mode)
 							UI.money -= UI.price[button_manager.mode]
 							tilemap.set_cell(coord.x, coord.y, button_manager.mode)
 							
