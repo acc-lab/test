@@ -9,31 +9,14 @@ func _ready():
 	pass
 	
 func _process(delta):
-	for i in $"button container".get_children():
-		i.material.set_shader_param("cd_effect",
-			( UI.cooldown[int(i.get_name())] - UI.delay[int(i.get_name())])
-			/
-			UI.cooldown[int(i.get_name())]
-		)
+	for i in $"NinePatchRect/button container/VBoxContainer".get_children():
+		for j in i.get_children():
+			j.material.set_shader_param("cd_effect",
+				( UI.cooldown[int(j.get_name())] - UI.delay[int(j.get_name())])
+				/
+				UI.cooldown[int(j.get_name())]
+			)
 		
-		
-
-func _on_TextureButton_pressed():
-	mode = 2
-	emit_signal("update_description")
-
-func _on_TextureButton2_pressed():
-	mode = 3
-	emit_signal("update_description")
-
-func _on_TextureButton3_pressed():
-	mode = 4
-	emit_signal("update_description")
-
-func _on_TextureButton4_pressed():
-	mode = 5
-	emit_signal("update_description")
-
-func _on_TextureButton5_pressed():
-	mode = 6
+func _on_UI_summon(target_mode):
+	mode = target_mode
 	emit_signal("update_description")

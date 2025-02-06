@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://pictures/Sprite-0001.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://pictures/tile_2.png" type="Texture" id=14]
 [ext_resource path="res://pictures/tile_archer.png" type="Texture" id=15]
 [ext_resource path="res://pictures/tile_1.png" type="Texture" id=16]
+[ext_resource path="res://pictures/tile_healer.png" type="Texture" id=17]
 [ext_resource path="res://assets/test sprite.tscn" type="PackedScene" id=18]
 [ext_resource path="res://pictures/latest/castle.png" type="Texture" id=19]
 [ext_resource path="res://pictures/background.png" type="Texture" id=20]
@@ -144,6 +145,20 @@ resource_local_to_scene = true
 6/shape_one_way_margin = 0.0
 6/shapes = [  ]
 6/z_index = 0
+7/name = "tile_healer.png 7"
+7/texture = ExtResource( 17 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 38, 44 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 25 )
@@ -304,7 +319,7 @@ position = Vector2( 680, 20 )
 script = ExtResource( 10 )
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI/button manager"]
-margin_right = 232.0
+margin_right = 243.0
 margin_bottom = 74.0
 texture = ExtResource( 1 )
 patch_margin_left = 18
@@ -312,44 +327,68 @@ patch_margin_top = 18
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="button container" type="Node2D" parent="UI/button manager"]
-position = Vector2( 18, 14 )
+[node name="button container" type="ScrollContainer" parent="UI/button manager/NinePatchRect"]
+margin_left = 14.0
+margin_top = 14.0
+margin_right = 239.0
+margin_bottom = 58.0
 
-[node name="2" type="TextureButton" parent="UI/button manager/button container"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/button manager/NinePatchRect/button container"]
+margin_right = 206.0
+margin_bottom = 92.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/button manager/NinePatchRect/button container/VBoxContainer"]
+margin_right = 206.0
+margin_bottom = 44.0
+
+[node name="2" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer"]
 material = SubResource( 9 )
-margin_right = 40.0
+margin_right = 38.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 13 )
 
-[node name="3" type="TextureButton" parent="UI/button manager/button container"]
+[node name="3" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer"]
 material = SubResource( 10 )
-margin_left = 40.0
+margin_left = 42.0
 margin_right = 80.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 15 )
 
-[node name="4" type="TextureButton" parent="UI/button manager/button container"]
+[node name="4" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer"]
 material = SubResource( 11 )
-margin_left = 80.0
-margin_right = 120.0
+margin_left = 84.0
+margin_right = 122.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 22 )
 
-[node name="5" type="TextureButton" parent="UI/button manager/button container"]
+[node name="5" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer"]
 material = SubResource( 12 )
-margin_left = 120.0
-margin_right = 160.0
+margin_left = 126.0
+margin_right = 164.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 21 )
 
-[node name="6" type="TextureButton" parent="UI/button manager/button container"]
+[node name="6" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer"]
 material = SubResource( 13 )
-margin_left = 160.0
-margin_right = 200.0
+margin_left = 168.0
+margin_right = 206.0
 margin_bottom = 44.0
+rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 26 )
 
-[node name="Light2D" type="Light2D" parent="UI/button manager"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/button manager/NinePatchRect/button container/VBoxContainer"]
+margin_top = 48.0
+margin_right = 206.0
+margin_bottom = 92.0
+
+[node name="7" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
+material = SubResource( 13 )
+margin_right = 38.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 22, 32 )
+texture_normal = ExtResource( 17 )
+
+[node name="Light2D" type="Light2D" parent="UI/button manager/NinePatchRect"]
 visible = false
 position = Vector2( 117, 38 )
 scale = Vector2( 3.53223, 1.0625 )
@@ -412,8 +451,9 @@ bbcode_enabled = true
 [connection signal="summon" from="UI/board" to="Manager (sprite)" method="_on_board_summon"]
 [connection signal="input_event" from="UI/board/Area2D" to="UI/board" method="_on_Area2D_input_event"]
 [connection signal="update_description" from="UI/button manager" to="UI/descriptor" method="_on_button_manager_update_description"]
-[connection signal="pressed" from="UI/button manager/button container/2" to="UI/button manager" method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/3" to="UI/button manager" method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/4" to="UI/button manager" method="_on_TextureButton3_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/5" to="UI/button manager" method="_on_TextureButton4_pressed"]
-[connection signal="pressed" from="UI/button manager/button container/6" to="UI/button manager" method="_on_TextureButton5_pressed"]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/2" to="UI/button manager" method="_on_UI_summon" binds= [ 2 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/3" to="UI/button manager" method="_on_UI_summon" binds= [ 3 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/4" to="UI/button manager" method="_on_UI_summon" binds= [ 4 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/5" to="UI/button manager" method="_on_UI_summon" binds= [ 5 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/6" to="UI/button manager" method="_on_UI_summon" binds= [ 6 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/7" to="UI/button manager" method="_on_UI_summon" binds= [ 7 ]]

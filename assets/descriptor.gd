@@ -79,4 +79,18 @@ func _on_button_manager_update_description():
 [color=green]Dash Range[/color]: 220-230 units
 [color=#00FFFF]Reload[/color]: 0.24 sec
 """,
+7: """[center]Healer[/center]
+
+[color=red]Unit Price: 600[/color]
+[color=gray]Cooldown: 7.2 sec[/color]
+
+"Something more creative"
+
+[color=purple]Heals troops.[/color]
+
+[color=#FFC0CB]Health[/color]: 400 units
+[color=red]Healing[/color]: 150 units
+[color=green]Heal Range[/color]: 700 units
+[color=#00FFFF]Reload[/color]: 13.2 sec
+""",
 }[button_manager.mode]
