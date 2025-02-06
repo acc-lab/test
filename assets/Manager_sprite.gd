@@ -57,7 +57,7 @@ var UUID = 0
 var manager_projectile
 
 var worth = 0
-var worths = 8
+var worths = 0
 var totaltick = 0
 var timegap = 15
 
@@ -67,6 +67,11 @@ func leftcpr(a, b):
 	return a.position.x < b.position.x
 	
 func adjust():
+	if totaltick >= 0:
+		worths = 8*scene.difficulty
+		
+		UI.mps = 8
+		
 	if totaltick >= 30:
 		worths = 10*scene.difficulty
 		
@@ -136,6 +141,8 @@ var cd = 0
 
 func temp():
 	if ticks > timegap:
+		print("DIFFICULTY:", scene.difficulty)
+		
 		adjust()
 		
 		new_wave()
@@ -143,7 +150,7 @@ func temp():
 		worth += timegap*worths
 		ticks -= timegap
 		
-		# print("New wave at ", int(totaltick), ": ", worth, " with worth +", worths, "*", timegap)
+		print("New wave at ", int(totaltick), ": ", worth, " with worth +", worths, "*", timegap)
 		
 		var networth = worth
 		
