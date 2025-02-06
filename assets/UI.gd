@@ -18,12 +18,9 @@ func _ready():
 
 func _process(delta):
 	tick += delta
-	print(tick)
 	if tick >= 0.03:
 		
 		var tick_passed: int = floor(tick / 0.03)
-		
-		print(tick_passed)
 		
 		tick -= 0.03 * tick_passed
 		
