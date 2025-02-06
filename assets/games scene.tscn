@@ -16,7 +16,6 @@
 [ext_resource path="res://pictures/tile_2.png" type="Texture" id=14]
 [ext_resource path="res://pictures/tile_archer.png" type="Texture" id=15]
 [ext_resource path="res://pictures/tile_1.png" type="Texture" id=16]
-[ext_resource path="res://pictures/tile_healer.png" type="Texture" id=17]
 [ext_resource path="res://assets/test sprite.tscn" type="PackedScene" id=18]
 [ext_resource path="res://pictures/latest/castle.png" type="Texture" id=19]
 [ext_resource path="res://pictures/background.png" type="Texture" id=20]
@@ -25,6 +24,7 @@
 [ext_resource path="res://assets/games scene.gd" type="Script" id=23]
 [ext_resource path="res://minimal3x5.ttf" type="DynamicFontData" id=24]
 [ext_resource path="res://assets/shader/button.gdshader" type="Shader" id=25]
+[ext_resource path="res://pictures/tile_ninja.png" type="Texture" id=26]
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 485, 9.5 )
@@ -130,8 +130,8 @@ resource_local_to_scene = true
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
 5/z_index = 0
-6/name = "tile_healer.png 6"
-6/texture = ExtResource( 17 )
+6/name = "tile_ninja.png 6"
+6/texture = ExtResource( 26 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 0, 0, 38, 44 )
@@ -347,7 +347,7 @@ material = SubResource( 13 )
 margin_left = 160.0
 margin_right = 200.0
 margin_bottom = 44.0
-texture_normal = ExtResource( 17 )
+texture_normal = ExtResource( 26 )
 
 [node name="Light2D" type="Light2D" parent="UI/button manager"]
 visible = false
