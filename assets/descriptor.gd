@@ -27,9 +27,9 @@ func _on_button_manager_update_description():
 [color=red]Unit Price: 150[/color]
 [color=gray]Cooldown: 1.8 sec[/color]
 
-"Pew pew pew, or whatever sound the bow makes."
+"Pew pew pew, or whatever sound the bow makes"
 
-[color=purple]Perfect for mid range, dealing reliable damage[/color]
+[color=purple]Perfect for mid range, dealing reliable damage.[/color]
 
 [color=#FFC0CB]Health[/color]: 80 units
 [color=red]Damage[/color]: 20 units per projectile
