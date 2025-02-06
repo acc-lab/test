@@ -29,7 +29,7 @@ func _on_button_manager_update_description():
 
 "Pew pew pew, or whatever sound the bow makes."
 
-[color=purple]Perfect for mid range, dealing reliable damage.[/color]
+[color=purple]Perfect for mid range, dealing reliable damage[/color]
 
 [color=#FFC0CB]Health[/color]: 80 units
 [color=red]Damage[/color]: 20 units per projectile
