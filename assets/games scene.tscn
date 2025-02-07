@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://pictures/Sprite-0001.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://minimal3x5.ttf" type="DynamicFontData" id=24]
 [ext_resource path="res://assets/shader/button.gdshader" type="Shader" id=25]
 [ext_resource path="res://pictures/tile_ninja.png" type="Texture" id=26]
+[ext_resource path="res://assets/UI_light.gd" type="Script" id=27]
 
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 485, 9.5 )
@@ -394,12 +395,12 @@ rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 17 )
 
 [node name="Light2D" type="Light2D" parent="UI/button manager/NinePatchRect"]
-visible = false
-position = Vector2( 117, 38 )
-scale = Vector2( 3.53223, 1.0625 )
+position = Vector2( 122.5, 38 )
+scale = Vector2( 3.64063, 1 )
 texture = ExtResource( 2 )
 energy = 1.2
 mode = 2
+script = ExtResource( 27 )
 
 [node name="money displayer" type="RichTextLabel" parent="UI"]
 margin_left = 686.0

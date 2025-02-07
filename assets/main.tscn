@@ -32,7 +32,7 @@ margin_right = 911.0
 margin_bottom = 181.0
 rect_rotation = -11.7
 rect_scale = Vector2( 1.2, 1.2 )
-text = "next implementing:"
+text = "Just implemented:"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="menu"]
 margin_left = 106.0

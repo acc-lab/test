@@ -218,12 +218,17 @@ func _process(delta):
 	
 	var target = 20
 	var ch
+	
+	var leading = [-1, 20, 880]
+	
 	for i in range(len(children)):
 		ch = children[i]
 		
 		if(ch.team == 1):
 			if ch.position.x > 20:
 				target = ch.position.x
+				
+			leading[1] = max(leading[1], ch.position.x)
 		else:
 			ch.observe_target_x = target
 			
@@ -234,8 +239,13 @@ func _process(delta):
 		if(ch.get("team") == 2):
 			if ch.position.x < 940:
 				target = ch.position.x
+				
+			leading[2] = min(leading[2], ch.position.x)
 		else:
 			ch.observe_target_x = target
+			
+	for child in children:
+		child.observe_leading_x = leading[child.team]
 
 func _on_Button_pressed():
 	var RI = rng.randi_range(1, 100)

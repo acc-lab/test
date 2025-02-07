@@ -20,5 +20,8 @@ func set_damage(damage):
 		emitted = true
 		
 		call_deferred("free")
+		
+func set_heal(healing):
+	pass # doesn't work
 	
 	

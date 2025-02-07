@@ -5,6 +5,7 @@ var variant = "axy"
 var uuid
 var team = 1
 var observe_target_x=0
+var observe_leading_x=0
 var state = "idle"
 var phase = ""
 
@@ -32,6 +33,7 @@ func _ready():
 	
 	instance.connect("_move", self, "_move")
 	instance.connect("_damage", self, "_damage")
+	instance.connect("_heal", self, "_heal")
 	instance.connect("_attack", self, "_attack")
 	
 	body = instance
@@ -110,9 +112,18 @@ func getDir():
 func _move(steps):
 	self.position.x += steps * getDir()
 	
+func _heal(healing):
+	print("healed", healing)
+	
+	health += healing
+	if health > health_bar.max_value:
+		health = health_bar.max_value
+		
+	effect = 10 # what healing effect?
+	
 func _damage(damage):
 	health -= damage
-	effect = 10
+	effect = 10 # ??
 	
 func _attack():
 	pass

@@ -21,3 +21,5 @@ func set_damage(damage):
 		
 		call_deferred("free")
 	
+func set_heal(healing):
+	pass # doesn't work

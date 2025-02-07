@@ -60,7 +60,7 @@ func _on_button_manager_update_description():
 [color=#FFC0CB]Health[/color]: 300 units
 [color=red]Damage[/color]: 200 units per projectile, per penetration
 [color=blue]Multishot[/color]: Shoots 3 projectiles
-[color=purple]Penetration[/color]: Deals damage to up to 3 entity
+[color=purple]Penetration[/color]: Deals damage to up to 3 entities
 [color=green]Range[/color]: 550 units
 [color=#00FFFF]Reload[/color]: 21 sec
 """,
@@ -81,7 +81,7 @@ func _on_button_manager_update_description():
 """,
 7: """[center]Healer[/center]
 
-[color=red]Unit Price: 600[/color]
+[color=red]Unit Price: 450[/color]
 [color=gray]Cooldown: 7.2 sec[/color]
 
 "Something more creative"
@@ -89,8 +89,9 @@ func _on_button_manager_update_description():
 [color=purple]Heals troops.[/color]
 
 [color=#FFC0CB]Health[/color]: 400 units
-[color=red]Healing[/color]: 150 units
-[color=green]Heal Range[/color]: 700 units
-[color=#00FFFF]Reload[/color]: 13.2 sec
+[color=red]Healing[/color]: 75 units
+[color=purple]Heal Units[/color]: Heals up to 3 entities
+[color=green]Heal Radius[/color]: 70 units
+[color=#00FFFF]Reload[/color]: 4.2 sec
 """,
 }[button_manager.mode]

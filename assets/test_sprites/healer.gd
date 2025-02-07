@@ -2,11 +2,26 @@ extends "res://assets/scripts/sprite_template.gd"
 
 func _attack():
 	# custom attack script
-	#emit_signal("_shoot_projectile","healbomb",{
-	#	"position":self.position+Vector2(10*getDir(),-30),
-	#	"team":team,
-	#	"velocity":Vector2(26,27)
-	#})
+	var dist = abs(self.position.x-observe_leading_x)
+	
+	# review these magic number
+	var vx = 150*getDir()*3.0/100.0
+	var vy = ((22/max(dist,15)-4*max(dist,15)/900.0))*150*3.0/100.0
+	
+	
+	var ax = 0
+	var ay = 8/900.0*(150*150)*3.0/100.0*3.0/100.0
+	
+	# old: heal, healRange, health, expiringSpeed
+	# 0.2, randomize(60, 80), 150, 0.25
+	
+	emit_signal("_shoot_projectile","healbomb",{
+		"position":self.position+Vector2(16*getDir(),-22),
+		"team":team,
+		"velocity":Vector2(vx, vy),
+		"acceleration":Vector2(ax, ay),
+		"healing": 75,
+	})
 	
 	pass
 	
@@ -32,9 +47,9 @@ func cst_movement(dur):
 			state = "after_attack"
 			return 0.84
 	elif(state == "after_attack"):
-		if Constants.geq(dur, 12.36):
+		if Constants.geq(dur, 3.36):
 			state = "idle"
-			return 12.36
+			return 3.36
 			#print("super idle")
 	
 	return 0
