@@ -34,7 +34,7 @@ func cst_movement(dur):
 			while collision:
 				var collider = collision.collider
 				
-				collider.set_healing(healing)
+				collider.set_heal(healing)
 				add_collision_exception_with(collider)
 				
 				heal_capacity -= 1

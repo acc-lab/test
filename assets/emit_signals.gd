@@ -14,7 +14,7 @@ func _move(steps):
 func set_damage(damage):
 	emit_signal("_damage", damage)
 	
-func set_healing(healing):
+func set_heal(healing):
 	emit_signal("_heal", healing)
 
 func _attack():
