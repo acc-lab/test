@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var money = 6900
+onready var money = 690
 onready var mps = 4
 
 onready var tick = 0
@@ -10,7 +10,7 @@ onready var display = $"money displayer"
 onready var type = ["", "", "axy", "archer2", "tank", "police", "ninja", "healer"]
 onready var price = [0, 0, 50, 150, 250, 600, 150, 450]
 
-var cooldown = [-1, -1, 0.9, 1.8, 5.4, 10.5, 3.6, 7.2]
+var cooldown = [-1, -1, 0.99, 1.89, 5.4, 9.51, 3.6, 7.2]
 var delay = [0, 0, 0, 0, 0, 0, 0, 0]
 
 func _ready():

@@ -11,7 +11,7 @@ func _on_button_manager_update_description():
 2: """[center]Axy[/center]
 
 [color=red]Unit Price: 50[/color]
-[color=gray]Cooldown: 0.9 sec[/color]
+[color=gray]Cooldown: 0.99 sec[/color]
 
 "The art of SPAM"
 
@@ -25,7 +25,7 @@ func _on_button_manager_update_description():
 3: """[center]Archer[/center]
 
 [color=red]Unit Price: 150[/color]
-[color=gray]Cooldown: 1.8 sec[/color]
+[color=gray]Cooldown: 1.89 sec[/color]
 
 "Pew pew pew, or whatever sound the bow makes"
 
@@ -51,7 +51,7 @@ func _on_button_manager_update_description():
 5: """[center]Police[/center]
 
 [color=red]Unit Price: 600[/color]
-[color=gray]Cooldown: 10.5 sec[/color]
+[color=gray]Cooldown: 9.51 sec[/color]
 
 "I'm OP"
 
