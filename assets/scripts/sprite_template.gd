@@ -113,8 +113,6 @@ func _move(steps):
 	self.position.x += steps * getDir()
 	
 func _heal(healing):
-	print("healed", healing)
-	
 	health += healing
 	if health > health_bar.max_value:
 		health = health_bar.max_value

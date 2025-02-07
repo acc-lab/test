@@ -15,7 +15,6 @@ func set_damage(damage):
 	emit_signal("_damage", damage)
 	
 func set_healing(healing):
-	print("dumb")
 	emit_signal("_heal", healing)
 
 func _attack():

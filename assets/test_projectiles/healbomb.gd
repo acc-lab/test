@@ -34,15 +34,12 @@ func cst_movement(dur):
 			while collision:
 				var collider = collision.collider
 				
-				print("heal ", heal_capacity)
-				
 				collider.set_healing(healing)
 				add_collision_exception_with(collider)
 				
 				heal_capacity -= 1
 					
 				if heal_capacity <= 0:
-					print("healed 3, dequed")
 					call_deferred("free")
 					
 					break
@@ -50,7 +47,6 @@ func cst_movement(dur):
 				collision = move_and_collide(Vector2(0,0), true, true, true)
 			
 			if heal_capacity>0:
-				print("dequed")
 				call_deferred("free")
 			
 		else:
