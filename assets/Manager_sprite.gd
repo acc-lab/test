@@ -16,7 +16,7 @@ func new_sprite(variant, team, coord = null, x = null):
 	instance.set("team", team)
 	instance.set("observe_target_x", null)
 	
-	instance.get_child(0).visible = $"..".debug
+	instance.get_child(0).visible = $"..".debug_alwaysShowHP
 	if variant == "tank":
 		instance.get_child(0).visible = true
 	
