@@ -30,6 +30,8 @@ func _attack():
 		"damage": 200
 	})
 	
+	$"../..".shake(10.0, 0.5)
+	
 func _ready():
 	health = 300
 	.set_health_bar()

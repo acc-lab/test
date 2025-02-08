@@ -471,6 +471,10 @@ margin_bottom = 156.0
 texture_normal = ExtResource( 31 )
 script = ExtResource( 32 )
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 480, 180 )
+current = true
+
 [connection signal="defeated" from="Manager (castle)/castle1 container/castle1" to="." method="_on_castle1_defeated"]
 [connection signal="victory" from="Manager (castle)/castle2 container/castle2" to="." method="_on_castle2_victory"]
 [connection signal="UI_no_money" from="UI/board" to="UI/money displayer" method="_on_board_UI_no_money"]

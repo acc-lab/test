@@ -13,6 +13,8 @@ func _attack(type = 0):
 	
 	elif type == 1:
 		
+		$"../..".shake(5.0, 0.2)
+		
 		ManagerParticle.emit_particle("ninjaDash",self.position+Vector2(0,-10),getDir())
 		
 		emit_signal("_shoot_projectile", "chop", {
