@@ -2,6 +2,7 @@ extends Node
 
 signal defeated
 signal victory
+signal restart
 
 var difficulty = 1
 
@@ -18,4 +19,5 @@ func _on_castle2_victory():
 	
 	call_deferred("free")
 
-
+func _restart():
+	emit_signal("restart")

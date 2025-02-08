@@ -2,6 +2,7 @@ extends Node
 
 var difficulty = 1
 
+var instance 
 
 func _ready():
 	$menu.visible = true
@@ -23,14 +24,20 @@ func _on_defeated():
 
 func _on_Button_pressed():
 	$menu.visible = false
+	start_game()
 	
+func start_game():
 	var sc = load("res://assets/games scene.tscn")
-	var instance = sc.instance()
+	instance = sc.instance();
 	
 	instance.difficulty = difficulty
 	
 	instance.connect("victory", self, "_on_victory")
 	instance.connect("defeated", self, "_on_defeated")
-	
+	instance.connect("restart",self,"_restart")
 	add_child(instance)
+
+func _restart():
+	print("reached")
+	start_game()
 

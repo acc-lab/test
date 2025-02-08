@@ -262,3 +262,9 @@ func _on_Button_pressed():
 
 func _on_board_summon(coord, type):
 	new_sprite(type, 1, coord)
+
+
+
+func _restart():
+	for n in get_children():
+		n.free();
