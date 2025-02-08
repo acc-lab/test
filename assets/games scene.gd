@@ -5,6 +5,7 @@ signal victory
 signal restart
 
 var difficulty = 1
+var debug = false
 
 func _on_castle1_defeated():
 	emit_signal("defeated")
@@ -30,6 +31,10 @@ var is_shaking = false
 func _ready():
 	if camera:
 		default_offset = camera.offset
+	
+	if debug:
+		difficulty = 10
+		$UI.money = 99999999
 		
 func _process(delta):
 	if is_shaking and camera:

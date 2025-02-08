@@ -1,6 +1,6 @@
 extends Node
 
-var difficulty = 10
+var difficulty = 1
 
 var instance 
 

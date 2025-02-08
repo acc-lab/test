@@ -15,6 +15,11 @@ func new_sprite(variant, team, coord = null, x = null):
 	instance.set("uuid", UUID)
 	instance.set("team", team)
 	instance.set("observe_target_x", null)
+	
+	instance.get_child(0).visible = $"..".debug
+	if variant == "tank":
+		instance.get_child(0).visible = true
+	
 	instance.connect("_shoot_projectile", manager_projectile, "_shoot_projectile")
 	instance.connect("free_tile", board, "free_tile")
 	
@@ -188,23 +193,24 @@ func spawn_random():
 	
 	if cd<0: cd=0
 	
-	if Input.is_action_pressed("ui_up") and cd == 0:
-		new_sprite("healer", 1)
-		cd += 15
-		
-	elif Input.is_action_pressed("ui_left") and cd == 0:
-		if(Engine.time_scale >= 1.2):
-			Engine.time_scale -= 0.2
-		cd += 15
-		
-	elif Input.is_action_pressed("ui_down") and cd == 0:
-		new_sprite("tank", 2)
-		cd += 15
-		
-	elif Input.is_action_pressed("ui_right") and cd == 0:
-		if(Engine.time_scale <= 3):
-			Engine.time_scale += 0.2
-		cd += 15
+	if $"..".debug:
+		if Input.is_action_pressed("ui_up") and cd == 0:
+			new_sprite("healer", 2)
+			cd += 15
+			
+		elif Input.is_action_pressed("ui_left") and cd == 0:
+			if(Engine.time_scale >= 1.2):
+				Engine.time_scale -= 0.2
+			cd += 15
+			
+		elif Input.is_action_pressed("ui_down") and cd == 0:
+			new_sprite("tank", 2)
+			cd += 15
+			
+		elif Input.is_action_pressed("ui_right") and cd == 0:
+			if(Engine.time_scale <= 3):
+				Engine.time_scale += 0.2
+			cd += 15
 
 func _process(delta):
 	ticks += delta

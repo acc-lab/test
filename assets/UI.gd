@@ -15,6 +15,10 @@ var delay = [0, 0, 0, 0, 0, 0, 0, 0]
 
 func _ready():
 	delay = cooldown.duplicate()
+	
+	if $"..".debug:
+		for i in range(len(cooldown)):
+			cooldown[i] = 0.01
 
 func _process(delta):
 	tick += delta
