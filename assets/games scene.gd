@@ -21,3 +21,5 @@ func _on_castle2_victory():
 
 func _restart():
 	emit_signal("restart")
+	
+	call_deferred("free")

@@ -39,5 +39,6 @@ func start_game():
 
 func _restart():
 	print("reached")
+
 	start_game()
 
