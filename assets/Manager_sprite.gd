@@ -179,6 +179,7 @@ func temp():
 				print("Spawned ", type, ": ", worth, "/", networth)
 	
 func spawn_random():
+	# remove this line, then Manager (sprite) can work independently
 	$"../UI/wave indicator/text displayer".bbcode_text = "[center]Until next wave: "+str(int(timegap-ticks))+"[/center]"
 		
 	temp()
