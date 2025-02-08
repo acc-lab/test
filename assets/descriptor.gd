@@ -89,7 +89,7 @@ func _on_button_manager_update_description():
 [color=purple]Heals troops.[/color]
 
 [color=#FFC0CB]Health[/color]: 400 units
-[color=red]Healing[/color]: 75 units
+[color=red]Healing[/color]: 150 units
 [color=purple]Heal Units[/color]: Heals up to 3 entities
 [color=green]Heal Radius[/color]: 70 units
 [color=#00FFFF]Reload[/color]: 4.2 sec

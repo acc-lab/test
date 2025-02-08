@@ -20,7 +20,7 @@ func _attack():
 		"team":team,
 		"velocity":Vector2(vx, vy),
 		"acceleration":Vector2(ax, ay),
-		"healing": 75,
+		"healing": 150,
 	})
 	
 	pass

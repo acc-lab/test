@@ -12,6 +12,9 @@ func _attack(type = 0):
 		})
 	
 	elif type == 1:
+		
+		ManagerParticle.emit_particle("ninjaDash",self.position+Vector2(0,-10),getDir())
+		
 		emit_signal("_shoot_projectile", "chop", {
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],

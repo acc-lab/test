@@ -1,14 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://pictures/blood_sheet.png" type="Texture" id=1]
-
-[sub_resource type="CanvasItemMaterial" id=1]
-particles_animation = true
-particles_anim_h_frames = 3
-particles_anim_v_frames = 1
-particles_anim_loop = true
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "New Anim"
 length = 2.0
 tracks/0/type = "method"
@@ -26,7 +18,7 @@ tracks/0/keys = {
 } ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:emitting")
+tracks/1/path = NodePath(".:one_shot")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +30,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:one_shot")
+tracks/2/path = NodePath(".:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,10 +42,10 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:emitting")
+tracks/0/path = NodePath(".:one_shot")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -65,7 +57,7 @@ tracks/0/keys = {
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:one_shot")
+tracks/1/path = NodePath(".:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -78,24 +70,17 @@ tracks/1/keys = {
 }
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
-material = SubResource( 1 )
-emitting = false
-amount = 2
+scale = Vector2( 2, 2 )
+amount = 6
 lifetime = 2.0
-one_shot = true
 explosiveness = 1.0
-texture = ExtResource( 1 )
-direction = Vector2( 0, -1 )
-spread = 30.14
+direction = Vector2( 1, -0.1 )
+spread = 4.0
 gravity = Vector2( 0, 500 )
-initial_velocity = 386.5
-initial_velocity_random = 1.0
-radial_accel = 20.18
-anim_speed = 2.35
-anim_offset = 0.92
-anim_offset_random = 1.0
+initial_velocity = 561.49
+initial_velocity_random = 0.78
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "New Anim"
-"anims/New Anim" = SubResource( 2 )
-anims/RESET = SubResource( 3 )
+"anims/New Anim" = SubResource( 1 )
+anims/RESET = SubResource( 2 )

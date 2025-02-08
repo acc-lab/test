@@ -30,6 +30,18 @@ tracks/1/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:one_shot")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -45,12 +57,23 @@ tracks/0/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:one_shot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [node name="Particles2D" type="CPUParticles2D"]
 emitting = false
 amount = 25
 lifetime = 1.5
-one_shot = true
 explosiveness = 1.0
 lifetime_randomness = 0.78
 texture = ExtResource( 1 )
@@ -62,5 +85,6 @@ initial_velocity_random = 0.74
 linear_accel = -5000.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "New Anim"
 "anims/New Anim" = SubResource( 1 )
 anims/RESET = SubResource( 2 )

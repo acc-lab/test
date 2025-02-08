@@ -28,6 +28,7 @@ func cst_movement(dur):
 		while collision:
 			var collider = collision.collider
 			
+			ManagerParticle.emit_particle("bulletHit",collision.position,getDir())
 			ManagerParticle.emit_particle("blood",collision.position)
 			collider.set_damage(damage)
 			add_collision_exception_with(collider)
