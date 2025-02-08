@@ -5,8 +5,6 @@ onready var board = $"../UI/board"
 onready var scene = $".."
 
 func new_sprite(variant, team, coord = null, x = null):
-	var RI = rng.randi_range(-20, 20)
-		
 	var sc = Preloads.scene["sprite_template"]
 	var instance = sc.instance()
 	
@@ -262,9 +260,3 @@ func _on_Button_pressed():
 
 func _on_board_summon(coord, type):
 	new_sprite(type, 1, coord)
-
-
-
-func _restart():
-	for n in get_children():
-		n.free();

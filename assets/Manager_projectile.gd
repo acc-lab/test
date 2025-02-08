@@ -85,8 +85,3 @@ func _shoot_projectile(type, arguments):
 		
 		UUID += 1
 		add_child(instance)
-		
-func _restart():
-	print("FUCK")
-	for n in get_children():
-		n.free();

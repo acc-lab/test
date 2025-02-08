@@ -68,11 +68,6 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			#if (event.position-last_cursor_position).dot(event.relative)>0:
 			tilemap.position+=event.relative
 
-		
-		
-		
-
-
 func _on_board_mouse_exited():
 	right_button_down=false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
