@@ -6,7 +6,7 @@ extends Node
 # var b = "text"
 
 var particles = {}
-var particle_names= ["heal_particle_1", "blood_particle"]
+var particle_names= ["healing", "blood", "arrowHit"]
 
 
 # Called when the node enters the scene tree for the first time.

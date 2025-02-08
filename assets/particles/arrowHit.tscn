@@ -1,15 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://pictures/blood_sheet.png" type="Texture" id=1]
+[ext_resource path="res://pictures/arrowHit_sheet.png" type="Texture" id=1]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
-particles_anim_loop = true
+particles_anim_loop = false
 
 [sub_resource type="Animation" id=2]
 resource_name = "New Anim"
+length = 2.0
 tracks/0/type = "method"
 tracks/0/path = NodePath(".")
 tracks/0/interp = 1
@@ -17,7 +18,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1 ),
+"times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -52,20 +53,20 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
-[node name="CPUParticles2D" type="CPUParticles2D"]
+[node name="CPUParticles" type="CPUParticles2D"]
 material = SubResource( 1 )
 emitting = false
-amount = 5
+amount = 6
+one_shot = true
 explosiveness = 1.0
 texture = ExtResource( 1 )
 direction = Vector2( 0, -1 )
-spread = 30.14
+spread = 90.0
 gravity = Vector2( 0, 500 )
-initial_velocity = 238.53
+initial_velocity = 645.16
 initial_velocity_random = 1.0
-radial_accel = 20.18
-anim_speed = 2.35
-anim_offset = 0.92
+radial_accel = 22.23
+anim_offset = 1.0
 anim_offset_random = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

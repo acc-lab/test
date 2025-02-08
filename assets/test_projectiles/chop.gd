@@ -27,7 +27,7 @@ func cst_movement():
 			if collision:
 				break
 	if collision:
-		ManagerParticle.emit_particle("blood_particle",collision.position)
+		ManagerParticle.emit_particle("blood",collision.position)
 		var collider = collision.collider
 		collider.set_damage(damage)
 		

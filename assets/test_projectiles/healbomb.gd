@@ -76,7 +76,7 @@ func _process(delta):
 		call_deferred("free")
 		
 	if self.position.y >= 400:
-		ManagerParticle.emit_particle("heal_particle_1",self.position)
+		ManagerParticle.emit_particle("healing",self.position)
 		exploded = true
 		hide()
 		set_collision_mask(team)
