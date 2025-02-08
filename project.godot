@@ -19,6 +19,7 @@ config/icon="res://pictures/latest/icon_of_healer.png"
 
 Preloads="*res://assets/scripts/preloads.gd"
 Constants="*res://assets/scripts/constants.gd"
+ManagerParticle="*res://assets/Manager_particle.gd"
 
 [display]
 
