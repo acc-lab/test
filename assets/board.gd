@@ -45,7 +45,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 							emit_signal("UI_no_money")
 					
 			if event.button_index == BUTTON_RIGHT:
-				Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+				#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 				right_button_down=true
 				last_cursor_position=event.position
 				#last_tilemap_position=tilemap.position
@@ -58,15 +58,15 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		##		right_button_down=false	
 		else:
 			if event.button_index==BUTTON_RIGHT:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				right_button_down=false
 	if event is InputEventMouseMotion:
 		# print(right_button_down)
 		if right_button_down:
-			viewport.warp_mouse(last_cursor_position)
+			#viewport.warp_mouse(last_cursor_position)
 			#print(event.position,last_cursor_position)
-			if (event.position-last_cursor_position).dot(event.relative)>0:
-				tilemap.position+=event.relative
+			#if (event.position-last_cursor_position).dot(event.relative)>0:
+			tilemap.position+=event.relative
 
 		
 		
