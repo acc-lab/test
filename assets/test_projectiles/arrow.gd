@@ -20,6 +20,7 @@ func cst_movement(dur):
 		var collision = move_and_collide(Vector2(vx, vy))
 		if collision:
 			var collider = collision.collider
+			ManagerParticle.emit_particle("blood_particle",collision.position)
 			collider.set_damage(damage)
 			
 			call_deferred("free")

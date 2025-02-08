@@ -69,11 +69,14 @@ func _process(delta):
 	last_tick += del
 		
 	if(self.position.x > 960*2 or self.position.x < -960):
+		#ManagerParticle.emit_particle("heal_particle_1",self.position)
 		call_deferred("free")
 	elif(self.position.y < -400):
+		#ManagerParticle.emit_particle("heal_particle_1",self.position)
 		call_deferred("free")
 		
 	if self.position.y >= 400:
+		ManagerParticle.emit_particle("heal_particle_1",self.position)
 		exploded = true
 		hide()
 		set_collision_mask(team)
