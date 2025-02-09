@@ -14,7 +14,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ 0 ]
 }
 tracks/1/type = "value"
@@ -26,7 +26,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ "idle" ]
 }
 
@@ -42,7 +42,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ 0 ]
 }
 tracks/1/type = "value"
@@ -54,7 +54,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ "idle" ]
 }
 
@@ -70,7 +70,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ 0 ]
 }
 tracks/1/type = "value"
@@ -82,7 +82,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ "idle" ]
 }
 
@@ -100,7 +100,7 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72, 0.81, 0.9, 0.99, 1.08, 1.26 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 0 ]
 }
 tracks/1/type = "value"
@@ -112,7 +112,7 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
+"update": 1,
 "values": [ "walk" ]
 }
 tracks/2/type = "method"
@@ -215,7 +215,7 @@ anims/walk = SubResource( 15 )
 position = Vector2( -14, -48 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 23 )
-animation = "idle"
+animation = "walk"
 centered = false
 __meta__ = {
 "_editor_description_": ""
