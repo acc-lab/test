@@ -6,7 +6,7 @@ signal restart
 
 var difficulty = 1
 var debug = false
-var debug_alwaysShowHP = false
+var debug_alwaysShowHP = true
 
 func _on_castle1_defeated():
 	emit_signal("defeated")
