@@ -1,10 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/emit_signals.gd" type="Script" id=1]
-[ext_resource path="res://pictures/latest/ninja.png" type="Texture" id=2]
-[ext_resource path="res://pictures/latest/ninja3.png" type="Texture" id=3]
-[ext_resource path="res://pictures/latest/ninja2.png" type="Texture" id=4]
-[ext_resource path="res://pictures/latest/ninja4.png" type="Texture" id=5]
+[ext_resource path="res://pictures/latest_checked/sprite sheets/ninja.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -21,24 +18,12 @@ tracks/0/keys = {
 "values": [ "idle" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -28, -96 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -62,24 +47,12 @@ tracks/0/keys = {
 "values": [ "attack" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.03, 0.21, 0.24 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -28, -96 ), Vector2( -28, -112 ), Vector2( -28, -112 ), Vector2( -28, -96 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 0.03, 0.06, 0.09, 0.12, 0.21, 0.24 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
@@ -103,24 +76,12 @@ tracks/0/keys = {
 "values": [ "walk" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ Vector2( -28, -96 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 0.06, 0.12 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
@@ -144,7 +105,7 @@ tracks/0/keys = {
 "values": [ "attack" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -152,28 +113,16 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -28, -96 ) ]
+"update": 1,
+"values": [ 1 ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 0.03, 0.06, 0.09 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
@@ -207,24 +156,12 @@ tracks/0/keys = {
 "values": [ "idle" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -28, -96 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -248,36 +185,24 @@ tracks/0/keys = {
 "values": [ "walk" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("AnimatedSprite:offset")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.27 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( -28, -96 ), Vector2( -28, -96 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("AnimatedSprite:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0, 0.06, 0.12, 0.18, 0.24, 0.27 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 0, 0 ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0.06, 0.12, 0.18, 0.24 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
@@ -295,19 +220,47 @@ tracks/3/keys = {
 } ]
 }
 
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 31, 27 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 31, 0, 31, 27 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 31, 27 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 31, 27 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 62, 0, 31, 27 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 93, 0, 31, 27 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
+region = Rect2( 124, 0, 31, 27 )
+
 [sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "attack",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ SubResource( 17 ) ],
 "loop": true,
 "name": "idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "walk",
 "speed": 0.0
@@ -331,13 +284,11 @@ anims/idle = SubResource( 3 )
 anims/walk = SubResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -4, 2 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( -20, -54 )
+scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
-animation = "attack"
-frame = 1
+animation = "idle"
 centered = false
-offset = Vector2( -28, -96 )
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"
 }

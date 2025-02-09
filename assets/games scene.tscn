@@ -18,7 +18,7 @@
 [ext_resource path="res://pictures/tile_1.png" type="Texture" id=16]
 [ext_resource path="res://pictures/tile_healer.png" type="Texture" id=17]
 [ext_resource path="res://assets/test sprite.tscn" type="PackedScene" id=18]
-[ext_resource path="res://pictures/latest/castle.png" type="Texture" id=19]
+[ext_resource path="res://pictures/latest_checked/castle.png" type="Texture" id=19]
 [ext_resource path="res://pictures/background.png" type="Texture" id=20]
 [ext_resource path="res://pictures/tile_police.png" type="Texture" id=21]
 [ext_resource path="res://pictures/tile_shield.png" type="Texture" id=22]
@@ -219,6 +219,7 @@ script = ExtResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="Manager (castle)/castle1 container/castle1"]
 position = Vector2( 20, 323 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1"]
@@ -247,7 +248,7 @@ script = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Manager (castle)/castle2 container/castle2"]
 position = Vector2( 940, 323 )
-scale = Vector2( -1, 1 )
+scale = Vector2( -2, 2 )
 texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2"]
