@@ -5,7 +5,7 @@ signal victory
 signal restart
 
 var difficulty = 1
-var debug = true
+var debug = false
 var debug_alwaysShowHP = true
 
 func _on_castle1_defeated():
