@@ -51,4 +51,4 @@ func cst_movement(dur):
 	return 0
 
 func death_animation():
-	ManagerParticle.emit_particle("chickenDeath",self.position)
+	ManagerParticle.emit_particle("chickenDeath", self.position)

@@ -6,7 +6,7 @@ extends Node
 # var b = "text"
 
 var particles = {}
-var particle_names= ["healing", "blood", "arrowHit", "bulletHit", "ninjaDash","chickenDeath"]
+var particle_names= ["healing", "blood", "arrowHit", "bulletHit", "ninjaDash", "chickenDeath"]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,8 +21,8 @@ func emit_particle(type,  position, x_direction=1):
 	#print(particle)
 	#particle.res#tart()
 	particle.z_index=100
-	particle.position=position
-	particle.set_emitting(true)
+	particle.position+=position
+	particle.set_emitting(true) # we could have added here all the time?
 	particle.direction.x *= x_direction
 	add_child(particle)
 	return 0

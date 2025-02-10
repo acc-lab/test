@@ -106,5 +106,7 @@ func _on_button_manager_update_description():
 [color=#FFC0CB]Health[/color]: 50 units
 [color=red]Damage[/color]: 5 units
 [color=#00FFFF]Reload[/color]: 0.76 sec
+
+Lives in the coop.
 """,
 }[button_manager.mode]
