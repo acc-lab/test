@@ -11,7 +11,7 @@ func _attack(type = 0):
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],
 			"team": team,
-			"damage": 10,
+			"damage": 20,
 		})
 	
 	elif type == 1:
@@ -25,7 +25,7 @@ func _attack(type = 0):
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],
 			"team": team,
-			"damage": 100,
+			"damage": 300,
 		})
 	
 func _ready():
