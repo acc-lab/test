@@ -109,7 +109,7 @@ func _on_button_manager_update_description():
 """,
 9: """[center]Slime[/center]
 
-[color=red]Unit Price: 100[/color]
+[color=red]Unit Price: 75[/color]
 [color=gray]Cooldown: 1.8 sec[/color]
 
 "Terrain slime gone wild"
