@@ -94,4 +94,17 @@ func _on_button_manager_update_description():
 [color=green]Heal Radius[/color]: 70 units
 [color=#00FFFF]Reload[/color]: 4.2 sec
 """,
+8: """[center]Chicken[/center]
+
+[color=red]Unit Price: 25[/color]
+[color=gray]Cooldown: 0.9 sec[/color]
+
+"Valley chicken gone wild"
+
+[color=purple]Short hitbox, low HP but very quick.[/color]
+
+[color=#FFC0CB]Health[/color]: 50 units
+[color=red]Damage[/color]: 5 units
+[color=#00FFFF]Reload[/color]: 0.76 sec
+""",
 }[button_manager.mode]

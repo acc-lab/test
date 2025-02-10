@@ -167,6 +167,8 @@ func temp():
 			"tank": {"rate": 50, "worth": UI.price[4]}, 
 			"axy": {"rate": 70, "worth": UI.price[2]}, 
 			"ninja": {"rate": 70, "worth": UI.price[6]}, 
+			"healer": {"rate": 20, "worth": UI.price[7]}, 
+			"chicken": {"rate": 90, "worth": UI.price[8]}, 
 		}
 		
 		while (2*worth >= networth):
@@ -189,34 +191,64 @@ func spawn_random():
 		
 	temp()
 	
+func spawn_debug():
 	cd -= 1
 	
 	if cd<0: cd=0
 	
-	if $"..".debug:
-		if Input.is_action_pressed("ui_up") and cd == 0:
-			new_sprite("healer", 2)
-			cd += 15
+	if Input.is_action_pressed("ui_up") and cd == 0:
+		new_sprite("chicken", 1)
+		cd += 15
+		
+	elif Input.is_action_pressed("ui_left") and cd == 0:
+		if(Engine.time_scale >= 1.2):
+			Engine.time_scale -= 0.2
+		cd += 15
+		
+	elif Input.is_action_pressed("ui_down") and cd == 0:
+		new_sprite("chicken", 2)
+		cd += 15
+		
+	elif Input.is_action_pressed("ui_right") and cd == 0:
+		if(Engine.time_scale <= 3):
+			Engine.time_scale += 0.2
+		cd += 15
+		
+	elif Input.is_key_pressed(KEY_1) and cd == 0:
+		new_sprite("axy", 2)
+		cd += 15
+		
+	elif Input.is_key_pressed(KEY_2) and cd == 0:
+		new_sprite("archer2", 2)
+		cd += 15
+		
+	elif Input.is_key_pressed(KEY_3) and cd == 0:
+		new_sprite("tank", 2)
+		cd += 15
+		
+	elif Input.is_key_pressed(KEY_4) and cd == 0:
+		new_sprite("police", 2)
+		cd += 15
+		
+	elif Input.is_key_pressed(KEY_5) and cd == 0:
+		new_sprite("ninja", 2)
+		cd += 15
+		
+	elif Input.is_key_pressed(KEY_6) and cd == 0:
+		new_sprite("healer", 2)
+		cd += 15
 			
-		elif Input.is_action_pressed("ui_left") and cd == 0:
-			if(Engine.time_scale >= 1.2):
-				Engine.time_scale -= 0.2
-			cd += 15
 			
-		elif Input.is_action_pressed("ui_down") and cd == 0:
-			new_sprite("tank", 2)
-			cd += 15
-			
-		elif Input.is_action_pressed("ui_right") and cd == 0:
-			if(Engine.time_scale <= 3):
-				Engine.time_scale += 0.2
-			cd += 15
 
 func _process(delta):
 	ticks += delta
 	totaltick += delta
 	
-	spawn_random()
+	if not $"..".debug_stopWave:
+		spawn_random()
+		
+	if $"..".debug:
+		spawn_debug()
 	
 	var children = get_children()
 	children.sort_custom(self, "leftcpr")

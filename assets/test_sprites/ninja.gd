@@ -4,6 +4,9 @@ func _attack(type = 0):
 	# custom attack script
 	
 	if type == 0:
+		# attack particles
+		ManagerParticle.emit_particle("ninjaDash",self.position+Vector2(0,-30),getDir())
+		
 		emit_signal("_shoot_projectile", "chop", {
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],
@@ -15,6 +18,7 @@ func _attack(type = 0):
 		
 		$"../..".shake(5.0, 0.2)
 		
+		# dash particles (on ground)
 		ManagerParticle.emit_particle("ninjaDash",self.position+Vector2(0,-10),getDir())
 		
 		emit_signal("_shoot_projectile", "chop", {

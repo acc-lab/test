@@ -2,7 +2,7 @@ extends Node
 
 var scene = {}
 var method = {}
-var variants = ["archer2", "axy", "healer", "police", "tank", "ninja", "healer"]
+var variants = ["archer2", "axy", "healer", "police", "tank", "ninja", "healer", "chicken"]
 
 func _ready():
 	for name in variants:

@@ -4,7 +4,7 @@ func _attack():
 	# custom attack script
 	
 	emit_signal("_shoot_projectile", "arrow", {
-		"position": self.position + Vector2(16*getDir(), -22),
+		"position": self.position + Vector2(27*getDir(), -23),
 		"team": team,
 		"velocity": Vector2(26*getDir(), -1.9),
 		"acceleration": Vector2(-0.4*getDir(), 0.2),
