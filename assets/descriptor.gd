@@ -107,4 +107,16 @@ func _on_button_manager_update_description():
 [color=red]Damage[/color]: 5 units
 [color=#00FFFF]Reload[/color]: 0.76 sec
 """,
+9: """[center]Wizard[/center]
+
+[color=red]Unit Price: ???[/color]
+[color=gray]Cooldown: ???[/color]
+
+"Magic"
+
+[color=purple]Throws balls of steel (or any conductor)[/color]
+[color=red]Damage[/color] ???
+[color=#00FFFF]Reload[/color]: ???
+
+"""
 }[button_manager.mode]

@@ -413,16 +413,24 @@ alignment = 1
 
 [node name="7" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 16 )
-margin_left = 63.0
-margin_right = 101.0
+margin_left = 42.0
+margin_right = 80.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 17 )
 
 [node name="8" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 17 )
-margin_left = 105.0
-margin_right = 143.0
+margin_left = 84.0
+margin_right = 122.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 22, 32 )
+texture_normal = ExtResource( 33 )
+
+[node name="9" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
+material = SubResource( 17 )
+margin_left = 126.0
+margin_right = 164.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 33 )
@@ -521,4 +529,5 @@ current = true
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/6" to="UI/button manager" method="_on_UI_summon" binds= [ 6 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/7" to="UI/button manager" method="_on_UI_summon" binds= [ 7 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/8" to="UI/button manager" method="_on_UI_summon" binds= [ 8 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/9" to="UI/button manager" method="_on_UI_summon" binds= [ 9 ]]
 [connection signal="restart" from="UI/restart button" to="." method="_restart"]
