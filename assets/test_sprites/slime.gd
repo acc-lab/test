@@ -10,11 +10,11 @@ func _attack():
 		"position": self.position + Vector2(0*getDir(), -22),
 		"slide": [self.position + Vector2(40*getDir(), -22)],
 		"team": team,
-		"damage": 50,
+		"damage": 25,
 	})
 	
 func _ready():
-	health = 100
+	health = 75
 	.set_health_bar()
 	
 	$'health bar'.rect_position.y = -36

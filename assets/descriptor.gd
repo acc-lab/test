@@ -116,8 +116,8 @@ func _on_button_manager_update_description():
 
 [color=purple]Flexible hitbox with consistent damage.[/color]
 
-[color=#FFC0CB]Health[/color]: 100 units
-[color=red]Damage[/color]: 50 units
+[color=#FFC0CB]Health[/color]: 75 units
+[color=red]Damage[/color]: 25 units
 [color=#00FFFF]Reload[/color]: 0.69 sec
 """,
 }[button_manager.mode]
