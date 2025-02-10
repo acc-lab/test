@@ -7,51 +7,49 @@ func _attack():
 	# ManagerParticle.emit_particle("ninjaDash",self.position + Vector2(24*getDir(), -20))
 	
 	emit_signal("_shoot_projectile", "chop", {
-		"position": self.position + Vector2(4*getDir(), -22),
-		"slide": [self.position + Vector2(36*getDir(), -22)],
+		"position": self.position + Vector2(0*getDir(), -22),
+		"slide": [self.position + Vector2(40*getDir(), -22)],
 		"team": team,
-		"damage": 5,
+		"damage": 50,
 	})
 	
 func _ready():
-	health = 50
+	health = 100
 	.set_health_bar()
 	
-	$'health bar'.rect_position.y = -46
+	$'health bar'.rect_position.y = -36
 
 func cst_movement(dur):
 	if state == "walk":
-		if Constants.geq(dur,0.48):
+		if Constants.geq(dur, 0.9):
 			state = "idle"
-			return 0.48
-			
-	elif state == "idle":
-		state = "walk"
+			return 0.9
 			
 	elif state == "before_attack" and Constants.geq(dur, 0.03):
 		state = "attack"
 		return 0.03
 		
 	elif state == "attack":
-		if Constants.geq(dur, 0.12) and phase=="":
-			_attack()
-			phase = "1"
-		if Constants.geq(dur, 0.3) and phase=="1":
+		if Constants.geq(dur, 0.63):
 			state = "after_attack"
 			phase = ""
-			return 0.3
+			return 0.63
 			
 	elif state == "after_attack":
 		if Constants.geq(dur, 0.03):
 			state = "idle"
 			return 0.03
 	
-	if state == "walk" and exceed(self.position.x + 30*getDir(), observe_target_x, getDir()):
+	if state == "idle" and exceed(self.position.x + 40*getDir(), observe_target_x, getDir()):
 		state = "before_attack"
+			
+	elif state == "idle":
+		state = "walk"
 		
 		return Constants.to30msmul(dur)
 	
 	return 0
 
 func death_animation():
-	ManagerParticle.emit_particle("chickenDeath", self.position)
+	pass
+	# ManagerParticle.emit_particle("chickenDeath", self.position)

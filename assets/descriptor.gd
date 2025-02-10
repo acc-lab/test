@@ -107,4 +107,17 @@ func _on_button_manager_update_description():
 [color=red]Damage[/color]: 5 units
 [color=#00FFFF]Reload[/color]: 0.76 sec
 """,
+9: """[center]Slime[/center]
+
+[color=red]Unit Price: 100[/color]
+[color=gray]Cooldown: 1.8 sec[/color]
+
+"Terrain slime gone wild"
+
+[color=purple]Flexible hitbox with consistent damage.[/color]
+
+[color=#FFC0CB]Health[/color]: 100 units
+[color=red]Damage[/color]: 50 units
+[color=#00FFFF]Reload[/color]: 0.69 sec
+""",
 }[button_manager.mode]

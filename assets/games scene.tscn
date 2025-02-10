@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://pictures/Sprite-0001.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://assets/restart.gd" type="Script" id=32]
 [ext_resource path="res://pictures/tile_chicken.png" type="Texture" id=33]
 [ext_resource path="res://assets/Manager_particle.gd" type="Script" id=34]
+[ext_resource path="res://pictures/tile_slime.png" type="Texture" id=35]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7, 37 )
@@ -178,6 +179,20 @@ resource_local_to_scene = true
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
+9/name = "tile_slime.png 9"
+9/texture = ExtResource( 35 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 38, 44 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 25 )
@@ -210,6 +225,11 @@ shader_param/cd_effect = 0.0
 shader_param/as_if_height = 22.0
 
 [sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 25 )
+shader_param/cd_effect = 0.0
+shader_param/as_if_height = 22.0
+
+[sub_resource type="ShaderMaterial" id=18]
 shader = ExtResource( 25 )
 shader_param/cd_effect = 0.0
 shader_param/as_if_height = 22.0
@@ -413,19 +433,27 @@ alignment = 1
 
 [node name="7" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 16 )
-margin_left = 63.0
-margin_right = 101.0
+margin_left = 42.0
+margin_right = 80.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 17 )
 
 [node name="8" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 17 )
-margin_left = 105.0
-margin_right = 143.0
+margin_left = 84.0
+margin_right = 122.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 33 )
+
+[node name="9" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
+material = SubResource( 18 )
+margin_left = 126.0
+margin_right = 164.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 22, 32 )
+texture_normal = ExtResource( 35 )
 
 [node name="Light2D" type="Light2D" parent="UI/button manager/NinePatchRect"]
 position = Vector2( 122.5, 55.5 )
@@ -521,4 +549,5 @@ current = true
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer/6" to="UI/button manager" method="_on_UI_summon" binds= [ 6 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/7" to="UI/button manager" method="_on_UI_summon" binds= [ 7 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/8" to="UI/button manager" method="_on_UI_summon" binds= [ 8 ]]
+[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/9" to="UI/button manager" method="_on_UI_summon" binds= [ 9 ]]
 [connection signal="restart" from="UI/restart button" to="." method="_restart"]

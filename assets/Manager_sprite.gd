@@ -169,6 +169,7 @@ func temp():
 			"ninja": {"rate": 70, "worth": UI.price[6]}, 
 			"healer": {"rate": 20, "worth": UI.price[7]}, 
 			"chicken": {"rate": 90, "worth": UI.price[8]}, 
+			"slime": {"rate": 80, "worth": UI.price[9]}, 
 		}
 		
 		while (2*worth >= networth):
@@ -197,7 +198,7 @@ func spawn_debug():
 	if cd<0: cd=0
 	
 	if Input.is_action_pressed("ui_up") and cd == 0:
-		new_sprite("chicken", 1)
+		new_sprite("slime", 1)
 		cd += 15
 		
 	elif Input.is_action_pressed("ui_left") and cd == 0:
