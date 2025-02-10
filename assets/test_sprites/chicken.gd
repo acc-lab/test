@@ -49,3 +49,6 @@ func cst_movement(dur):
 		return Constants.to30msmul(dur)
 	
 	return 0
+
+func death_animation():
+	ManagerParticle.emit_particle("chickenDeath",self.position)

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://pictures/heal_particle_1.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[node name="Particles2D" type="CPUParticles2D"]
+emitting = false
+amount = 25
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.78
+texture = ExtResource( 1 )
+direction = Vector2( 0, -1 )
+spread = 90.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.74
+linear_accel = -5000.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 1 )
+anims/RESET = SubResource( 2 )

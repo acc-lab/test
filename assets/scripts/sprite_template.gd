@@ -70,6 +70,9 @@ func within(a, b, c, dir):
 func cst_movement(dur):
 	pass
 
+func death_animation():
+	pass
+
 func _process(delta):
 	tick += delta
 	
@@ -94,6 +97,7 @@ func _process(delta):
 	health_bar.value = health
 	
 	if(health <= 0):
+		death_animation()
 		if coord != null:
 			emit_signal("free_tile", coord)
 		call_deferred("free")
