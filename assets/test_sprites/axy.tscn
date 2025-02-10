@@ -280,7 +280,7 @@ anims/walk = SubResource( 4 )
 position = Vector2( -14, -56 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
-animation = "idle"
+animation = "walk"
 centered = false
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"

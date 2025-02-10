@@ -209,7 +209,7 @@ tracks/2/keys = {
 "args": [ 2 ],
 "method": "_move"
 }, {
-"args": [ 2 ],
+"args": [ 4 ],
 "method": "_move"
 }, {
 "args": [ 6 ],
@@ -287,7 +287,8 @@ anims/walk = SubResource( 4 )
 position = Vector2( -20, -54 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
-animation = "idle"
+animation = "walk"
+frame = 2
 centered = false
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"

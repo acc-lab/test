@@ -202,7 +202,7 @@ func spawn_debug():
 		cd += 15
 		
 	elif Input.is_action_pressed("ui_left") and cd == 0:
-		if(Engine.time_scale >= 1.2):
+		if(Engine.time_scale >= 0.6):
 			Engine.time_scale -= 0.2
 		cd += 15
 		
