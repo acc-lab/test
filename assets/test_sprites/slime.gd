@@ -10,7 +10,7 @@ func _attack():
 		"position": self.position + Vector2(0*getDir(), -22),
 		"slide": [self.position + Vector2(40*getDir(), -22)],
 		"team": team,
-		"damage": 25,
+		"damage": 35,
 	})
 	
 func _ready():
