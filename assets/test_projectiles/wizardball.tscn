@@ -31,10 +31,13 @@ radius = 4.0
 script = ExtResource( 2 )
 
 [node name="ball" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "positive"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 2, 2 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="conductor" type="CollisionShape2D" parent="."]

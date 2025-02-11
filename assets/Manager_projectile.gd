@@ -97,9 +97,11 @@ func _shoot_projectile(type, arguments):
 		instance.set("vy", arguments["velocity"].y)
 		instance.set("ax", arguments["acceleration"].x)
 		instance.set("ay", arguments["acceleration"].y)
-		print(arguments["voltage"])
-		instance.set("voltage",arguments["voltage"])
+		#print(arguments["voltage"])
+		instance.set("charge",arguments["charge"])
 		instance.set("attached_to",arguments["attached_to"])
 		
+		
+		arguments["caller"].bound_ball=instance
 		UUID += 1
 		add_child(instance)
