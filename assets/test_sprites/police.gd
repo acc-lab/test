@@ -54,9 +54,9 @@ func cst_movement(dur):
 			state = "after_attack"
 			return 0.33
 	elif(state == "after_attack"):
-		if Constants.geq(dur, 20.67):
+		if Constants.geq(dur, 17.67):
 			state = "idle"
-			return 20.67
+			return 17.67
 			#print("super idle")
 	
 	return 0

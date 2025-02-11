@@ -50,7 +50,7 @@ func _on_button_manager_update_description():
 """,
 5: """[center]Police[/center]
 
-[color=red]Unit Price: 600[/color]
+[color=red]Unit Price: 500[/color]
 [color=gray]Cooldown: 9.51 sec[/color]
 
 "I'm OP"
@@ -62,7 +62,7 @@ func _on_button_manager_update_description():
 [color=blue]Multishot[/color]: Shoots 3 projectiles
 [color=purple]Penetration[/color]: Deals damage to up to 3 entities
 [color=green]Range[/color]: 550 units
-[color=#00FFFF]Reload[/color]: 21 sec
+[color=#00FFFF]Reload[/color]: 18 sec
 """,
 6: """[center]Ninja[/center]
 
