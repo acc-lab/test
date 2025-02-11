@@ -64,7 +64,7 @@ var manager_projectile
 var worth = 0
 var worths = 0
 var totaltick = 0
-var timegap = 15
+var timegap = 10
 
 var enemy_spawn_global_x = 980
 
@@ -73,41 +73,47 @@ func leftcpr(a, b):
 	
 func adjust():
 	if totaltick >= 0:
-		worths = 8*scene.difficulty
-		
-		UI.mps = 8
-		
-	if totaltick >= 30:
 		worths = 10*scene.difficulty
 		
 		UI.mps = 10
 		
-	if totaltick >= 45:
-		worths = 12*scene.difficulty
-		timegap = 30
-		
-		UI.mps = 12
-		
-	if totaltick >= 95:
+	if totaltick >= 30:
 		worths = 15*scene.difficulty
-		timegap = 20
 		
 		UI.mps = 15
 		
-	if totaltick >= 180:
+	if totaltick >= 45:
+		worths = 18*scene.difficulty
+		timegap = 15
+		
+		UI.mps = 18
+		
+	if totaltick >= 90:
 		worths = 20*scene.difficulty
+		timegap = 5
+		
+		UI.mps = 20
+		
+	if totaltick >= 95:
+		worths = 25*scene.difficulty
+		timegap = 20
+		
+		UI.mps = 20
+		
+	if totaltick >= 180:
+		worths = 30*scene.difficulty
 		timegap = 25
 		
 		UI.mps = 19
 		
 	if totaltick >= 270:
-		worths = 25*scene.difficulty
+		worths = 35*scene.difficulty
 		timegap = 5
 		
 		UI.mps = 23
 		
 	if totaltick >= 360:
-		worths = 35*scene.difficulty
+		worths = 40*scene.difficulty
 		timegap = 20
 		
 		UI.mps = 32

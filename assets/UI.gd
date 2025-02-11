@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var money = 690 * $"..".difficulty
+onready var money = 400 * $"..".difficulty
 onready var mps = 4
 
 onready var tick = 0
