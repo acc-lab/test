@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 
 var uuid
@@ -9,7 +9,9 @@ var ax
 var ay
 
 var charge #determine dps and shown sprite (1 charge = 1 dmg)
-var resistance=0.35 #only affect dps when at contact, not total damage can be dealt (dps = (charge remain)/(resistance*distance between 2 balls))
+var base_conductivity=1 #base conductivity for all objects (this ensure base dps)
+var conductivity_factor=100 #factor that was divide by health (the higher this number, the higher dps)
+#var resistance=0.001 #only affect dps when at contact, not total damage can be dealt (dps = (charge remain)/(resistance*distance between 2 balls))
 
 var attached_to
 var is_paired=false #is_paired is only one way, which means if another ball pair this ball, this would not change
@@ -52,27 +54,52 @@ func cst_movement(dur):
 
 		if !is_paired:
 			return 0.03
-		var collision = move_and_collide(Vector2(0,0), true, true, true)
-		var collidelist=[]
-		
-		while collision:
-			add_collision_exception_with(collision.collider)
-			collidelist.append(collision.collider)
+		#var collision = move_and_collide(Vector2(0,0), true, true, true)
 
-			collision=move_and_collide(Vector2(0,0),true,true,true)
+		var collidelist= get_overlapping_areas()
+		var n=len(collidelist)
+		if n==0:
+			return 0.03
+
+		#while collision:
+		#	add_collision_exception_with(collision.collider)
+		#	collidelist.append(collision.collider)
+
+		#	collision=move_and_collide(Vector2(0,0),true,true,true)
 
 		#print((global_position-attachpos).length())
-		var voltage=charge/(global_position-attachpos).length() #calculated based on Q/r
-		print(collidelist.size())
-		for collider in collidelist:
+		
+		#old algorithm
 
-			var current=voltage/resistance # dps
-			collider.set_damage(0.03*current)
-			#print(charge)
-			attached_to.charge-=sign(attached_to.charge)*0.03*current
-			charge-=sign(charge)*0.03*current
+		#var voltage=charge/(global_position-attachpos).length() #calculated based on Q/r
+		#var current=voltage/resistance # dps
+		#for colliderbox in collidelist:
+		#	var collider=colliderbox.get_parent()
+		#	#print(collider)
 
-			remove_collision_exception_with(collider)
+		#	collider.set_damage(0.03*current)
+		#	#print(charge)
+		#	attached_to.charge-=sign(attached_to.charge)*0.03*current
+		#	charge-=sign(charge)*0.03*current
+
+		
+		##new algorithm
+		#print(collidelist[0].get_parent().health_bar)
+		var total_conductivity=0
+		for colliderbox in collidelist:
+			var collider=colliderbox.get_parent()
+			total_conductivity += conductivity_factor/collider.max_health+base_conductivity
+
+		var charge_released=charge*(1-exp(-0.03/((global_position-attachpos).length()/total_conductivity)))
+		for colliderbox in collidelist:
+			var collider=colliderbox.get_parent()
+			var this_object_conductivity=conductivity_factor/collider.max_health+base_conductivity
+			collider.set_damage(charge_released*this_object_conductivity/total_conductivity)
+
+		attached_to.charge-=sign(attached_to.charge)*abs(charge_released)
+		charge-=sign(charge)*abs(charge_released)
+		
+		
 		return 0.03
 	return 0
 func _draw():
@@ -91,6 +118,8 @@ func _process(delta):
 	update()
 	
 	last_tick += del
+	if abs(charge)<=500:
+		$ball.play("neutral")
 	if(self.position.x > 960*2 or self.position.x < -960):
 		print(charge)	
 		call_deferred("free")

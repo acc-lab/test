@@ -1,7 +1,7 @@
 extends "res://assets/scripts/sprite_template.gd"
 
 var atkcnt=0
-var charge=-2000 #total damage per ball can deal (also affect dps)
+var charge=-20000 #total damage per ball can deal (also affect dps)
 var bound_ball
 func _attack():
 	# custom attack script

@@ -125,7 +125,7 @@ func _on_button_manager_update_description():
 [color=red]Unit Price: ???[/color]
 [color=gray]Cooldown: ???[/color]
 
-"Magic"
+"Magik" - The wizard, prolly
 
 [color=purple]Throws balls of steel (or any conductor)[/color]
 [color=red]Damage[/color] ???
