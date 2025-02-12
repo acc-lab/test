@@ -6,7 +6,8 @@ signal _heal(healing)
 signal _attack()
 
 func _ready():
-	pass
+	$AOEHitbox.get_node("hitbox").shape=$hitbox.shape
+	print($AOEHitbox.get_node("hitbox").shape)
 
 func _move(steps):
 	emit_signal("_move", steps)

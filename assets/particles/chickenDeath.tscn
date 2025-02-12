@@ -44,6 +44,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:one_shot")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -59,24 +71,37 @@ tracks/0/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:one_shot")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 material = SubResource( 1 )
+position = Vector2( 0, -20 )
 amount = 12
 lifetime = 0.5
-one_shot = true
 explosiveness = 1.0
+lifetime_randomness = 0.32
 texture = ExtResource( 1 )
 emission_shape = 1
 emission_sphere_radius = 4.16
 direction = Vector2( 0, -1 )
-spread = 92.48
+spread = 97.28
 gravity = Vector2( 0, 750 )
-initial_velocity = 651.38
+initial_velocity = 756.43
 initial_velocity_random = 0.57
 orbit_velocity = 0.01
 orbit_velocity_random = 1.0
-damping = 1500.0
+damping = 1000.0
 damping_curve = SubResource( 5 )
 scale_amount = 2.0
 color_ramp = SubResource( 2 )

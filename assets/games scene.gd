@@ -7,7 +7,9 @@ signal restart
 var difficulty = 1
 var debug = true 
 var debug_alwaysShowHP = true
-var debug_stopWave = true 
+var debug_stopWave = false
+var debug_difficulty_change = false
+var debug_difficulty = 1.7
 
 func _on_castle1_defeated():
 	emit_signal("defeated")
@@ -37,6 +39,10 @@ func _ready():
 	if debug:
 		difficulty = 10
 		$UI.money = 99999999
+	
+	if debug_difficulty_change:
+		difficulty = debug_difficulty
+		$UI.money *= debug_difficulty
 		
 func _process(delta):
 	if is_shaking and camera:

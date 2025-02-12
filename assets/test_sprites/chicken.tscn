@@ -91,7 +91,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
 length = 0.48
-loop = true
 step = 0.03
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -252,13 +251,19 @@ anims/walk = SubResource( 4 )
 position = Vector2( -20, -38 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
-animation = "idle"
+animation = "walk"
 centered = false
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="hitbox" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
+
+[node name="AOEHitbox" type="Area2D" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="AOEHitbox"]
+position = Vector2( 0, -27 )
+scale = Vector2( 0.5, 0.5 )

@@ -17,8 +17,8 @@ func _on_button_manager_update_description():
 
 [color=purple]Deals solid damage.[/color]
 
-[color=#FFC0CB]Health[/color]: 150 units
-[color=red]Damage[/color]: 30 units
+[color=#FFC0CB]Health[/color]: 120 units
+[color=red]Damage[/color]: 20 units
 [color=green]Range[/color]: 30 units
 [color=#00FFFF]Reload[/color]: 0.69 sec
 """,
@@ -50,7 +50,7 @@ func _on_button_manager_update_description():
 """,
 5: """[center]Police[/center]
 
-[color=red]Unit Price: 600[/color]
+[color=red]Unit Price: 500[/color]
 [color=gray]Cooldown: 9.51 sec[/color]
 
 "I'm OP"
@@ -62,7 +62,7 @@ func _on_button_manager_update_description():
 [color=blue]Multishot[/color]: Shoots 3 projectiles
 [color=purple]Penetration[/color]: Deals damage to up to 3 entities
 [color=green]Range[/color]: 550 units
-[color=#00FFFF]Reload[/color]: 21 sec
+[color=#00FFFF]Reload[/color]: 18 sec
 """,
 6: """[center]Ninja[/center]
 
@@ -74,8 +74,8 @@ func _on_button_manager_update_description():
 [color=purple]Does quick damage and dashes.[/color]
 
 [color=#FFC0CB]Health[/color]: 500 units
-[color=red]Damage[/color]: 10 units
-[color=blue]Dash Damage[/color]: 100 units
+[color=red]Damage[/color]: 20 units
+[color=blue]Dash Damage[/color]: 300 units
 [color=green]Dash Range[/color]: 220-230 units
 [color=#00FFFF]Reload[/color]: 0.24 sec
 """,
@@ -107,7 +107,20 @@ func _on_button_manager_update_description():
 [color=red]Damage[/color]: 5 units
 [color=#00FFFF]Reload[/color]: 0.76 sec
 """,
-9: """[center]Wizard[/center]
+9: """[center]Slime[/center]
+
+[color=red]Unit Price: 75[/color]
+[color=gray]Cooldown: 1.8 sec[/color]
+
+"Terrain slime gone wild"
+
+[color=purple]Flexible hitbox with consistent damage.[/color]
+
+[color=#FFC0CB]Health[/color]: 90 units
+[color=red]Damage[/color]: 50 units
+[color=#00FFFF]Reload[/color]: 0.69 sec
+""",
+10: """[center]Wizard[/center]
 
 [color=red]Unit Price: ???[/color]
 [color=gray]Cooldown: ???[/color]
