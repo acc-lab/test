@@ -8,12 +8,12 @@ func _attack():
 	var dist = abs(self.position.x-observe_target_x+10)
 	
 	# review these magic number
-	var vx = 100 - 30 * atkcnt
-	var vy = -5+10*atkcnt 
+	var vx = 1 - 30 * atkcnt 
+	var vy = -15
 
 
-	var ax = getDir()*-2*(.5-atkcnt)
-	var ay = .7-1.4*atkcnt
+	var ax = getDir()*40
+	var ay =.5 
 	
 	# old: heal, healRange, health, expiringSpeed
 	# 0.2, randomize(60, 80), 150, 0.25
@@ -27,7 +27,6 @@ func _attack():
 		"velocity":Vector2(vx, vy),
 		"acceleration":Vector2(ax, ay),
 		"charge":charge,
-		"attached_to":bound_ball,
 		"caller":self,
 	})
 	
@@ -57,7 +56,7 @@ func cst_movement(dur):
 			#print("shoot!")
 			_attack()
 			atkcnt+=1
-			if atkcnt==2:
+			if atkcnt==1:
 				state = "after_attack"
 				atkcnt=0
 			return 0.42

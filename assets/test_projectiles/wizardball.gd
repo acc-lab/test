@@ -9,13 +9,14 @@ var ax
 var ay
 
 var charge #determine dps and shown sprite (1 charge = 1 dmg)
-var base_conductivity=1 #base conductivity for all objects (this ensure base dps)
-var conductivity_factor=100 #factor that was divide by health (the higher this number, the higher dps)
+var base_resistance=20 #base conductivity for all objects (this caps dps)
+var conductivity_factor=10 #factor that was divide by health (the higher this number, the higher dps)
 #var resistance=0.001 #only affect dps when at contact, not total damage can be dealt (dps = (charge remain)/(resistance*distance between 2 balls))
 
-var attached_to
-var is_paired=false #is_paired is only one way, which means if another ball pair this ball, this would not change
-var attachpos #if attached to other ball, then this stores the position of the paired ball, else the position of itself
+#var attached_to
+#var is_paired=false #is_paired is only one way, which means if another ball pair this ball, this would not change
+#var attachpos #if attached to other ball, then this stores the position of the paired ball, else the position of itself
+var collidelist = []
 
 var to_local 
 
@@ -24,17 +25,18 @@ var last_tick=0
 
 
 func get_pair_information():
-	is_paired=is_instance_valid(attached_to)
-	if is_paired:
-		attachpos=attached_to.global_position
-	else:
-		attachpos=global_position
+	#is_paired=is_instance_valid(attached_to)
+	#if is_paired:
+	#	attachpos=attached_to.global_position
+	#else:
+	#	attachpos=global_position
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_pair_information()
-	$conductor.shape=SegmentShape2D.new()
-	$conductor.shape.a=Vector2(0,0)
+	#$conductor.shape=SegmentShape2D.new()
+	#$conductor.shape.a=Vector2(0,0)
 	#print(is_instance_valid(attached_to))
 
 	if charge>0:
@@ -50,13 +52,9 @@ func cst_movement(dur):
 		
 		vx+=ax*.03
 		vy+=ay*.03
+
+		collidelist = get_overlapping_areas()
 		
-
-		if !is_paired:
-			return 0.03
-		#var collision = move_and_collide(Vector2(0,0), true, true, true)
-
-		var collidelist= get_overlapping_areas()
 		var n=len(collidelist)
 		if n==0:
 			return 0.03
@@ -88,16 +86,20 @@ func cst_movement(dur):
 		var total_conductivity=0
 		for colliderbox in collidelist:
 			var collider=colliderbox.get_parent()
-			total_conductivity += conductivity_factor/collider.max_health+base_conductivity
-
-		var charge_released=charge*(1-exp(-0.03/((global_position-attachpos).length()/total_conductivity)))
+			#print(global_position-collider.global_position)
+			var this_resistance=(collider.max_health/conductivity_factor)*((global_position-collider.global_position).length())
+			total_conductivity += 1/(this_resistance+base_resistance)
+		#print((global_position-attachpos).length())
+		var charge_released=charge*(1-exp(-0.03*(total_conductivity)))
 		for colliderbox in collidelist:
 			var collider=colliderbox.get_parent()
-			var this_object_conductivity=conductivity_factor/collider.max_health+base_conductivity
-			collider.set_damage(charge_released*this_object_conductivity/total_conductivity)
+			var this_resistance=(collider.max_health/conductivity_factor)*((global_position-collider.global_position).length())+base_resistance
+			#print(charge_released*this_object_conductivity/total_conductivity)
+			collider.set_damage(abs(charge_released/this_resistance/total_conductivity))
 
-		attached_to.charge-=sign(attached_to.charge)*abs(charge_released)
+		#attached_to.charge-=sign(attached_to.charge)*abs(charge_released)
 		charge-=sign(charge)*abs(charge_released)
+		#print(charge)
 		
 		
 		return 0.03
@@ -105,11 +107,18 @@ func cst_movement(dur):
 func _draw():
 	get_pair_information()
 	to_local=global_transform.affine_inverse()
-	draw_line(Vector2(0, 0),to_local*attachpos, Color(0.5, 0.5, 0.5), 1)
+	#print(intersection)
+	#draw_line(Vector2(0, 0),Vector2(100,100), Color(0.5, 0.5, 0.5), 1)
+	for area in collidelist:
+		if is_instance_valid(area):
+			#print("a")
+			print(area.global_position)
+			draw_line(Vector2(0, 0),to_local*(area.global_position-Vector2(0,16)), Color(0.5, 0.5, 0.5), 1)
+
 
 func _process(delta):
 	get_pair_information()
-	$conductor.shape.b=to_local*attachpos
+	#$conductor.shape.b=to_local*attachpos
 	to_local=global_transform.affine_inverse()
 
 	tick += delta

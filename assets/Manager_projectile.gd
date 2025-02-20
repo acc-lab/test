@@ -99,7 +99,6 @@ func _shoot_projectile(type, arguments):
 		instance.set("ay", arguments["acceleration"].y)
 		#print(arguments["voltage"])
 		instance.set("charge",arguments["charge"])
-		instance.set("attached_to",arguments["attached_to"])
 		
 		
 		arguments["caller"].bound_ball=instance

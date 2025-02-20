@@ -267,6 +267,12 @@ visible = false
 position = Vector2( 19, 323 )
 shape = SubResource( 5 )
 
+[node name="AOEHitbox" type="Area2D" parent="Manager (castle)/castle1 container/castle1"]
+
+[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1/AOEHitbox"]
+position = Vector2( 0, -27 )
+scale = Vector2( 0.5, 0.5 )
+
 [node name="health bar" type="ProgressBar" parent="Manager (castle)/castle1 container/castle1"]
 anchor_right = 0.908
 margin_left = 4.0
@@ -278,12 +284,6 @@ custom_styles/fg = SubResource( 6 )
 custom_styles/bg = SubResource( 7 )
 value = 50.0
 percent_visible = false
-
-[node name="AOEHitbox" type="Area2D" parent="Manager (castle)/castle1 container/castle1"]
-
-[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1/AOEHitbox"]
-position = Vector2( 0, -27 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="castle2 container" type="Node2D" parent="Manager (castle)"]
 script = ExtResource( 4 )
@@ -303,6 +303,12 @@ position = Vector2( 941, 323 )
 scale = Vector2( -1, 1 )
 shape = SubResource( 5 )
 
+[node name="AOEHitbox" type="Area2D" parent="Manager (castle)/castle2 container/castle2"]
+
+[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2/AOEHitbox"]
+position = Vector2( 0, -27 )
+scale = Vector2( 0.5, 0.5 )
+
 [node name="health bar" type="ProgressBar" parent="Manager (castle)/castle2 container/castle2"]
 anchor_right = 0.908
 margin_left = 924.0
@@ -314,12 +320,6 @@ custom_styles/fg = SubResource( 6 )
 custom_styles/bg = SubResource( 7 )
 value = 50.0
 percent_visible = false
-
-[node name="AOEHitbox" type="Area2D" parent="Manager (castle)/castle2 container/castle2"]
-
-[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2/AOEHitbox"]
-position = Vector2( 0, -27 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Manager (sprite)" parent="." instance=ExtResource( 18 )]
 

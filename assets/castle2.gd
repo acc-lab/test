@@ -16,6 +16,7 @@ func _ready():
 	
 func _process(delta):
 	$AOEHitbox.get_node("hitbox").position=$hitbox.position
+	print($AOEHitbox.get_node("hitbox").global_position)
 	
 func set_damage(damage):
 	health -= damage
