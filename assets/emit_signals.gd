@@ -5,13 +5,8 @@ signal _damage(damage)
 signal _heal(healing)
 signal _attack()
 
-var max_health
-
 func _ready():
-	$AOEHitbox.get_node("hitbox").shape=$hitbox.shape
-	
-func _process(delta):
-	$AOEHitbox.get_node("hitbox").position=$hitbox.position
+	pass
 
 func _move(steps):
 	emit_signal("_move", steps)

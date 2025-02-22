@@ -262,16 +262,10 @@ position = Vector2( 20, 323 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 19 )
 
-[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1"]
 visible = false
 position = Vector2( 19, 323 )
 shape = SubResource( 5 )
-
-[node name="AOEHitbox" type="Area2D" parent="Manager (castle)/castle1 container/castle1"]
-
-[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1/AOEHitbox"]
-position = Vector2( 0, -27 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="health bar" type="ProgressBar" parent="Manager (castle)/castle1 container/castle1"]
 anchor_right = 0.908
@@ -297,17 +291,11 @@ position = Vector2( 940, 323 )
 scale = Vector2( -2, 2 )
 texture = ExtResource( 19 )
 
-[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2"]
 visible = false
 position = Vector2( 941, 323 )
 scale = Vector2( -1, 1 )
 shape = SubResource( 5 )
-
-[node name="AOEHitbox" type="Area2D" parent="Manager (castle)/castle2 container/castle2"]
-
-[node name="hitbox" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2/AOEHitbox"]
-position = Vector2( 0, -27 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="health bar" type="ProgressBar" parent="Manager (castle)/castle2 container/castle2"]
 anchor_right = 0.908
@@ -445,32 +433,24 @@ alignment = 1
 
 [node name="7" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 16 )
-margin_left = 21.0
-margin_right = 59.0
+margin_left = 42.0
+margin_right = 80.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 17 )
 
 [node name="8" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 17 )
-margin_left = 63.0
-margin_right = 101.0
+margin_left = 84.0
+margin_right = 122.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 33 )
 
 [node name="9" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
-material = SubResource( 17 )
-margin_left = 105.0
-margin_right = 143.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 22, 32 )
-texture_normal = ExtResource( 35 )
-
-[node name="10" type="TextureButton" parent="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2"]
 material = SubResource( 18 )
-margin_left = 147.0
-margin_right = 185.0
+margin_left = 126.0
+margin_right = 164.0
 margin_bottom = 44.0
 rect_pivot_offset = Vector2( 22, 32 )
 texture_normal = ExtResource( 35 )
@@ -570,5 +550,4 @@ current = true
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/7" to="UI/button manager" method="_on_UI_summon" binds= [ 7 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/8" to="UI/button manager" method="_on_UI_summon" binds= [ 8 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/9" to="UI/button manager" method="_on_UI_summon" binds= [ 9 ]]
-[connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/10" to="UI/button manager" method="_on_UI_summon" binds= [ 10 ]]
 [connection signal="restart" from="UI/restart button" to="." method="_restart"]
