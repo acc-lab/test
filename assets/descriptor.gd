@@ -81,7 +81,7 @@ func _on_button_manager_update_description():
 """,
 7: """[center]Healer[/center]
 
-[color=red]Unit Price: 450[/color]
+[color=red]Unit Price: 200[/color]
 [color=gray]Cooldown: 7.2 sec[/color]
 
 "Something more creative"
