@@ -219,7 +219,7 @@ animations = [ {
 "speed": 0.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=38]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 12, 30 )
 
 [node name="healer" type="KinematicBody2D"]
@@ -243,13 +243,7 @@ __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"
 }
 
-[node name="AOEHitbox" type="Area2D" parent="."]
-
-[node name="hitbox" type="CollisionShape2D" parent="AOEHitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -27 )
 scale = Vector2( 0.5, 0.5 )
-
-[node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -27 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 38 )
+shape = SubResource( 6 )
