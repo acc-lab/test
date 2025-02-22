@@ -13,6 +13,7 @@ var effect=0
 var health
 
 var body
+var bodyaoe
 var animator
 var sprite
 
@@ -37,6 +38,7 @@ func _ready():
 	instance.connect("_attack", self, "_attack")
 	
 	body = instance
+	bodyaoe = instance.get_node("AOEHitbox")
 	
 	animator = body.get_node("animator")
 	sprite = body.get_node("AnimatedSprite")
@@ -45,6 +47,8 @@ func _ready():
 	
 	body.set_collision_layer(team)
 	body.set_collision_mask(0)
+	bodyaoe.set_collision_layer(team)
+	bodyaoe.set_collision_mask(0)
 	
 	# set_health_bar()
 	
@@ -52,6 +56,7 @@ func set_health_bar():
 	health_bar.min_value = 0
 	health_bar.max_value = health
 	health_bar.value = health
+	body.max_health=health
 	
 var tick = 0
 var last_tick = 0
