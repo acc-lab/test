@@ -238,11 +238,11 @@ func spawn_debug():
 		cd += 15
 		
 	elif Input.is_key_pressed(KEY_5) and cd == 0:
-		new_sprite("ninja", 2)
+		new_sprite("slime", 2)
 		cd += 15
 		
 	elif Input.is_key_pressed(KEY_6) and cd == 0:
-		new_sprite("healer", 2)
+		new_sprite("chicken", 2)
 		cd += 15
 			
 			

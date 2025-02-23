@@ -10,6 +10,13 @@ var emitted = false
 func _ready():
 	health_bar.max_value = max_health
 	health_bar.value = health
+	$AOEHitbox.get_node("hitbox").shape=$hitbox.shape
+	$AOEHitbox.set_collision_layer(2)
+	$AOEHitbox.set_collision_mask(0)
+	
+func _process(delta):
+	$AOEHitbox.get_node("hitbox").position=$hitbox.position
+	print($AOEHitbox.get_node("hitbox").global_position)
 	
 func set_damage(damage):
 	health -= damage
