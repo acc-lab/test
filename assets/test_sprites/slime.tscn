@@ -33,7 +33,7 @@ tracks/1/keys = {
 "values": [ 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("hitbox:shape:extents")
+tracks/2/path = NodePath("CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -42,10 +42,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 24, 23 ) ]
+"values": [ Vector2( 0, -11 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hitbox:shape")
+tracks/3/path = NodePath("CollisionShape2D:shape")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -57,7 +57,7 @@ tracks/3/keys = {
 "values": [ SubResource( 6 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("hitbox:position")
+tracks/4/path = NodePath("CollisionShape2D:shape:extents")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -66,7 +66,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, -11 ) ]
+"values": [ Vector2( 24, 23 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -112,7 +112,7 @@ tracks/2/keys = {
 } ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("hitbox:shape:extents")
+tracks/3/path = NodePath("CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -120,11 +120,11 @@ tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24, 22 ), Vector2( 16, 30 ), Vector2( 20, 24 ), Vector2( 24, 22 ), Vector2( 24, 24 ), Vector2( 20, 26 ), Vector2( 28, 20 ), Vector2( 24, 22 ) ]
+"update": 1,
+"values": [ Vector2( 0, -11 ), Vector2( 0, -23 ), Vector2( 0, -30 ), Vector2( 0, -31 ), Vector2( 0, -30 ), Vector2( 0, -23 ), Vector2( 0, -10 ), Vector2( 0, -11 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("hitbox:position")
+tracks/4/path = NodePath("CollisionShape2D:shape:extents")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -132,8 +132,8 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -11 ), Vector2( 0, -23 ), Vector2( 0, -30 ), Vector2( 0, -31 ), Vector2( 0, -30 ), Vector2( 0, -23 ), Vector2( 0, -10 ), Vector2( 0, -11 ) ]
+"update": 1,
+"values": [ Vector2( 24, 22 ), Vector2( 16, 30 ), Vector2( 20, 24 ), Vector2( 24, 22 ), Vector2( 24, 24 ), Vector2( 20, 26 ), Vector2( 28, 20 ), Vector2( 24, 22 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -269,7 +269,7 @@ tracks/3/keys = {
 } ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("hitbox:shape:extents")
+tracks/4/path = NodePath("CollisionShape2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -277,11 +277,11 @@ tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.48, 0.54 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 24, 22 ), Vector2( 16, 30 ), Vector2( 20, 24 ), Vector2( 24, 22 ), Vector2( 24, 24 ), Vector2( 20, 26 ), Vector2( 28, 20 ) ]
+"update": 1,
+"values": [ Vector2( 0, -11 ), Vector2( 0, -23 ), Vector2( 0, -30 ), Vector2( 0, -31 ), Vector2( 0, -30 ), Vector2( 0, -23 ), Vector2( 0, -10 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("hitbox:position")
+tracks/5/path = NodePath("CollisionShape2D:shape:extents")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -289,8 +289,8 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.09, 0.18, 0.27, 0.36, 0.48, 0.54 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, -11 ), Vector2( 0, -23 ), Vector2( 0, -30 ), Vector2( 0, -31 ), Vector2( 0, -30 ), Vector2( 0, -23 ), Vector2( 0, -10 ) ]
+"update": 1,
+"values": [ Vector2( 24, 22 ), Vector2( 16, 30 ), Vector2( 20, 24 ), Vector2( 24, 22 ), Vector2( 24, 24 ), Vector2( 20, 26 ), Vector2( 28, 20 ) ]
 }
 
 [sub_resource type="AtlasTexture" id=13]
@@ -359,13 +359,7 @@ __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"
 }
 
-[node name="hitbox" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -11 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
-
-[node name="AOEHitbox" type="Area2D" parent="."]
-
-[node name="hitbox" type="CollisionShape2D" parent="AOEHitbox"]
-position = Vector2( 0, -27 )
-scale = Vector2( 0.5, 0.5 )

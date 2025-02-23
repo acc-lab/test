@@ -5,9 +5,9 @@ signal victory
 signal restart
 
 var difficulty = 1
-var debug = true
+var debug = false
 var debug_alwaysShowHP = true
-var debug_stopWave = true 
+var debug_stopWave = false
 var debug_difficulty_change = false
 var debug_difficulty = 1.7
 
