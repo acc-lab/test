@@ -38,9 +38,9 @@ func new_sprite(variant, team, coord = null, x = null):
 	
 	add_child(instance)
 	
-func new_enemy(type):
+func new_enemy(type, cd = 1):
 	new_sprite(type, 2, null, enemy_spawn_global_x)
-	enemy_spawn_global_x += 30
+	enemy_spawn_global_x += 30 * cd
 	
 func new_wave():
 	enemy_spawn_global_x = 980
@@ -168,14 +168,14 @@ func temp():
 		var RI: int
 		
 		var spawnCondition = {
-			"police": {"rate": 60, "worth": UI.price[5]}, 
-			"archer2": {"rate": 80, "worth": UI.price[3]}, 
-			"tank": {"rate": 50, "worth": UI.price[4]}, 
-			"axy": {"rate": 70, "worth": UI.price[2]}, 
-			"ninja": {"rate": 70, "worth": UI.price[6]}, 
-			"healer": {"rate": 20, "worth": UI.price[7]}, 
-			"chicken": {"rate": 90, "worth": UI.price[8]}, 
-			"slime": {"rate": 80, "worth": UI.price[9]}, 
+			"police": {"rate": 60, "worth": UI.price[5], "cd": UI.cooldown[5]}, 
+			"archer2": {"rate": 80, "worth": UI.price[3], "cd": UI.cooldown[3]}, 
+			"tank": {"rate": 50, "worth": UI.price[4], "cd": UI.cooldown[4]}, 
+			"axy": {"rate": 70, "worth": UI.price[2], "cd": UI.cooldown[2]}, 
+			"ninja": {"rate": 70, "worth": UI.price[6], "cd": UI.cooldown[6]}, 
+			"healer": {"rate": 20, "worth": UI.price[7], "cd": UI.cooldown[7]}, 
+			"chicken": {"rate": 90, "worth": UI.price[8], "cd": UI.cooldown[8]}, 
+			"slime": {"rate": 80, "worth": UI.price[9], "cd": UI.cooldown[9]}, 
 		}
 		
 		while (2*worth >= networth):
@@ -184,7 +184,7 @@ func temp():
 			
 				while (RI <= spawnCondition[type]["rate"]): # 60%
 					if (worth >= spawnCondition[type]["worth"]):
-						new_enemy(type)
+						new_enemy(type, spawnCondition[type]["cd"])
 						worth -= spawnCondition[type]["worth"]
 					else:
 						break
