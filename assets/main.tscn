@@ -54,9 +54,8 @@ margin_left = 675.0
 margin_top = 241.0
 margin_right = 899.0
 margin_bottom = 304.0
-text = "VALLEY CHICKEN!!
-(and also death particles)
-TERRAIN SLIME!!"
+text = "better mobile support :D
+also more friendly difficulty"
 scroll_active = false
 
 [node name="ChickenDeathSheet" type="Sprite" parent="."]
