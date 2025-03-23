@@ -26,6 +26,7 @@ ManagerParticle="*res://assets/Manager_particle.gd"
 window/size/width=960
 window/size/height=360
 window/dpi/allow_hidpi=true
+window/handheld/orientation="sensor_landscape"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
