@@ -34,7 +34,9 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				var coord = tilemap.world_to_map(tilemap.to_local(event.position))
 				var tile_id = tilemap.get_cell(coord.x, coord.y)
 				if tile_id == 1:
-					if(UI.delay[button_manager.mode] >= UI.cooldown[button_manager.mode]):
+					if button_manager.mode == -1:
+						pass
+					elif(UI.delay[button_manager.mode] >= UI.cooldown[button_manager.mode]):
 						if(UI.money >= UI.price[button_manager.mode]):
 							UI.delay[button_manager.mode] = 0
 							UI.money -= UI.price[button_manager.mode]
