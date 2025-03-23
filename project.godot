@@ -25,6 +25,7 @@ ManagerParticle="*res://assets/Manager_particle.gd"
 
 window/size/width=960
 window/size/height=360
+window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -33,10 +34,12 @@ window/stretch/aspect="keep"
 fps=false
 texture=false
 backgroudn=false
+hiDPI=false
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/use_hidpi=true
 
 [mono]
 
