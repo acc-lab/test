@@ -16,6 +16,11 @@ func _process(delta):
 				/
 				UI.cooldown[int(j.get_name())]
 			)
+			if UI.money>=UI.price[int(j.get_name())]:
+				j.material.set_shader_param("effect",0)
+			else:
+				j.material.set_shader_param("effect",1)
+				
 		
 func _on_UI_summon(target_mode):
 	mode = target_mode
