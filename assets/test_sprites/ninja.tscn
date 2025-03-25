@@ -215,7 +215,7 @@ tracks/2/keys = {
 "args": [ 6 ],
 "method": "_move"
 }, {
-"args": [ 2 ],
+"args": [ 6 ],
 "method": "_move"
 } ]
 }

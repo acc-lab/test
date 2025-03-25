@@ -40,9 +40,9 @@ func cst_movement(dur):
 		state = "walk"
 	
 	if state == "walk":
-		if Constants.geq(dur,0.24):
+		if Constants.geq(dur,0.27):
 			state = "idle"
-			return 0.24
+			return 0.27
 			
 	elif state == "before_attack" and Constants.geq(dur, 0.06):
 		state = "attack"
