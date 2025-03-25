@@ -66,7 +66,7 @@ func _on_button_manager_update_description():
 """,
 6: """[center]Ninja[/center]
 
-[color=red]Unit Price: 175[/color]
+[color=red]Unit Price: 225[/color]
 [color=gray]Cooldown: 3.6 sec[/color]
 
 "My attack animation is just me jumping up and down, because why not"
