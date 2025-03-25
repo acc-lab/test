@@ -10,114 +10,176 @@ func _on_button_manager_update_description():
 	description.bbcode_text = {
 2: """[center]Axy[/center]
 
-[color=red]Unit Price: 50[/color]
-[color=gray]Cooldown: 0.99 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "The art of SPAM"
 
 [color=purple]Deals solid damage.[/color]
 
-[color=#FFC0CB]Health[/color]: 120 units
-[color=red]Damage[/color]: 20 units
-[color=green]Range[/color]: 30 units
-[color=#00FFFF]Reload[/color]: 0.69 sec
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Damage[/color]: {damage} units
+[color=green]Range[/color]: {range} units
+[color=#00FFFF]Reload[/color]: {reload} sec
+""".format({
+	"price": TileLib.price[2],
+	"cd": TileLib.cooldown[2],
+	"health": Preloads.method["axy"].full_health,
+	"damage": Preloads.method["axy"].damage,
+	"range": Preloads.method["axy"].sight_range,
+	"reload": Preloads.method["axy"].estimated_reload,
+}),
 3: """[center]Archer[/center]
 
-[color=red]Unit Price: 125[/color]
-[color=gray]Cooldown: 1.89 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "Pew pew pew, or whatever sound the bow makes"
 
 [color=purple]Perfect for mid range, dealing reliable damage.[/color]
 
-[color=#FFC0CB]Health[/color]: 80 units
-[color=red]Damage[/color]: 30 units per projectile
-[color=green]Range[/color]: 450 units
-[color=#00FFFF]Reload[/color]: 1.5 sec
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Damage[/color]: {damage_per_projectile} units per projectile
+[color=green]Range[/color]: {range} units
+[color=#00FFFF]Reload[/color]: {reload} sec
+""".format({
+	"price": TileLib.price[3],
+	"cd": TileLib.cooldown[3],
+	"health": Preloads.method["archer2"].full_health,
+	"damage_per_projectile": Preloads.method["archer2"].damage_per_projectile,
+	"range": Preloads.method["archer2"].sight_range,
+	"reload": Preloads.method["archer2"].estimated_reload,
+}),
 4: """[center]Meat Shield[/center]
 
-[color=red]Unit Price: 250[/color]
-[color=gray]Cooldown: 5.4 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "Ow, that hurts"
 
 [color=purple]A meat shield; doesn't attack.[/color]
 
-[color=#FFC0CB]Health[/color]: 1825 units
-[color=green]Range[/color]: 25 units
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=green]Range[/color]: {range} units
+""".format({
+	"price": TileLib.price[4],
+	"cd": TileLib.cooldown[4],
+	"health": Preloads.method["tank"].full_health,
+	"range": Preloads.method["tank"].sight_range,
+}),
 5: """[center]Police[/center]
 
-[color=red]Unit Price: 500[/color]
-[color=gray]Cooldown: 9.51 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "I'm OP"
 
-[color=purple]Shoots 3 bullets that penetrate and deal high damages.[/color]
+[color=purple]Shoots {projectiles} bullets that penetrate and deal high damages.[/color]
 
-[color=#FFC0CB]Health[/color]: 300 units
-[color=red]Damage[/color]: 200 units per projectile, per penetration
-[color=blue]Multishot[/color]: Shoots 3 projectiles
-[color=purple]Penetration[/color]: Deals damage to up to 3 entities
-[color=green]Range[/color]: 550 units
-[color=#00FFFF]Reload[/color]: 18 sec
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Damage[/color]: {damage_per_projectile} units per projectile, per penetration
+[color=blue]Multishot[/color]: Shoots {projectiles} projectiles
+[color=purple]Penetration[/color]: Deals damage to up to {piercing} entities
+[color=green]Range[/color]: {range} units
+[color=#00FFFF]Reload[/color]: {reload} sec
+""".format({
+	"price": TileLib.price[5],
+	"cd": TileLib.cooldown[5],
+	"health": Preloads.method["police"].full_health,
+	"damage_per_projectile": Preloads.method["police"].damage_per_projectile,
+	"projectiles": Preloads.method["police"].projectiles,
+	"piercing": Preloads.method["police"].piercing,
+	"range": Preloads.method["police"].sight_range,
+	"reload": Preloads.method["police"].estimated_reload,
+}),
 6: """[center]Ninja[/center]
 
-[color=red]Unit Price: 225[/color]
-[color=gray]Cooldown: 3.6 sec[/color]
+[color=red]Unit Price: {health} [/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "My attack animation is just me jumping up and down, because why not"
 
-[color=purple]Does quick damage and dashes.[/color]
+[color=purple]Does quick damage and dashes. Cannot hit lower hitbox![/color]
 
-[color=#FFC0CB]Health[/color]: 500 units
-[color=red]Damage[/color]: 20 units
-[color=blue]Dash Damage[/color]: 300 units
-[color=green]Dash Range[/color]: 220-230 units
-[color=#00FFFF]Reload[/color]: 0.24 sec
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Damage[/color]: {damage} units
+[color=blue]Dash Damage[/color]: {dash_damage} units
+[color=green]Range[/color]: {range} units
+[color=purple]Dash Range[/color]: {dash_range} units
+[color=#00FFFF]Reload[/color]: {reload} sec
+""".format({
+	"price": TileLib.price[6],
+	"cd": TileLib.cooldown[6],
+	"health": Preloads.method["ninja"].full_health,
+	"damage": Preloads.method["ninja"].damage,
+	"dash_damage": Preloads.method["ninja"].dash_damage,
+	"range": Preloads.method["ninja"].sight_range,
+	"dash_range": Preloads.method["ninja"].dash_range,
+	"reload": Preloads.method["ninja"].estimated_reload,
+}),
 7: """[center]Healer[/center]
 
-[color=red]Unit Price: 200[/color]
-[color=gray]Cooldown: 7.2 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "Something more creative"
 
 [color=purple]Heals troops.[/color]
 
-[color=#FFC0CB]Health[/color]: 400 units
-[color=red]Healing[/color]: 150 units
-[color=purple]Heal Units[/color]: Heals up to 3 entities
-[color=green]Heal Radius[/color]: 70 units
-[color=#00FFFF]Reload[/color]: 4.2 sec
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Healing[/color]: {healing} units
+[color=purple]Heal Capacity[/color]: Heals up to {heal_cap} entities
+[color=green]Heal Radius[/color]: {heal_rad} units
+[color=#00FFFF]Reload[/color]: {reload} sec
+""".format({
+	"price": TileLib.price[7],
+	"cd": TileLib.cooldown[7],
+	"health": Preloads.method["healer"].full_health,
+	"healing": Preloads.method["healer"].healing,
+	"heal_cap": Preloads.method["healer"].heal_capacity,
+	"heal_rad": Preloads.method["healer"].heal_radius,
+	"reload": Preloads.method["healer"].estimated_reload,
+}),
 8: """[center]Chicken[/center]
 
-[color=red]Unit Price: 25[/color]
-[color=gray]Cooldown: 0.9 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "Valley chicken gone wild"
 
 [color=purple]Short hitbox, low HP but very quick.[/color]
 
-[color=#FFC0CB]Health[/color]: 50 units
-[color=red]Damage[/color]: 5 units
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Damage[/color]: {damage} units
+[color=green]Range[/color]: {range} units
 [color=#00FFFF]Reload[/color]: 0.76 sec
-""",
+""".format({
+	"price": TileLib.price[8],
+	"cd": TileLib.cooldown[8],
+	"health": Preloads.method["chicken"].full_health,
+	"damage": Preloads.method["chicken"].damage,
+	"range": Preloads.method["chicken"].sight_range,
+	"reload": Preloads.method["chicken"].estimated_reload,
+}),
 9: """[center]Slime[/center]
 
-[color=red]Unit Price: 75[/color]
-[color=gray]Cooldown: 1.8 sec[/color]
+[color=red]Unit Price: {price}[/color]
+[color=gray]Cooldown: {cd} sec[/color]
 
 "Terrain slime gone wild"
 
 [color=purple]Flexible hitbox with consistent damage.[/color]
 
-[color=#FFC0CB]Health[/color]: 90 units
-[color=red]Damage[/color]: 50 units
-[color=#00FFFF]Reload[/color]: 0.69 sec
-""",
+[color=#FFC0CB]Health[/color]: {health} units
+[color=red]Damage[/color]: {damage} units
+[color=green]Range[/color]: {range} units
+[color=#00FFFF]Reload[/color]: {reload} sec
+""".format({
+	"price": TileLib.price[9],
+	"cd": TileLib.cooldown[9],
+	"health": Preloads.method["slime"].full_health,
+	"damage": Preloads.method["slime"].damage,
+	"range": Preloads.method["slime"].sight_range,
+	"reload": Preloads.method["slime"].estimated_reload,
+}),
 }[button_manager.mode]

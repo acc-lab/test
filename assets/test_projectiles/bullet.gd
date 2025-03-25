@@ -12,7 +12,7 @@ var damage=100
 var tick=0
 var last_tick=0
 
-var piercing = 2
+var piercing = 3
 var pierced = 0
 
 func _ready():
@@ -35,7 +35,7 @@ func cst_movement(dur):
 			
 			pierced += 1
 				
-			if pierced >= piercing + 1:
+			if pierced >= piercing:
 				call_deferred("free")
 				
 				break

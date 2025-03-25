@@ -20,6 +20,7 @@ config/icon="res://pictures/tile_ninja.png"
 Preloads="*res://assets/scripts/preloads.gd"
 Constants="*res://assets/scripts/constants.gd"
 ManagerParticle="*res://assets/Manager_particle.gd"
+TileLib="*res://assets/tileLib.gd"
 
 [display]
 

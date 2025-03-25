@@ -15,14 +15,15 @@ var healing=100 #hp
 var exploded = false
 var time_after_exploding = 0
 
-# var heal_rate=1 #hp/s
-# var decay_rate=-1 #-hp/s
+var heal_radius = 100 # embedded in the shape
 
-var heal_capacity = 3 # person
+var heal_capacity = 3 # most units it can heal
 
 func _ready():
 	set_collision_layer(0)
 	set_collision_mask(0)
+	
+	$hitbox_exploded.shape.radius = heal_radius
 
 func cst_movement(dur):
 	if dur >= 0.03:

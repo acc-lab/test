@@ -60,6 +60,7 @@ func _shoot_projectile(type, arguments):
 		instance.set("uuid", UUID)
 		instance.set("position", arguments["position"])
 		instance.set("team", arguments["team"])
+		instance.set("piercing", arguments["piercing"])
 		instance.set("vx", arguments["velocity"].x)
 		instance.set("vy", arguments["velocity"].y)
 		instance.set("ax", arguments["acceleration"].x)
@@ -82,6 +83,8 @@ func _shoot_projectile(type, arguments):
 		instance.set("ax", arguments["acceleration"].x)
 		instance.set("ay", arguments["acceleration"].y)
 		instance.set("healing", arguments["healing"])
+		instance.set("heal_capacity", arguments["heal_capacity"])
+		instance.set("heal_radius", arguments["heal_radius"])
 		
 		UUID += 1
 		add_child(instance)

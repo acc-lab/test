@@ -1,5 +1,24 @@
 extends "res://assets/scripts/sprite_template.gd"
 
+const full_health = 500
+const damage = 20
+const dash_damage = 300
+
+const sight_range = 30
+const dash_range = [220, 230]
+
+const cycle_time = 0.27
+
+const pre_AA_delay = 0.06
+const AA_delay = 0.24
+const post_AA_delay = 0.24
+
+const estimated_reload = pre_AA_delay + AA_delay + post_AA_delay
+
+const pre_dash_delay = 0.21
+const dash_time = 0.12
+const post_dash_delay = 0.12
+
 func _attack(type = 0):
 	# custom attack script
 	
@@ -11,7 +30,7 @@ func _attack(type = 0):
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],
 			"team": team,
-			"damage": 20,
+			"damage": damage,
 		})
 	
 	elif type == 1:
@@ -25,11 +44,11 @@ func _attack(type = 0):
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],
 			"team": team,
-			"damage": 300,
+			"damage": dash_damage,
 		})
 	
 func _ready():
-	health = 500
+	health = full_health
 	.set_health_bar()
 	
 	anims = {"walk":"walk", "attack":"attack", "idle":"idle", "after_attack":"idle", "before_attack": "idle",
@@ -40,44 +59,44 @@ func cst_movement(dur):
 		state = "walk"
 	
 	if state == "walk":
-		if Constants.geq(dur,0.27):
+		if Constants.geq(dur,cycle_time):
 			state = "idle"
-			return 0.27
+			return cycle_time
 			
-	elif state == "before_attack" and Constants.geq(dur, 0.06):
+	elif state == "before_attack" and Constants.geq(dur, pre_AA_delay):
 		state = "attack"
-		return 0.06
+		return pre_AA_delay
 		
-	elif state == "before_dash" and Constants.geq(dur, 0.21):
+	elif state == "before_dash" and Constants.geq(dur, pre_dash_delay):
 		state = "dash"
-		return 0.21
+		return pre_dash_delay
 		
 	elif state == "attack":
-		if Constants.geq(dur, 0.12) and phase=="":
+		if Constants.geq(dur, dash_time) and phase=="":
 			_attack()
 			phase = "1"
-		if Constants.geq(dur, 0.24) and phase=="1":
+		if Constants.geq(dur, AA_delay) and phase=="1":
 			state = "after_attack"
 			phase = ""
-			return 0.24
+			return AA_delay
 			
 	elif state == "dash":
-		if Constants.geq(dur, 0.12):
+		if Constants.geq(dur, post_dash_delay):
 			_attack(1)
 			state = "after_attack"
-			return 0.12
+			return post_dash_delay
 			
 	elif state == "after_attack":
-		if Constants.geq(dur, 0.24):
+		if Constants.geq(dur, post_AA_delay):
 			state = "walk"
-			return 0.24
+			return post_AA_delay
 	
-	if state == "walk" and exceed(self.position.x + 30*getDir(), observe_target_x, getDir()):
+	if state == "walk" and exceed(self.position.x + sight_range*getDir(), observe_target_x, getDir()):
 		state = "before_attack"
 		
 		return Constants.to30msmul(dur)
 	
-	if state == "walk" and within(self.position.x + 220*getDir(), self.position.x + 230*getDir(), observe_target_x, getDir()):
+	if state == "walk" and within(self.position.x + dash_range[0]*getDir(), self.position.x + dash_range[1]*getDir(), observe_target_x, getDir()):
 		state = "before_dash"
 		
 		return Constants.to30msmul(dur)

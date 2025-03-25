@@ -168,14 +168,14 @@ func temp():
 		var RI: int
 		
 		var spawnCondition = {
-			"police": {"rate": 60, "worth": UI.price[5], "cd": UI.cooldown[5]}, 
-			"archer2": {"rate": 80, "worth": UI.price[3], "cd": UI.cooldown[3]}, 
-			"tank": {"rate": 50, "worth": UI.price[4], "cd": UI.cooldown[4]}, 
-			"axy": {"rate": 70, "worth": UI.price[2], "cd": UI.cooldown[2]}, 
-			"ninja": {"rate": 70, "worth": UI.price[6], "cd": UI.cooldown[6]}, 
-			"healer": {"rate": 20, "worth": UI.price[7], "cd": UI.cooldown[7]}, 
-			"chicken": {"rate": 90, "worth": UI.price[8], "cd": UI.cooldown[8]}, 
-			"slime": {"rate": 80, "worth": UI.price[9], "cd": UI.cooldown[9]}, 
+			"police": {"rate": 60, "worth": TileLib.price[5], "cd": TileLib.cooldown[5]}, 
+			"archer2": {"rate": 80, "worth": TileLib.price[3], "cd": TileLib.cooldown[3]}, 
+			"tank": {"rate": 50, "worth": TileLib.price[4], "cd": TileLib.cooldown[4]}, 
+			"axy": {"rate": 70, "worth": TileLib.price[2], "cd": TileLib.cooldown[2]}, 
+			"ninja": {"rate": 70, "worth": TileLib.price[6], "cd": TileLib.cooldown[6]}, 
+			"healer": {"rate": 20, "worth": TileLib.price[7], "cd": TileLib.cooldown[7]}, 
+			"chicken": {"rate": 90, "worth": TileLib.price[8], "cd": TileLib.cooldown[8]}, 
+			"slime": {"rate": 80, "worth": TileLib.price[9], "cd": TileLib.cooldown[9]}, 
 		}
 		
 		while (2*worth >= networth):

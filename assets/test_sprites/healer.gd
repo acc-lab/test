@@ -1,5 +1,20 @@
 extends "res://assets/scripts/sprite_template.gd"
 
+const full_health = 400
+const detect_range = 700
+
+const healing = 150
+const heal_capacity = 3
+const heal_radius = 100
+
+const AA_delay = 0.84
+const post_AA_delay = 3.36
+
+const estimated_reload = AA_delay + post_AA_delay
+
+const cycle_time = 0.42
+
+
 func _attack():
 	# custom attack script
 	var dist = abs(self.position.x-observe_leading_x)
@@ -20,36 +35,36 @@ func _attack():
 		"team":team,
 		"velocity":Vector2(vx, vy),
 		"acceleration":Vector2(ax, ay),
-		"healing": 150,
+		"healing": healing,
+		"heal_capacity": heal_capacity,
+		"heal_radius": heal_radius,
 	})
 	
-	pass
-	
 func _ready():
-	health = 400 
+	health = full_health
 	.set_health_bar()
 
 func cst_movement(dur):
-	if(state == "walk" and Constants.geq(dur,0.42)):
+	if(state == "walk" and Constants.geq(dur, cycle_time)):
 		state = "idle"
-		return 0.42
+		return cycle_time
 	elif(state == "idle"):
 		#print(self.position.x + 450*getDir(), " ", observe_target_x)
-		if exceed(self.position.x + 700*getDir(), observe_target_x, getDir()):
+		if exceed(self.position.x + detect_range*getDir(), observe_target_x, getDir()):
 			state = "attack"
 		else:
 			state = "walk"
 		return 0
 	elif(state == "attack"):
-		if Constants.geq(dur, 0.84):
+		if Constants.geq(dur, AA_delay):
 			#print("shoot!")
 			_attack()
 			state = "after_attack"
-			return 0.84
+			return AA_delay
 	elif(state == "after_attack"):
-		if Constants.geq(dur, 3.36):
+		if Constants.geq(dur, post_AA_delay):
 			state = "idle"
-			return 3.36
+			return post_AA_delay
 			#print("super idle")
 	
 	return 0

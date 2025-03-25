@@ -7,11 +7,11 @@ onready var tick = 0
 
 onready var display = $"money displayer"
 
-onready var type = ["", "", "axy", "archer2", "tank", "police", "ninja", "healer", "chicken", "slime"]
-onready var price = [0, 0, 50, 125, 250, 500, 225, 200, 25, 75]
+onready var type = TileLib.type
+onready var price = TileLib.price
 
-var cooldown = [-1, -1, 0.99, 1.89, 5.4, 9.51, 3.6, 7.2, 0.9, 1.8]
-var delay = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+var cooldown = TileLib.cooldown
+var delay
 
 func _ready():
 	delay = cooldown.duplicate()
