@@ -281,6 +281,7 @@ position = Vector2( -14, -56 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
 animation = "walk"
+frame = 1
 centered = false
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"

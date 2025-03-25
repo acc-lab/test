@@ -170,7 +170,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
-length = 0.27
+length = 0.24
 step = 0.03
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
@@ -191,10 +191,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.06, 0.12, 0.18, 0.24, 0.27 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.06, 0.12, 0.18, 0.24 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 0, 0 ]
+"values": [ 0, 1, 2, 3, 0 ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -288,7 +288,6 @@ position = Vector2( -20, -54 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
 animation = "walk"
-frame = 2
 centered = false
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"

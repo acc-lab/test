@@ -19,7 +19,6 @@
 [ext_resource path="res://pictures/tile_healer.png" type="Texture" id=17]
 [ext_resource path="res://assets/test sprite.tscn" type="PackedScene" id=18]
 [ext_resource path="res://pictures/latest_checked/castle.png" type="Texture" id=19]
-[ext_resource path="res://pictures/background.png" type="Texture" id=20]
 [ext_resource path="res://pictures/tile_police.png" type="Texture" id=21]
 [ext_resource path="res://pictures/tile_shield.png" type="Texture" id=22]
 [ext_resource path="res://assets/games scene.gd" type="Script" id=23]
@@ -35,6 +34,7 @@
 [ext_resource path="res://pictures/tile_chicken.png" type="Texture" id=33]
 [ext_resource path="res://assets/Manager_particle.gd" type="Script" id=34]
 [ext_resource path="res://pictures/tile_slime.png" type="Texture" id=35]
+[ext_resource path="res://pictures/Sprite-0002.png" type="Texture" id=36]
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7, 37 )
@@ -250,11 +250,10 @@ script = ExtResource( 23 )
 
 [node name="Background" type="Node" parent="."]
 
-[node name="Background" type="Sprite" parent="Background"]
-light_mask = 0
-position = Vector2( 480, 180 )
-scale = Vector2( 2, 1.8 )
-texture = ExtResource( 20 )
+[node name="Sprite-0002" type="Sprite" parent="Background"]
+position = Vector2( 480, 165 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 36 )
 
 [node name="Manager (castle)" type="Node" parent="."]
 
