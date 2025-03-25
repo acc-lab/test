@@ -56,16 +56,18 @@ text = "so much depth"
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 749.0
 margin_top = 121.0
-margin_right = 933.0
-margin_bottom = 240.0
+margin_right = 938.0
+margin_bottom = 280.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "Changelog:
 
 - Better mobile support
-- New background
+- Meat shield (tank) that actually tanks
+- More skulls to f/**
+
 
 Give me feedback at:
-bit.ly/skulf"
+bit.ly slash skulf"
 scroll_active = false
 
 [connection signal="pressed" from="menu/Button" to="." method="_on_Button_pressed"]

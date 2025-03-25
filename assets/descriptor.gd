@@ -13,9 +13,9 @@ func _on_button_manager_update_description():
 [color=red]Unit Price: {price}[/color]
 [color=gray]Cooldown: {cd} sec[/color]
 
-"The art of SPAM"
+"I swing axe and stuff"
 
-[color=purple]Deals solid damage.[/color]
+[color=purple]Tanks and deals solid damage.[/color]
 
 [color=#FFC0CB]Health[/color]: {health} units
 [color=red]Damage[/color]: {damage} units
@@ -50,7 +50,7 @@ func _on_button_manager_update_description():
 	"range": Preloads.method["archer2"].sight_range,
 	"reload": Preloads.method["archer2"].estimated_reload,
 }),
-4: """[center]Meat Shield[/center]
+4: """[center]Tank[/center]
 
 [color=red]Unit Price: {price}[/color]
 [color=gray]Cooldown: {cd} sec[/color]
@@ -72,7 +72,7 @@ func _on_button_manager_update_description():
 [color=red]Unit Price: {price}[/color]
 [color=gray]Cooldown: {cd} sec[/color]
 
-"I'm OP"
+"Pew pew pew, I'm OP"
 
 [color=purple]Shoots {projectiles} bullets that penetrate and deal high damages.[/color]
 
@@ -122,7 +122,7 @@ func _on_button_manager_update_description():
 [color=red]Unit Price: {price}[/color]
 [color=gray]Cooldown: {cd} sec[/color]
 
-"Something more creative"
+"Something more creative here"
 
 [color=purple]Heals troops.[/color]
 
