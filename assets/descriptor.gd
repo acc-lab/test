@@ -94,7 +94,7 @@ func _on_button_manager_update_description():
 }),
 6: """[center]Ninja[/center]
 
-[color=red]Unit Price: {health} [/color]
+[color=red]Unit Price: {price} [/color]
 [color=gray]Cooldown: {cd} sec[/color]
 
 "My attack animation is just me jumping up and down, because why not"
