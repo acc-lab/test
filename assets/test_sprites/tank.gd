@@ -15,7 +15,7 @@ func cst_movement(dur):
 		return 0.42
 	elif(state == "idle"):
 		#print(self.position.x + 450*getDir(), " ", observe_target_x)
-		if exceed(self.position.x + 75*getDir(), observe_target_x, getDir()):
+		if exceed(self.position.x + 25*getDir(), observe_target_x, getDir()):
 			state = "attack"
 		else:
 			state = "walk"

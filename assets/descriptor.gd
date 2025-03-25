@@ -46,7 +46,7 @@ func _on_button_manager_update_description():
 [color=purple]A meat shield; doesn't attack.[/color]
 
 [color=#FFC0CB]Health[/color]: 1825 units
-[color=green]Range[/color]: 75 units
+[color=green]Range[/color]: 25 units
 """,
 5: """[center]Police[/center]
 
