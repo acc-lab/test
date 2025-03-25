@@ -36,15 +36,6 @@
 [ext_resource path="res://assets/Manager_particle.gd" type="Script" id=34]
 [ext_resource path="res://pictures/tile_slime.png" type="Texture" id=35]
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 7, 37 )
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 1, 0.482353, 0.482353, 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.462745, 0.0352941, 0.0352941, 1 )
-
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 95, 75 )
 
@@ -245,84 +236,24 @@ shader_param/as_if_height = 22.0
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 24 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 7, 37 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0.482353, 0.482353, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.462745, 0.0352941, 0.0352941, 1 )
+
 [node name="Games scene" type="Node"]
 script = ExtResource( 23 )
 
 [node name="Background" type="Node" parent="."]
 
-[node name="BgEz" type="Sprite" parent="Background"]
-position = Vector2( 480, 165 )
+[node name="Bg" type="Sprite" parent="Background"]
+position = Vector2( 480, 164 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 20 )
-
-[node name="Manager (castle)" type="Node" parent="."]
-
-[node name="castle1 container" type="Node2D" parent="Manager (castle)"]
-script = ExtResource( 3 )
-
-[node name="castle1" type="KinematicBody2D" parent="Manager (castle)/castle1 container"]
-collision_mask = 2
-script = ExtResource( 12 )
-
-[node name="Sprite" type="Sprite" parent="Manager (castle)/castle1 container/castle1"]
-position = Vector2( 20, 323 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1"]
-visible = false
-position = Vector2( 19, 323 )
-shape = SubResource( 5 )
-
-[node name="health bar" type="ProgressBar" parent="Manager (castle)/castle1 container/castle1"]
-anchor_right = 0.908
-margin_left = 4.0
-margin_top = 276.0
-margin_right = 36.0
-margin_bottom = 279.0
-rect_pivot_offset = Vector2( -99, -55 )
-custom_styles/fg = SubResource( 6 )
-custom_styles/bg = SubResource( 7 )
-value = 50.0
-percent_visible = false
-
-[node name="castle2 container" type="Node2D" parent="Manager (castle)"]
-script = ExtResource( 4 )
-
-[node name="castle2" type="KinematicBody2D" parent="Manager (castle)/castle2 container"]
-collision_layer = 2
-script = ExtResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="Manager (castle)/castle2 container/castle2"]
-position = Vector2( 940, 323 )
-scale = Vector2( -2, 2 )
-texture = ExtResource( 19 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2"]
-visible = false
-position = Vector2( 941, 323 )
-scale = Vector2( -1, 1 )
-shape = SubResource( 5 )
-
-[node name="health bar" type="ProgressBar" parent="Manager (castle)/castle2 container/castle2"]
-anchor_right = 0.908
-margin_left = 924.0
-margin_top = 276.0
-margin_right = 956.0
-margin_bottom = 279.0
-rect_pivot_offset = Vector2( -99, -55 )
-custom_styles/fg = SubResource( 6 )
-custom_styles/bg = SubResource( 7 )
-value = 50.0
-percent_visible = false
-
-[node name="Manager (sprite)" parent="." instance=ExtResource( 18 )]
-
-[node name="Manager (projectile)" type="Node" parent="."]
-script = ExtResource( 11 )
-
-[node name="Manager (particle)" type="Node" parent="."]
-script = ExtResource( 34 )
 
 [node name="UI" type="Node2D" parent="."]
 script = ExtResource( 5 )
@@ -537,12 +468,79 @@ margin_bottom = 156.0
 texture_normal = ExtResource( 31 )
 script = ExtResource( 32 )
 
+[node name="Manager (castle)" type="Node" parent="."]
+
+[node name="castle1 container" type="Node2D" parent="Manager (castle)"]
+script = ExtResource( 3 )
+
+[node name="castle1" type="KinematicBody2D" parent="Manager (castle)/castle1 container"]
+collision_mask = 2
+script = ExtResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="Manager (castle)/castle1 container/castle1"]
+position = Vector2( 20, 323 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle1 container/castle1"]
+visible = false
+position = Vector2( 19, 323 )
+shape = SubResource( 5 )
+
+[node name="health bar" type="ProgressBar" parent="Manager (castle)/castle1 container/castle1"]
+anchor_right = 0.908
+margin_left = 4.0
+margin_top = 276.0
+margin_right = 36.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( -99, -55 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 50.0
+percent_visible = false
+
+[node name="castle2 container" type="Node2D" parent="Manager (castle)"]
+script = ExtResource( 4 )
+
+[node name="castle2" type="KinematicBody2D" parent="Manager (castle)/castle2 container"]
+collision_layer = 2
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Manager (castle)/castle2 container/castle2"]
+position = Vector2( 940, 323 )
+scale = Vector2( -2, 2 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Manager (castle)/castle2 container/castle2"]
+visible = false
+position = Vector2( 941, 323 )
+scale = Vector2( -1, 1 )
+shape = SubResource( 5 )
+
+[node name="health bar" type="ProgressBar" parent="Manager (castle)/castle2 container/castle2"]
+anchor_right = 0.908
+margin_left = 924.0
+margin_top = 276.0
+margin_right = 956.0
+margin_bottom = 279.0
+rect_pivot_offset = Vector2( -99, -55 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 50.0
+percent_visible = false
+
+[node name="Manager (sprite)" parent="." instance=ExtResource( 18 )]
+
+[node name="Manager (projectile)" type="Node" parent="."]
+script = ExtResource( 11 )
+
+[node name="Manager (particle)" type="Node" parent="."]
+script = ExtResource( 34 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 480, 180 )
 current = true
 
-[connection signal="defeated" from="Manager (castle)/castle1 container/castle1" to="." method="_on_castle1_defeated"]
-[connection signal="victory" from="Manager (castle)/castle2 container/castle2" to="." method="_on_castle2_victory"]
 [connection signal="UI_no_money" from="UI/board" to="UI/money displayer" method="_on_board_UI_no_money"]
 [connection signal="input_event" from="UI/board" to="UI/board" method="_on_board_input_event"]
 [connection signal="summon" from="UI/board" to="Manager (sprite)" method="_on_board_summon"]
@@ -558,3 +556,5 @@ current = true
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/8" to="UI/button manager" method="_on_UI_summon" binds= [ 8 ]]
 [connection signal="pressed" from="UI/button manager/NinePatchRect/button container/VBoxContainer/HBoxContainer2/9" to="UI/button manager" method="_on_UI_summon" binds= [ 9 ]]
 [connection signal="restart" from="UI/restart button" to="." method="_restart"]
+[connection signal="defeated" from="Manager (castle)/castle1 container/castle1" to="." method="_on_castle1_defeated"]
+[connection signal="victory" from="Manager (castle)/castle2 container/castle2" to="." method="_on_castle2_victory"]
