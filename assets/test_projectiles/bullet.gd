@@ -53,7 +53,7 @@ func cst_movement(dur):
 	return 0
 
 func _draw():
-	draw_line(Vector2(0, 0), Vector2(vx, vy), Color(0.5, 0.5, 0.5), 1)
+	draw_line(Vector2(0, 0), Vector2(vx, vy), Color(0.5, 0.5, 0.5), 2)
 	
 func _process(delta):
 	tick += delta
