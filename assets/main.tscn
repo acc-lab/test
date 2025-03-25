@@ -47,18 +47,17 @@ text = "play"
 [node name="RichTextLabel2" type="RichTextLabel" parent="menu"]
 margin_left = 71.0
 margin_top = 131.0
-margin_right = 179.0
-margin_bottom = 157.0
+margin_right = 225.0
+margin_bottom = 187.0
 rect_rotation = 10.6
-rect_scale = Vector2( 1.5, 1.5 )
 custom_fonts/normal_font = SubResource( 1 )
 text = "so much depth"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 668.0
-margin_top = 113.0
-margin_right = 852.0
-margin_bottom = 232.0
+margin_left = 749.0
+margin_top = 121.0
+margin_right = 933.0
+margin_bottom = 240.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "Changelog:
 
