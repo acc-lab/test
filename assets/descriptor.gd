@@ -152,7 +152,7 @@ func _on_button_manager_update_description():
 [color=#FFC0CB]Health[/color]: {health} units
 [color=red]Damage[/color]: {damage} units
 [color=green]Range[/color]: {range} units
-[color=#00FFFF]Reload[/color]: 0.76 sec
+[color=#00FFFF]Reload[/color]: {reload} sec
 """.format({
 	"price": TileLib.price[8],
 	"cd": TileLib.cooldown[8],
