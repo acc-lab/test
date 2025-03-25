@@ -456,8 +456,8 @@ margin_top = 69.0
 margin_right = 61.0
 margin_bottom = 109.0
 toggle_mode = true
-texture_normal = ExtResource( 28 )
-texture_pressed = ExtResource( 29 )
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 28 )
 script = ExtResource( 30 )
 
 [node name="restart button" type="TextureButton" parent="UI"]
