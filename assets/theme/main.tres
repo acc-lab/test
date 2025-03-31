@@ -8,12 +8,11 @@ font_data = ExtResource( 1 )
 [sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 4.0
 bg_color = Color( 0.227451, 0.227451, 0.227451, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color( 0.141176, 0.141176, 0.141176, 1 )
-border_blend = true
 shadow_offset = Vector2( 0, -2 )
 anti_aliasing = false
 
@@ -25,7 +24,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.141176, 0.141176, 0.141176, 1 )
-border_blend = true
 shadow_offset = Vector2( 0, -2 )
 anti_aliasing = false
 
@@ -37,7 +35,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.141176, 0.141176, 0.141176, 1 )
-border_blend = true
 shadow_offset = Vector2( 0, -2 )
 anti_aliasing = false
 
@@ -48,7 +45,6 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color( 0.141176, 0.141176, 0.141176, 1 )
-border_blend = true
 
 [resource]
 default_font = SubResource( 5 )
