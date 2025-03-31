@@ -26,6 +26,8 @@ func _attack(type = 0):
 		# attack particles
 		ManagerParticle.emit_particle("ninjaDash",self.position+Vector2(0,-30),getDir())
 		
+		SFX.play_sound("Sword Slash")
+		
 		emit_signal("_shoot_projectile", "chop", {
 			"position": self.position + Vector2(10*getDir(), -30),
 			"slide": [self.position + Vector2(35*getDir(), -30)],
@@ -36,6 +38,8 @@ func _attack(type = 0):
 	elif type == 1:
 		
 		$"../..".shake(5.0, 0.2)
+		
+		SFX.play_sound_random(["Dash", "Dash 2"])
 		
 		# dash particles (on ground)
 		ManagerParticle.emit_particle("ninjaDash",self.position+Vector2(0,-10),getDir())

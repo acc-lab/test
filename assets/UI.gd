@@ -10,7 +10,7 @@ onready var display = $"money displayer"
 onready var type = TileLib.type
 onready var price = TileLib.price
 
-var cooldown = TileLib.cooldown
+var cooldown = TileLib.cooldown.duplicate()
 var delay
 
 func _ready():

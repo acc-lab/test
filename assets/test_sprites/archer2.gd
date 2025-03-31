@@ -22,6 +22,8 @@ func _attack():
 		"damage": damage_per_projectile
 	})
 	
+	SFX.play_sound("Bow")
+	
 func _ready():
 	health = full_health
 	.set_health_bar()

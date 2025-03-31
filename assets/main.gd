@@ -24,6 +24,7 @@ func _on_defeated():
 
 func _on_Button_pressed():
 	$menu.visible = false
+	SFX.play_sound("Alarm")
 	start_game()
 	
 func start_game():

@@ -11,6 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _toggled(state):
+	SFX.play_sound("Click")
 	get_tree().paused=state
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

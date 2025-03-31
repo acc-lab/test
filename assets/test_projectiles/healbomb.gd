@@ -84,6 +84,7 @@ func _process(delta):
 			
 		$hitbox_beforeExploding.disabled = true
 		$hitbox_exploded.disabled = false
+		SFX.play_sound("Reveal")
 		
 		
 func getDir():

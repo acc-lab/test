@@ -30,7 +30,7 @@ func cst_movement():
 		ManagerParticle.emit_particle("blood",collision.position)
 		var collider = collision.collider
 		collider.set_damage(damage)
-		
+	
 	call_deferred("free")
 
 func getDir():

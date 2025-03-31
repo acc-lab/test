@@ -24,6 +24,8 @@ func cst_movement(dur):
 			ManagerParticle.emit_particle("blood",collision.position)
 			collider.set_damage(damage)
 			
+			SFX.play_sound_random(["Jab", "Flesh Hit", "Split Hit"])
+			
 			call_deferred("free")
 			
 		vx+=ax;

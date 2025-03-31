@@ -23,6 +23,8 @@ func _attack():
 		"damage": damage,
 	})
 	
+	SFX.play_sound_random(["Swing", "Swing 2"])
+	
 func _ready():
 	health = full_health
 	.set_health_bar()

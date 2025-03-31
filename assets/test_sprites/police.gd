@@ -48,6 +48,7 @@ func _attack():
 	})
 	
 	$"../..".shake(10.0, 0.5)
+	SFX.play_sound_random(["Dooz", "Heavy Shot"])
 	
 func _ready():
 	health = full_health

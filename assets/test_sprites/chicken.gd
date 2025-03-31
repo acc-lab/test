@@ -33,6 +33,8 @@ func _ready():
 	.set_health_bar()
 	
 	$'health bar'.rect_position.y = -46
+	
+	SFX.play_sound_random(["Chicken", "Chicken 2", "Chicken 3"])
 
 func cst_movement(dur):
 	if state == "walk":
@@ -70,3 +72,4 @@ func cst_movement(dur):
 
 func death_animation():
 	ManagerParticle.emit_particle("chickenDeath", self.position)
+	SFX.play_sound_random(["Splat"])

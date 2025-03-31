@@ -40,6 +40,8 @@ func _attack():
 		"heal_radius": heal_radius,
 	})
 	
+	SFX.play_sound("Revive")
+	
 func _ready():
 	health = full_health
 	.set_health_bar()

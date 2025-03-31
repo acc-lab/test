@@ -25,6 +25,8 @@ func _attack():
 		"damage": damage,
 	})
 	
+	SFX.play_sound("Tear")
+	
 func _ready():
 	health = full_health
 	.set_health_bar()

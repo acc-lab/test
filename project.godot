@@ -21,6 +21,7 @@ Preloads="*res://assets/scripts/preloads.gd"
 Constants="*res://assets/scripts/constants.gd"
 ManagerParticle="*res://assets/Manager_particle.gd"
 TileLib="*res://assets/tileLib.gd"
+SFX="*res://assets/sound_manager.gd"
 
 [display]
 

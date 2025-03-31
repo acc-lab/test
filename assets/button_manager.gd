@@ -24,4 +24,5 @@ func _process(delta):
 		
 func _on_UI_summon(target_mode):
 	mode = target_mode
+	SFX.play_sound("Click")
 	emit_signal("update_description")

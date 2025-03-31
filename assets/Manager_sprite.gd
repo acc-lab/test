@@ -42,6 +42,8 @@ func new_enemy(type, cd = 1):
 	new_sprite(type, 2, null, enemy_spawn_global_x)
 	enemy_spawn_global_x += 30 * cd
 	
+	print("+= ", 30 * cd, "x: ", enemy_spawn_global_x)
+	
 func new_wave():
 	enemy_spawn_global_x = 980
 

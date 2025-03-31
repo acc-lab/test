@@ -37,6 +37,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 					if button_manager.mode == -1:
 						pass
 					elif(UI.delay[button_manager.mode] >= UI.cooldown[button_manager.mode]):
+						SFX.play_sound_random(["Ka Ching", "Coin 2", "Coin 3"])
 						if(UI.money >= UI.price[button_manager.mode]):
 							UI.delay[button_manager.mode] = 0
 							UI.money -= UI.price[button_manager.mode]
