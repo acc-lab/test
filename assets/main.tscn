@@ -2,10 +2,9 @@
 
 [ext_resource path="res://minimal3x5.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://pictures/title.png" type="Texture" id=2]
+[ext_resource path="res://assets/theme/main.tres" type="Theme" id=3]
 [ext_resource path="res://pictures/bg_ez.png" type="Texture" id=5]
 [ext_resource path="res://assets/main.gd" type="Script" id=6]
-
-[sub_resource type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 1 )
@@ -40,7 +39,7 @@ margin_left = 352.0
 margin_top = 222.0
 margin_right = 576.0
 margin_bottom = 242.0
-theme = SubResource( 3 )
+theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 4 )
 text = "play"
 
@@ -53,7 +52,7 @@ rect_rotation = 10.6
 custom_fonts/normal_font = SubResource( 1 )
 text = "so much depth"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="menu"]
 margin_left = 749.0
 margin_top = 121.0
 margin_right = 938.0
