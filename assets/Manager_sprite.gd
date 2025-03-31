@@ -28,7 +28,7 @@ func new_sprite(variant, team, coord = null, x = null):
 		
 	else:
 		if team == 1:
-			instance.position.x = 20
+			instance.position.x = -20
 		else:
 			instance.position.x = 940
 	
