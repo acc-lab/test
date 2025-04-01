@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=2]
 
-[ext_resource path="res://minimal3x5.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Minimal3x5.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 1 )
