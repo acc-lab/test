@@ -10,24 +10,21 @@ func set_global_volume(volume: float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db(volume))
 
 func preload_sounds():
-	var sound_ext = ["wav"]
+	var sound_ext = ["wav", "mp3"]
 	var files = [
+		"dobranoc-219730.wav",
 		"Alarm.wav",
 		"Bow.wav",
 		"Buy.wav",
-		"Chamber Coin",
-		"Chamber Coin 2.wav",
-		"Chicken.wav",
-		"Chicken 2.wav",
-		"Chicken 3.wav",
+		"Chamber Coin", "Chamber Coin 2.wav",
+		"Chicken.wav", "Chicken 2.wav", "Chicken 3.wav",
 		"Click.wav",
-		"Coin 2.wav",
-		"Coin 3.wav",
-		"Dash.wav",
-		"Dash 2.wav",
+		"Coin 2.wav", "Coin 3.wav",
+		"Dash.wav", "Dash 2.wav",
 		"Dooz.wav",
 		"Flesh Hit.wav",
 		"Gameover 3.wav",
+		"Heavy Shot.wav",
 		"Jab.wav",
 		"Ka Ching.wav",
 		"Laser.wav",
@@ -42,8 +39,7 @@ func preload_sounds():
 		"Dooz.wav",
 		"Flesh Hit.wav",
 		"Squeak.wav",
-		"Swing.wav",
-		"Swing 2.wav",
+		"Swing.wav", "Swing 2.wav",
 		"Sword Slash.wav",
 		"Tear.wav",
 		"Unlock.wav",

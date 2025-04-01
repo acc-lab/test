@@ -46,6 +46,8 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 							emit_signal("summon", coord, UI.type[button_manager.mode]) 
 						else:
 							emit_signal("UI_no_money")
+				else:
+					print(coord.x, " ", coord.y)
 					
 			if event.button_index == BUTTON_RIGHT:
 				#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)

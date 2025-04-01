@@ -44,6 +44,8 @@ func _ready():
 		difficulty = debug_difficulty
 		$UI.money *= debug_difficulty
 		
+	SFX.play_sound("dobranoc-219730") # repeated
+		
 func _process(delta):
 	if is_shaking and camera:
 		camera.offset = Vector2(
@@ -71,7 +73,7 @@ func shake(intensity = 10.0, duration = 0.3, falloff = true):
 	if falloff:
 		# gradually reduce shake intensity
 		current_tween.interpolate_property(
-			self, 
+			self,
 			"shake_amount",
 			intensity,
 			0.0,
