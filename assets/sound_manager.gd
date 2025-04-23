@@ -64,3 +64,9 @@ func play_sound(sound_name: String):
 		audio_player.connect("finished", audio_player, "queue_free")
 	else:
 		print("Error: Sound not found -", sound_name)
+
+func reset_sound():
+	for child in get_children():
+		if child is AudioStreamPlayer:
+			child.stop()
+			child.queue_free()

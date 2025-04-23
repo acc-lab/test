@@ -6,10 +6,12 @@ var instance
 
 func _ready():
 	$menu.visible = true
+	SFX.reset_sound()
 	Engine.time_scale = 1
 	
 func _on_victory():
 	$menu.visible = true
+	SFX.reset_sound()
 	difficulty += 0.1
 	
 	$menu/RichTextLabel2.text = "well I guess you win now. Current difficulty set to: " + str(difficulty)
