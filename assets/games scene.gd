@@ -44,7 +44,7 @@ func _ready():
 		difficulty = debug_difficulty
 		$UI.money *= debug_difficulty
 		
-	SFX.play_sound("dobranoc-219730") # repeated
+	# SFX.play_sound("dobranoc-219730") # repeated (for BGM)
 		
 func _process(delta):
 	if is_shaking and camera:

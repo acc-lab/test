@@ -12,7 +12,6 @@ func set_global_volume(volume: float):
 func preload_sounds():
 	var sound_ext = ["wav", "mp3"]
 	var files = [
-		"dobranoc-219730.wav",
 		"Alarm.wav",
 		"Bow.wav",
 		"Buy.wav",

@@ -56,6 +56,10 @@ func cst_movement(dur):
 	
 	if state == "idle" and exceed(self.position.x + sight_range*getDir(), observe_target_x, getDir()):
 		state = "before_attack"
+		
+	if state == "walk" and exceed(self.position.x + sight_range*getDir(), observe_target_x, getDir()):
+		state = "attack"
+		keepFrame = true
 			
 	elif state == "idle":
 		state = "walk"

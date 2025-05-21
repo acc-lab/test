@@ -4,7 +4,7 @@
 [ext_resource path="res://pictures/latest_checked/sprite sheets/slime.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 28, 20 )
+extents = Vector2( 20, 24 )
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -354,13 +354,13 @@ position = Vector2( -16, -44 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
 animation = "walk"
-frame = 6
+frame = 2
 centered = false
 __meta__ = {
 "_editor_description_": "for test only (frame duration should be customizable)"
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -10 )
+position = Vector2( 0, -30 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )

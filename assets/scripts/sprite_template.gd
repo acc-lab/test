@@ -57,6 +57,8 @@ var tick = 0
 var last_tick = 0
 var last_state = ""
 
+var keepFrame = false
+
 var anims = {"walk":"walk", "attack":"attack", "idle":"idle", "after_attack":"idle", "before_attack": "idle"}
 
 func exceed(a, b, dir):
@@ -83,6 +85,8 @@ func _process(delta):
 	self.body.scale.x = 1*getDir()
 	if(!animator.current_animation): animator.current_animation = "idle"
 	
+	keepFrame = false
+	
 	var del = cst_movement(dur)
 	
 	last_tick += del
@@ -91,7 +95,13 @@ func _process(delta):
 	
 	if(state != last_state):
 		var anim = anims[state]
+		var current_time = animator.current_animation_position
 		animator.current_animation = anim
+		
+		if keepFrame == true:
+			print("CUNTASS")
+			print(current_time)
+			animator.seek(current_time, true)
 		last_state = state
 		
 	health_bar.value = health
