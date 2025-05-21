@@ -99,8 +99,6 @@ func _process(delta):
 		animator.current_animation = anim
 		
 		if keepFrame == true:
-			print("CUNTASS")
-			print(current_time)
 			animator.seek(current_time, true)
 		last_state = state
 		
